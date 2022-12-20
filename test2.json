@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "originLang": "Ciężarówka",
+        "learningLang": "Truck",
+        "category": "Vehicles"
+    },
+    {
+        "id": 2,
+        "originLang": "Samochód",
+        "learningLang": "Car",
+        "category": "Vehicles"
+    },
+    {
+        "id": 3,
+        "originLang": "Samolot",
+        "learningLang": "Airplane",
+        "category": "Vehicles"
+    },
+    {
+        "id": 4,
+        "originLang": "Pociąg",
+        "learningLang": "Train",
+        "category": "Vehicles"
+    },
+    {
+        "id": 5,
+        "originLang": "Policjant",
+        "learningLang": "Police officer",
+        "category": "Jobs"
+    },
+    {
+        "id": 6,
+        "originLang": "Strażak",
+        "learningLang": "Firefighter",
+        "category": "Jobs"
+    },
+    {
+        "id": 7,
+        "originLang": "Woźny",
+        "learningLang": "Janitor",
+        "category": "Jobs"
+    },
+    {
+        "id": 8,
+        "originLang": "Żołnierz",
+        "learningLang": "Soldier",
+        "category": "Jobs"
+    }
+]
