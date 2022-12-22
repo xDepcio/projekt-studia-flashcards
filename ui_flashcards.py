@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(468, 544)
+        MainWindow.resize(465, 629)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
 "padding-top: 10px;\n"
 "border-radius: 9;\n"
 "font-weight: 500;\n"
-"font-size: 16px")
+"font-size: 16px;")
 
         self.horizontalLayout.addWidget(self.examButton)
 
@@ -224,65 +224,126 @@ class Ui_MainWindow(object):
         self.widget_2.setSizePolicy(sizePolicy1)
         self.horizontalLayout_6 = QHBoxLayout(self.widget_2)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.pushButton_4 = QPushButton(self.widget_2)
-        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.testEasyBtn = QPushButton(self.widget_2)
+        self.testEasyBtn.setObjectName(u"testEasyBtn")
+        self.testEasyBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"padding-left: 15px;\n"
+"padding-right: 15px;\n"
+"font-weight: 500;")
 
-        self.horizontalLayout_6.addWidget(self.pushButton_4)
+        self.horizontalLayout_6.addWidget(self.testEasyBtn)
 
-        self.pushButton_5 = QPushButton(self.widget_2)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.testMediumBtn = QPushButton(self.widget_2)
+        self.testMediumBtn.setObjectName(u"testMediumBtn")
+        self.testMediumBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"padding-left: 15px;\n"
+"padding-right: 15px;\n"
+"font-weight: 500;")
 
-        self.horizontalLayout_6.addWidget(self.pushButton_5)
+        self.horizontalLayout_6.addWidget(self.testMediumBtn)
 
-        self.pushButton_6 = QPushButton(self.widget_2)
-        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.testHardBtn = QPushButton(self.widget_2)
+        self.testHardBtn.setObjectName(u"testHardBtn")
+        self.testHardBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"padding-left: 15px;\n"
+"padding-right: 15px;\n"
+"font-weight: 500;")
 
-        self.horizontalLayout_6.addWidget(self.pushButton_6)
+        self.horizontalLayout_6.addWidget(self.testHardBtn)
 
         self.horizontalSpacer = QSpacerItem(118, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer)
 
-        self.pushButton_7 = QPushButton(self.widget_2)
-        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.testStartBtn = QPushButton(self.widget_2)
+        self.testStartBtn.setObjectName(u"testStartBtn")
+        self.testStartBtn.setEnabled(False)
+        self.testStartBtn.setStyleSheet(u"QPushButton:enabled {\n"
+"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"padding-left: 15px;\n"
+"padding-right: 15px;\n"
+"font-weight: 500;\n"
+"}\n"
+"QPushButton:disabled {\n"
+"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"padding-left: 15px;\n"
+"padding-right: 15px;\n"
+"font-weight: 500;\n"
+"border: 2px solid rgb(118, 152, 184);\n"
+"color: rgb(118, 152, 184);\n"
+"background-color: rgb(227, 227, 227);\n"
+"}")
 
-        self.horizontalLayout_6.addWidget(self.pushButton_7)
+        self.horizontalLayout_6.addWidget(self.testStartBtn)
 
 
         self.verticalLayout_6.addWidget(self.widget_2)
 
-        self.widget_3 = QWidget(self.page_2)
-        self.widget_3.setObjectName(u"widget_3")
-        self.verticalLayout_7 = QVBoxLayout(self.widget_3)
+        self.testStack = QStackedWidget(self.page_2)
+        self.testStack.setObjectName(u"testStack")
+        self.page_6 = QWidget()
+        self.page_6.setObjectName(u"page_6")
+        self.verticalLayout_8 = QVBoxLayout(self.page_6)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.testsMainDisplay = QWidget(self.page_6)
+        self.testsMainDisplay.setObjectName(u"testsMainDisplay")
+        self.verticalLayout_7 = QVBoxLayout(self.testsMainDisplay)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.label_2 = QLabel(self.widget_3)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setAlignment(Qt.AlignCenter)
+        self.testCardLabel = QLabel(self.testsMainDisplay)
+        self.testCardLabel.setObjectName(u"testCardLabel")
+        self.testCardLabel.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_7.addWidget(self.label_2)
+        self.verticalLayout_7.addWidget(self.testCardLabel)
 
-        self.widget_4 = QWidget(self.widget_3)
+        self.widget_4 = QWidget(self.testsMainDisplay)
         self.widget_4.setObjectName(u"widget_4")
         sizePolicy1.setHeightForWidth(self.widget_4.sizePolicy().hasHeightForWidth())
         self.widget_4.setSizePolicy(sizePolicy1)
         self.horizontalLayout_7 = QHBoxLayout(self.widget_4)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.lineEdit = QLineEdit(self.widget_4)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.testCardInput = QLineEdit(self.widget_4)
+        self.testCardInput.setObjectName(u"testCardInput")
 
-        self.horizontalLayout_7.addWidget(self.lineEdit)
+        self.horizontalLayout_7.addWidget(self.testCardInput)
 
-        self.pushButton_8 = QPushButton(self.widget_4)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setMinimumSize(QSize(150, 0))
+        self.testCardBtn = QPushButton(self.widget_4)
+        self.testCardBtn.setObjectName(u"testCardBtn")
+        self.testCardBtn.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout_7.addWidget(self.pushButton_8)
+        self.horizontalLayout_7.addWidget(self.testCardBtn)
 
 
         self.verticalLayout_7.addWidget(self.widget_4)
 
 
-        self.verticalLayout_6.addWidget(self.widget_3)
+        self.verticalLayout_8.addWidget(self.testsMainDisplay)
+
+        self.testStack.addWidget(self.page_6)
+        self.page_7 = QWidget()
+        self.page_7.setObjectName(u"page_7")
+        self.testStack.addWidget(self.page_7)
+
+        self.verticalLayout_6.addWidget(self.testStack)
 
         self.pagesStack.addWidget(self.page_2)
         self.page_3 = QWidget()
@@ -361,7 +422,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 468, 21))
+        self.menubar.setGeometry(QRect(0, 0, 465, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -369,7 +430,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(2)
+        self.pagesStack.setCurrentIndex(0)
+        self.testStack.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -385,12 +447,12 @@ class Ui_MainWindow(object):
         self.cardName.setText(QCoreApplication.translate("MainWindow", u"Airplane", None))
         self.answerFeedbackLabel.setText("")
         self.flashcardButton.setText(QCoreApplication.translate("MainWindow", u"Sprawd\u017a", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u0141atwy", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u015aredni", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Trudny", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Rozpocznij", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.testEasyBtn.setText(QCoreApplication.translate("MainWindow", u"\u0141atwy", None))
+        self.testMediumBtn.setText(QCoreApplication.translate("MainWindow", u"\u015aredni", None))
+        self.testHardBtn.setText(QCoreApplication.translate("MainWindow", u"Trudny", None))
+        self.testStartBtn.setText(QCoreApplication.translate("MainWindow", u"Rozpocznij", None))
+        self.testCardLabel.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.testCardBtn.setText(QCoreApplication.translate("MainWindow", u"Dalej", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Odpowiedzi", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Testy", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Inne", None))

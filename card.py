@@ -1,3 +1,6 @@
+from answer import Answer
+
+
 class Card:
     def __init__(
         self,
@@ -19,17 +22,20 @@ class Card:
         else:
             self.popularity = popularity
 
-    def evaluate_answer(self, answer):
-        answer_bool = answer.lower() == self.origin_lang_value.lower()
+    def answer(self, answer):
+        answer_bool = self.evaluate_answer(answer)
         self._handle_answer(answer_bool)
         self._save()
-        return answer_bool
+        return Answer(self, answer)
+
+    def evaluate_answer(self, answer):
+        return answer.lower() == self.origin_lang_value.lower()
 
     def _handle_answer(self, is_correct):
         if is_correct:
-            self.popularity = self.popularity * 0.75
+            self.popularity = min(self.popularity * 0.75, 0.01)
         else:
-            self.popularity = self.popularity * 1.5
+            self.popularity = max(self.popularity * 1.8, 0.99)
 
     def _save(self):
         pass

@@ -102,6 +102,61 @@
                 "originLang": "Samolot",
                 "learningLang": "Airplane",
                 "date": "2022-12-19 15:25"
+            },
+            {
+                "originLang": "Ciężarówka",
+                "learningLang": "Truck",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Ciężarówka",
+                "learningLang": "Truck",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Samolot",
+                "learningLang": "Airplane",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:46"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:46"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:46"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:46"
+            },
+            {
+                "originLang": "Samochód",
+                "learningLang": "Car",
+                "date": "2022-12-20 23:29"
             }
         ],
         "wrong": [
@@ -209,7 +264,38 @@
                 "originLang": "Samolot",
                 "learningLang": "Airplane",
                 "date": "2022-12-19 15:25"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Samolot",
+                "learningLang": "Airplane",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:45"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-20 19:45"
             }
         ]
-    }
+    },
+    "exams": []
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>468</width>
-    <height>544</height>
+    <width>465</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,7 +62,7 @@ padding-bottom: 10px;
 padding-top: 10px;
 border-radius: 9;
 font-weight: 500;
-font-size: 16px</string>
+font-size: 16px;</string>
           </property>
           <property name="text">
            <string>Test</string>
@@ -101,7 +101,7 @@ font-size: 16px</string>
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -287,21 +287,51 @@ font-weight: 400;</string>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="testEasyBtn">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(62, 162, 255);
+border-radius: 5px;
+background-color: 'white';
+border: 2px solid rgb(62, 162, 255);
+padding: 7px;
+padding-left: 15px;
+padding-right: 15px;
+font-weight: 500;</string>
+               </property>
                <property name="text">
                 <string>Łatwy</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_5">
+              <widget class="QPushButton" name="testMediumBtn">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(62, 162, 255);
+border-radius: 5px;
+background-color: 'white';
+border: 2px solid rgb(62, 162, 255);
+padding: 7px;
+padding-left: 15px;
+padding-right: 15px;
+font-weight: 500;</string>
+               </property>
                <property name="text">
                 <string>Średni</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_6">
+              <widget class="QPushButton" name="testHardBtn">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(62, 162, 255);
+border-radius: 5px;
+background-color: 'white';
+border: 2px solid rgb(62, 162, 255);
+padding: 7px;
+padding-left: 15px;
+padding-right: 15px;
+font-weight: 500;</string>
+               </property>
                <property name="text">
                 <string>Trudny</string>
                </property>
@@ -321,7 +351,35 @@ font-weight: 400;</string>
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_7">
+              <widget class="QPushButton" name="testStartBtn">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton:enabled {
+color: rgb(62, 162, 255);
+border-radius: 5px;
+background-color: 'white';
+border: 2px solid rgb(62, 162, 255);
+padding: 7px;
+padding-left: 15px;
+padding-right: 15px;
+font-weight: 500;
+}
+QPushButton:disabled {
+color: rgb(62, 162, 255);
+border-radius: 5px;
+background-color: 'white';
+border: 2px solid rgb(62, 162, 255);
+padding: 7px;
+padding-left: 15px;
+padding-right: 15px;
+font-weight: 500;
+border: 2px solid rgb(118, 152, 184);
+color: rgb(118, 152, 184);
+background-color: rgb(227, 227, 227);
+}</string>
+               </property>
                <property name="text">
                 <string>Rozpocznij</string>
                </property>
@@ -331,47 +389,59 @@ font-weight: 400;</string>
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="widget_3" native="true">
-            <layout class="QVBoxLayout" name="verticalLayout_7">
-             <item>
-              <widget class="QLabel" name="label_2">
-               <property name="text">
-                <string>TextLabel</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_4" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_7">
-                <item>
-                 <widget class="QLineEdit" name="lineEdit"/>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="pushButton_8">
-                  <property name="minimumSize">
-                   <size>
-                    <width>150</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>PushButton</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
+           <widget class="QStackedWidget" name="testStack">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <widget class="QWidget" name="page_6">
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QWidget" name="testsMainDisplay" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="testCardLabel">
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_4" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
+                     <widget class="QLineEdit" name="testCardInput"/>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="testCardBtn">
+                      <property name="minimumSize">
+                       <size>
+                        <width>150</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Dalej</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_7"/>
            </widget>
           </item>
          </layout>
@@ -458,7 +528,7 @@ font-weight: 500;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>468</width>
+     <width>465</width>
      <height>21</height>
     </rect>
    </property>

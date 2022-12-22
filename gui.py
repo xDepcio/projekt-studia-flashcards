@@ -1,6 +1,7 @@
 from PySide2.QtWidgets import (
     QApplication, QHBoxLayout, QVBoxLayout, QWidget, QSlider, QSpinBox,
-    QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem
+    QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
+    QSizePolicy
 )
 from PySide2.QtCore import Qt
 from PySide2.QtCharts import QtCharts
@@ -14,6 +15,7 @@ from utils import export_cards, import_cards, get_categorized_cards_collections
 from stylesheets import StyleSheet
 from stats import Stats
 from time import time
+from exam import Exam
 
 
 class AirQualityWindow(QMainWindow):
@@ -23,10 +25,11 @@ class AirQualityWindow(QMainWindow):
         self.stats.load_stats()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.state_obj = {}
+        self.state = {}
         self._setupCategories()
         self._setupMainNav()
         self._setupStatsPage()
+        self._setupExamsPage()
 
     def _setupCategories(self):
         cards = import_cards('cards.json')
@@ -35,6 +38,8 @@ class AirQualityWindow(QMainWindow):
             collection_item = QListWidgetItem(card_collection.category)
             collection_item.card_collection = card_collection
             self.ui.categoriesField.addItem(collection_item)
+            if card_collection.category == 'Wszystkie':
+                self.state['allCardsCollection'] = card_collection
 
         self.ui.categoriesField.itemClicked.connect(self._selectCategory)
         self.ui.categoriesField.item(0).setSelected(True)
@@ -43,10 +48,79 @@ class AirQualityWindow(QMainWindow):
 
     def _selectCategory(self, category):
         card_collection = category.card_collection
-        self.ui.state_obj['current_collection'] = card_collection
+        self.state['current_collection'] = card_collection
         self._draw_new_card(card_collection)
         self.ui.choosenCategoryHeader.setText(
             f'Wybrana kategoria: {card_collection.category}'
+        )
+
+    def _handleStartTestClick(self):
+        self.ui.testEasyBtn.setDisabled(True)
+        self.ui.testMediumBtn.setDisabled(True)
+        self.ui.testHardBtn.setDisabled(True)
+        self.ui.testStartBtn.setDisabled(True)
+        self.ui.testStack.setCurrentIndex(0)
+        self.ui.testCardInput.textChanged.connect(self._handleTestInputChange)
+        self.ui.testCardBtn.clicked.connect(self._handleNextExamQuestion)
+        all_cards_collection = self.state['allCardsCollection']
+        cards = all_cards_collection.draw_cards(5, False)
+        exam = Exam(cards, 0)
+        self.state['currExam'] = exam
+        self._draw_exam_card()
+
+    def _draw_exam_card(self):
+        self.ui.testCardInput.setText('')
+        card = self.state['currExam'].draw_card()
+        if self.state['currExam'].is_completed:
+            print(self.state['currExam'].generate_result())
+            return
+        self.ui.testCardLabel.setText(card.learning_lang_value)
+        self.state['currExamCard'] = card
+
+    def _handleTestInputChange(self):
+        if self.ui.testCardInput.text() == '':
+            self.ui.testCardBtn.setDisabled(True)
+        else:
+            self.ui.testCardBtn.setDisabled(False)
+
+    def _handleNextExamQuestion(self):
+        user_input = self.ui.testCardInput.text()
+        card = self.state['currExamCard']
+        self.state['currExam'].answer_card(card, user_input)
+        self._draw_exam_card()
+
+    def _setupExamsPage(self):
+        self.ui.testEasyBtn.clicked.connect(self._handleTestDiffBtn1Click)
+        self.ui.testMediumBtn.clicked.connect(self._handleTestDiffBtn2Click)
+        self.ui.testHardBtn.clicked.connect(self._handleTestDiffBtn3Click)
+        self.ui.testStartBtn.clicked.connect(self._handleStartTestClick)
+
+    def _handleTestDiffBtn1Click(self):
+        self.state['testDiffBtn'] = 'easy'
+        self.__setSelectedBtnUi()
+
+    def _handleTestDiffBtn2Click(self):
+        self.state['testDiffBtn'] = 'medium'
+        self.__setSelectedBtnUi()
+
+    def _handleTestDiffBtn3Click(self):
+        self.state['testDiffBtn'] = 'hard'
+        self.__setSelectedBtnUi()
+
+    def __setSelectedBtnUi(self):
+        print(StyleSheet.btnExamSelected)
+        self.ui.testStartBtn.setDisabled(False)
+        self.ui.testEasyBtn.setStyleSheet(
+            StyleSheet.btnExamSelected if self.state['testDiffBtn'] == 'easy'
+            else StyleSheet.btnExamNotSelected
+        )
+        self.ui.testMediumBtn.setStyleSheet(
+            StyleSheet.btnExamSelected if self.state['testDiffBtn'] == 'medium'
+            else StyleSheet.btnExamNotSelected
+        )
+        self.ui.testHardBtn.setStyleSheet(
+            StyleSheet.btnExamSelected if self.state['testDiffBtn'] == 'hard'
+            else StyleSheet.btnExamNotSelected
         )
 
     def _draw_new_card(self, card_collection):
@@ -56,14 +130,14 @@ class AirQualityWindow(QMainWindow):
         self.ui.answerFeedbackLabel.setText('')
         self.ui.answerInput.setText('')
         self.ui.flashcardButton.clicked.connect(self._handleAnswer)
-        self.ui.state_obj['current_card'] = card
+        self.state['current_card'] = card
 
     def _handleAnswer(self):
-        card = self.ui.state_obj['current_card']
-        answer = self.ui.answerInput.text().strip()
-        is_answer_correct = card.evaluate_answer(answer)
-        self.__format_answer_label(is_answer_correct)
-        self._save_answer(is_answer_correct, card)
+        card = self.state['current_card']
+        input_str = self.ui.answerInput.text().strip()
+        answer = card.answer(input_str)
+        self.__format_answer_label(answer.is_correct)
+        self.stats.save_answer(answer)
         self.ui.flashcardButton.setText('Następna')
         self.ui.flashcardButton.clicked.disconnect(self._handleAnswer)
         self.ui.flashcardButton.clicked.connect(self._handleNextCardClick)
@@ -75,7 +149,7 @@ class AirQualityWindow(QMainWindow):
             self.ui.flashcardButton.setDisabled(False)
 
     def __format_answer_label(self, is_answer_correct):
-        card = self.ui.state_obj['current_card']
+        card = self.state['current_card']
         if is_answer_correct:
             self.ui.answerFeedbackLabel.setText('Dobrze :)')
             self.ui.answerFeedbackLabel.setStyleSheet(
@@ -92,26 +166,8 @@ class AirQualityWindow(QMainWindow):
         font.setPixelSize(18)
         self.ui.answerFeedbackLabel.setFont(font)
 
-    def _save_answer(self, is_answer_correct, card):
-        date = datetime.fromtimestamp(time())
-        date = f'{date.year}-{date.month}-{date.day} {date.hour}:{date.minute}'
-
-        self.stats.data['answers'][
-            'totalCorrect' if is_answer_correct else 'totalWrong'
-            ] += 1
-        self.stats.data['answers'][
-            'correct' if is_answer_correct else 'wrong'
-            ].append(
-            {
-                "originLang": card.origin_lang_value,
-                "learningLang": card.learning_lang_value,
-                "date": date
-            }
-        )
-        self.stats.save_stats()
-
     def _handleNextCardClick(self):
-        curr_card_collection = self.ui.state_obj['current_collection']
+        curr_card_collection = self.state['current_collection']
         self.ui.flashcardButton.clicked.disconnect(self._handleNextCardClick)
         self._draw_new_card(curr_card_collection)
 
@@ -138,11 +194,11 @@ class AirQualityWindow(QMainWindow):
         series = QtCharts.QLineSeries()
         series.setName('Poprawne odpowiedzi')
         epoch = datetime.utcfromtimestamp(0)
-        readings_correct = self.stats.accum_answers('correct')
-        for reading in readings_correct:
-            reading_date = datetime.strptime(reading[0], '%Y-%m-%d %H')
+        date_answ_count_correct = self.stats.get_date_answers_count('correct')
+        for date, count in date_answ_count_correct:
+            reading_date = datetime.strptime(date, '%Y-%m-%d %H')
             x = (reading_date - epoch).total_seconds()*1000
-            series.append(x, reading[1])
+            series.append(x, count)
         self.ui.plotCorrect.chart().addSeries(series)
         dateAxisCorrect = QtCharts.QDateTimeAxis()
         valueAxisCorrect = QtCharts.QValueAxis()
@@ -157,7 +213,7 @@ class AirQualityWindow(QMainWindow):
         series = QtCharts.QLineSeries()
         series.setName('Niepoprawne odpowiedzi')
         epoch = datetime.utcfromtimestamp(0)
-        readings_wrong = self.stats.accum_answers('wrong')
+        readings_wrong = self.stats.get_date_answers_count('wrong')
         print(readings_wrong)
         for reading in readings_wrong:
             reading_date = datetime.strptime(reading[0], '%Y-%m-%d %H')
