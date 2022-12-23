@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import (
     QApplication, QHBoxLayout, QVBoxLayout, QWidget, QSlider, QSpinBox,
     QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
-    QSizePolicy
+    QSizePolicy, QLabel
 )
 from PySide2.QtCore import Qt
 from PySide2.QtCharts import QtCharts
@@ -25,6 +25,8 @@ class AirQualityWindow(QMainWindow):
         self.stats.load_stats()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ui.vbox_exam_answers = QVBoxLayout(self.ui.scrollItemsHolder)
+        self.ui.vbox_exam_history = QVBoxLayout(self.ui.examsHistoryHolder)
         self.state = {}
         self._setupCategories()
         self._setupMainNav()
@@ -72,10 +74,72 @@ class AirQualityWindow(QMainWindow):
         self.ui.testCardInput.setText('')
         card = self.state['currExam'].draw_card()
         if self.state['currExam'].is_completed:
-            print(self.state['currExam'].generate_result())
+            self._handleEndExam()
             return
         self.ui.testCardLabel.setText(card.learning_lang_value)
         self.state['currExamCard'] = card
+        print(' ')
+        print(self.state)
+        print('-------------------')
+        print(self.state['currExam'])
+        print(' ')
+
+    def _handleEndExam(self):
+        self.stats.save_exam(self.state['currExam'])
+        result = self.state['currExam'].generate_result()
+        print(result)
+        self.ui.testStack.setCurrentIndex(1)
+        self.ui.examScoreHeader.setText(
+            f"Wynik: {result['correct']}/{result['total']} pkt. ({result['percentage']}%)"
+        )
+        self._display_exam_result_in_layout(result, self.ui.vbox_exam_answers, self.ui.scrollItemsHolder)
+        self.ui.testCardInput.textChanged.disconnect(self._handleTestInputChange)
+        self.ui.testCardBtn.clicked.disconnect(self._handleNextExamQuestion)
+        self.ui.testEasyBtn.setDisabled(False)
+        self.ui.testMediumBtn.setDisabled(False)
+        self.ui.testHardBtn.setDisabled(False)
+        self.ui.testStartBtn.setDisabled(False)
+
+    def _display_exam_result_in_layout(self, result, layout, widget_holder):
+        if self.state.get('attachedExamAnswerWidget'):
+            print('+++++++++++++++++++++')
+            for child in widget_holder.children():
+                print(type(child))
+                print(type(child) == QWidget)
+                if type(child) == QWidget:
+                    child.setParent(None)
+                # self.ui.vbox_exam_answers.removeWidget(child)
+            print('+++++++++++++++++++++')
+        for answer in result['answers']:
+
+            answer_widget = QWidget(widget_holder)
+            layout.addWidget(answer_widget)
+            answer_vbox_layout = QVBoxLayout(answer_widget)
+            self.state['attachedExamAnswerWidget'] = answer_widget
+
+            # answer_widget.deleteLater()
+            # answer_vbox_layout.deleteLater()
+
+            question_label = QLabel(
+                f'Pytanie: {answer["toBeGuessed"]}',
+                answer_widget
+            )
+            correct_answer_label = QLabel(
+                f'Odpowiedź: {answer["expected"]}',
+                answer_widget
+            )
+            given_answer_label = QLabel(
+                f'Twoja odpowiedź: {answer["given"]}',
+                answer_widget
+            )
+            status_label = QLabel(
+                f'{"dobrze" if answer["isCorrect"] else "źle"}',
+                answer_widget
+            )
+            answer_vbox_layout.addWidget(question_label)
+            answer_vbox_layout.addWidget(correct_answer_label)
+            answer_vbox_layout.addWidget(given_answer_label)
+            answer_vbox_layout.addWidget(status_label)
 
     def _handleTestInputChange(self):
         if self.ui.testCardInput.text() == '':
@@ -180,6 +244,32 @@ class AirQualityWindow(QMainWindow):
             lambda: self.ui.pagesStack.setCurrentIndex(2))
 
     def _setupStatsPage(self):
+        self.ui.statsAnswersBtn.clicked.connect(
+            lambda: self.ui.statsStack.setCurrentIndex(0))
+        self.ui.statsTestsBtn.clicked.connect(
+            lambda: self.ui.statsStack.setCurrentIndex(1))
+        self.ui.statsOtherBtn.clicked.connect(
+            lambda: self.ui.statsStack.setCurrentIndex(2))
+        self._setupStatsAnswersPage()
+        self._setupStatsExamsPage()
+
+    def _setupStatsExamsPage(self):
+        prev_exams = self.stats.get_exams()
+        print(prev_exams)
+        for exam in prev_exams:
+            exam_head_str = f"{exam['correct']}/{exam['total']} pkt. ({exam['percentage']}%), {exam['date']}"
+            list_item = QListWidgetItem(exam_head_str)
+            self.ui.prevExamsList.addItem(list_item)
+            list_item.exam = exam
+        self.ui.prevExamsList.itemClicked.connect(self._selectExam)
+        # self.ui.categoriesField.item(0).setSelected(True)
+        # self._selectExam(self.ui.categoriesField.item(0))
+        # self.ui.answerInput.textChanged.connect(self._handleInputChange)
+
+    def _selectExam(self, exam):
+        self._display_exam_result_in_layout(exam.exam, self.ui.vbox_exam_history, self.ui.examsHistoryHolder)
+
+    def _setupStatsAnswersPage(self):
         self._setupPlotCanvas()
         if self.ui.plotCorrect:
             self.ui.plotCorrect.deleteLater()

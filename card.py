@@ -33,9 +33,9 @@ class Card:
 
     def _handle_answer(self, is_correct):
         if is_correct:
-            self.popularity = min(self.popularity * 0.75, 0.01)
+            self.popularity = max(self.popularity * 0.75, 0.01)
         else:
-            self.popularity = max(self.popularity * 1.8, 0.99)
+            self.popularity = min(self.popularity * 1.8, 0.99)
 
     def _save(self):
         pass

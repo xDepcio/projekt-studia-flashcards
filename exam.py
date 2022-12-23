@@ -1,4 +1,6 @@
 from random import choice
+from datetime import datetime
+from time import time
 
 
 class Exam:
@@ -6,6 +8,9 @@ class Exam:
         self.unanswered_cards = cards
         self.answers = []
         self.is_completed = False
+        date = datetime.fromtimestamp(time())
+        date = f'{date.year}-{date.month}-{date.day} {date.hour}:{date.minute}'
+        self.date = date
 
     def draw_card(self):
         if len(self.unanswered_cards) <= 0:
@@ -32,10 +37,18 @@ class Exam:
                     "isCorrect": answer.is_correct
                 }
                 for answer in self.answers
-            ]
+            ],
+            "date": self.date
         }
 
     def _calculate_score(self):
         correct = [answer for answer in self.answers if answer.is_correct]
         percentage = len(correct)/len(self.answers)*100
         return len(correct), len(self.answers), percentage
+
+    def __str__(self):
+        return (
+            f"unanswered: {self.unanswered_cards}\n"
+            f"answers: {self.answers}\n"
+            f"completed?: {self.is_completed}"
+        )

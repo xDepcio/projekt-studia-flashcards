@@ -17,12 +17,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(465, 629)
+        MainWindow.resize(588, 702)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.verticalLayout_11 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.horizontalLayout = QHBoxLayout()
@@ -341,7 +341,47 @@ class Ui_MainWindow(object):
         self.testStack.addWidget(self.page_6)
         self.page_7 = QWidget()
         self.page_7.setObjectName(u"page_7")
+        self.verticalLayout_10 = QVBoxLayout(self.page_7)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.widget_3 = QWidget(self.page_7)
+        self.widget_3.setObjectName(u"widget_3")
+        self.verticalLayout_9 = QVBoxLayout(self.widget_3)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.examScoreHeader = QLabel(self.widget_3)
+        self.examScoreHeader.setObjectName(u"examScoreHeader")
+        self.examScoreHeader.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.examScoreHeader)
+
+        self.label_3 = QLabel(self.widget_3)
+        self.label_3.setObjectName(u"label_3")
+
+        self.verticalLayout_9.addWidget(self.label_3)
+
+        self.examAnswerScroll = QScrollArea(self.widget_3)
+        self.examAnswerScroll.setObjectName(u"examAnswerScroll")
+        self.examAnswerScroll.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 500, 404))
+        self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
+        self.scrollItemsHolder.setObjectName(u"scrollItemsHolder")
+
+        self.horizontalLayout_2.addWidget(self.scrollItemsHolder)
+
+        self.examAnswerScroll.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout_9.addWidget(self.examAnswerScroll)
+
+
+        self.verticalLayout_10.addWidget(self.widget_3)
+
         self.testStack.addWidget(self.page_7)
+        self.page_8 = QWidget()
+        self.page_8.setObjectName(u"page_8")
+        self.testStack.addWidget(self.page_8)
 
         self.verticalLayout_6.addWidget(self.testStack)
 
@@ -352,45 +392,45 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.pushButton = QPushButton(self.page_3)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.statsAnswersBtn = QPushButton(self.page_3)
+        self.statsAnswersBtn.setObjectName(u"statsAnswersBtn")
+        self.statsAnswersBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
 "font-weight: 500;")
 
-        self.horizontalLayout_5.addWidget(self.pushButton)
+        self.horizontalLayout_5.addWidget(self.statsAnswersBtn)
 
-        self.pushButton_2 = QPushButton(self.page_3)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.statsTestsBtn = QPushButton(self.page_3)
+        self.statsTestsBtn.setObjectName(u"statsTestsBtn")
+        self.statsTestsBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
 "font-weight: 500;")
 
-        self.horizontalLayout_5.addWidget(self.pushButton_2)
+        self.horizontalLayout_5.addWidget(self.statsTestsBtn)
 
-        self.pushButton_3 = QPushButton(self.page_3)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.statsOtherBtn = QPushButton(self.page_3)
+        self.statsOtherBtn.setObjectName(u"statsOtherBtn")
+        self.statsOtherBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
 "font-weight: 500;")
 
-        self.horizontalLayout_5.addWidget(self.pushButton_3)
+        self.horizontalLayout_5.addWidget(self.statsOtherBtn)
 
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
 
-        self.stackedWidget = QStackedWidget(self.page_3)
-        self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setAutoFillBackground(False)
+        self.statsStack = QStackedWidget(self.page_3)
+        self.statsStack.setObjectName(u"statsStack")
+        self.statsStack.setAutoFillBackground(False)
         self.page_4 = QWidget()
         self.page_4.setObjectName(u"page_4")
         self.verticalLayout_5 = QVBoxLayout(self.page_4)
@@ -405,24 +445,53 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.wrongPlot)
 
-        self.stackedWidget.addWidget(self.page_4)
+        self.statsStack.addWidget(self.page_4)
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
-        self.stackedWidget.addWidget(self.page_5)
+        self.horizontalLayout_8 = QHBoxLayout(self.page_5)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.prevExamsList = QListWidget(self.page_5)
+        self.prevExamsList.setObjectName(u"prevExamsList")
+        sizePolicy.setHeightForWidth(self.prevExamsList.sizePolicy().hasHeightForWidth())
+        self.prevExamsList.setSizePolicy(sizePolicy)
 
-        self.verticalLayout_4.addWidget(self.stackedWidget)
+        self.horizontalLayout_8.addWidget(self.prevExamsList)
+
+        self.scrollArea = QScrollArea(self.page_5)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 256, 480))
+        self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
+        self.examsHistoryHolder.setObjectName(u"examsHistoryHolder")
+
+        self.verticalLayout_12.addWidget(self.examsHistoryHolder)
+
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.horizontalLayout_8.addWidget(self.scrollArea)
+
+        self.statsStack.addWidget(self.page_5)
+        self.page_9 = QWidget()
+        self.page_9.setObjectName(u"page_9")
+        self.statsStack.addWidget(self.page_9)
+
+        self.verticalLayout_4.addWidget(self.statsStack)
 
         self.pagesStack.addWidget(self.page_3)
 
         self.verticalLayout.addWidget(self.pagesStack)
 
 
-        self.horizontalLayout_2.addLayout(self.verticalLayout)
+        self.verticalLayout_11.addLayout(self.verticalLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 465, 21))
+        self.menubar.setGeometry(QRect(0, 0, 588, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -431,7 +500,8 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.pagesStack.setCurrentIndex(0)
-        self.testStack.setCurrentIndex(1)
+        self.testStack.setCurrentIndex(2)
+        self.statsStack.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -453,8 +523,10 @@ class Ui_MainWindow(object):
         self.testStartBtn.setText(QCoreApplication.translate("MainWindow", u"Rozpocznij", None))
         self.testCardLabel.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.testCardBtn.setText(QCoreApplication.translate("MainWindow", u"Dalej", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Odpowiedzi", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Testy", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Inne", None))
+        self.examScoreHeader.setText(QCoreApplication.translate("MainWindow", u"Wynik: 14/20 pkt. (70%)", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Twoje odpowiedzi:", None))
+        self.statsAnswersBtn.setText(QCoreApplication.translate("MainWindow", u"Odpowiedzi", None))
+        self.statsTestsBtn.setText(QCoreApplication.translate("MainWindow", u"Testy", None))
+        self.statsOtherBtn.setText(QCoreApplication.translate("MainWindow", u"Inne", None))
     # retranslateUi
 

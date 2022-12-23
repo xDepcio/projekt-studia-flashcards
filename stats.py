@@ -45,3 +45,6 @@ class Stats:
             else:
                 self.data['answers']['wrong'].append(answer_str)
             json.dump(self.data, fh, indent=4, ensure_ascii=False)
+
+    def get_exams(self):
+        return self.data['exams']

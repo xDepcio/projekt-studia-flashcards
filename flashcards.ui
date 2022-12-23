@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>465</width>
-    <height>629</height>
+    <width>588</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout_11">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -391,7 +391,7 @@ background-color: rgb(227, 227, 227);
           <item>
            <widget class="QStackedWidget" name="testStack">
             <property name="currentIndex">
-             <number>1</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_6">
              <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -441,7 +441,56 @@ background-color: rgb(227, 227, 227);
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_7"/>
+            <widget class="QWidget" name="page_7">
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QWidget" name="widget_3" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="examScoreHeader">
+                   <property name="text">
+                    <string>Wynik: 14/20 pkt. (70%)</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Twoje odpowiedzi:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QScrollArea" name="examAnswerScroll">
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>500</width>
+                      <height>404</height>
+                     </rect>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_2">
+                     <item>
+                      <widget class="QWidget" name="scrollItemsHolder" native="true"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_8"/>
            </widget>
           </item>
          </layout>
@@ -451,7 +500,7 @@ background-color: rgb(227, 227, 227);
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="statsAnswersBtn">
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -466,7 +515,7 @@ font-weight: 500;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="statsTestsBtn">
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -481,7 +530,7 @@ font-weight: 500;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="statsOtherBtn">
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -498,9 +547,12 @@ font-weight: 500;</string>
            </layout>
           </item>
           <item>
-           <widget class="QStackedWidget" name="stackedWidget">
+           <widget class="QStackedWidget" name="statsStack">
             <property name="autoFillBackground">
              <bool>false</bool>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_4">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -512,7 +564,43 @@ font-weight: 500;</string>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_5"/>
+            <widget class="QWidget" name="page_5">
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QListWidget" name="prevExamsList">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="scrollArea">
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>256</width>
+                   <height>480</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                  <item>
+                   <widget class="QWidget" name="examsHistoryHolder" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_9"/>
            </widget>
           </item>
          </layout>
@@ -528,7 +616,7 @@ font-weight: 500;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>465</width>
+     <width>588</width>
      <height>21</height>
     </rect>
    </property>
