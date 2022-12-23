@@ -3,7 +3,7 @@ from PySide2.QtWidgets import (
     QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
     QSizePolicy, QLabel
 )
-from PySide2.QtCore import Qt
+from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod
 from PySide2.QtCharts import QtCharts
 from PySide2.QtGui import QPixmap, QPainter, QBrush, QColor
 import sys
@@ -188,6 +188,15 @@ class AirQualityWindow(QMainWindow):
         )
 
     def _draw_new_card(self, card_collection):
+        print(']]]]]]]]]]]]')
+        meta = self.ui.flashcardButton.metaObject()
+        singalIndex = meta.indexOfSignal('clicked()')
+        signalMethod = meta.method(singalIndex)
+        print(signalMethod)
+        signalSignature = signalMethod.methodSignature()
+        print(self.ui.flashcardButton.isSignalConnected(signalSignature))
+        SignalInstance().emit()
+        print(']]]]]]]]]]]]')
         card = card_collection.draw_cards(1)[0]
         self.ui.cardName.setText(card.learning_lang_value)
         self.ui.flashcardButton.setText('Sprawdź')
@@ -201,6 +210,7 @@ class AirQualityWindow(QMainWindow):
         input_str = self.ui.answerInput.text().strip()
         answer = card.answer(input_str)
         self.__format_answer_label(answer.is_correct)
+        print('------executed------')
         self.stats.save_answer(answer)
         self.ui.flashcardButton.setText('Następna')
         self.ui.flashcardButton.clicked.disconnect(self._handleAnswer)

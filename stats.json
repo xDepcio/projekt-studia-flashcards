@@ -342,6 +342,61 @@
                 "originLang": "Ciężarówka",
                 "learningLang": "Truck",
                 "date": "2022-12-23 3:36"
+            },
+            {
+                "originLang": "Woźny",
+                "learningLang": "Janitor",
+                "date": "2022-12-23 3:42"
+            },
+            {
+                "originLang": "Woźny",
+                "learningLang": "Janitor",
+                "date": "2022-12-23 3:42"
+            },
+            {
+                "originLang": "Woźny",
+                "learningLang": "Janitor",
+                "date": "2022-12-23 3:42"
+            },
+            {
+                "originLang": "Ciężarówka",
+                "learningLang": "Truck",
+                "date": "2022-12-23 3:48"
+            },
+            {
+                "originLang": "Samolot",
+                "learningLang": "Airplane",
+                "date": "2022-12-23 3:48"
+            },
+            {
+                "originLang": "Pociąg",
+                "learningLang": "Train",
+                "date": "2022-12-23 3:49"
+            },
+            {
+                "originLang": "Woźny",
+                "learningLang": "Janitor",
+                "date": "2022-12-23 3:49"
+            },
+            {
+                "originLang": "Samochód",
+                "learningLang": "Car",
+                "date": "2022-12-23 3:50"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2022-12-23 3:50"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2022-12-23 3:50"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2022-12-23 3:50"
             }
         ],
         "wrong": [
@@ -749,6 +804,51 @@
                 "originLang": "Samochód",
                 "learningLang": "Car",
                 "date": "2022-12-23 3:36"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2022-12-23 3:48"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
+            },
+            {
+                "originLang": "Żołnierz",
+                "learningLang": "Soldier",
+                "date": "2022-12-23 3:52"
             }
         ]
     },
