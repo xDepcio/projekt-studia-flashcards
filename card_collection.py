@@ -1,6 +1,11 @@
 from random import choices
 
 
+class CardCollectionEmpty(Exception):
+    def __init__(self, title):
+        super().__init__(title)
+
+
 class CardCollection:
     def __init__(self, cards, category):
         self.cards = cards
@@ -13,6 +18,9 @@ class CardCollection:
         pass
 
     def draw_cards(self, amount, unique=True):
+        if len(self.cards) <= 0:
+            raise CardCollectionEmpty('Cannot draw from empty CardCollection')
+
         choosen_cards = []
         weights = [card.popularity for card in self.cards]
 

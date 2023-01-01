@@ -101,7 +101,7 @@ font-size: 16px</string>
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -389,6 +389,21 @@ background-color: rgb(227, 227, 227);
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="testTimerLabel">
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QStackedWidget" name="testStack">
             <property name="currentIndex">
              <number>2</number>
@@ -473,8 +488,8 @@ background-color: rgb(227, 227, 227);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>500</width>
-                      <height>404</height>
+                      <width>98</width>
+                      <height>28</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -544,6 +559,31 @@ font-weight: 500;</string>
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="refreshStatsBtn">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>27</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(62, 162, 255);
+border-radius: 5px;
+background-color: rgb(62, 162, 255);
+border: 2px solid rgb(62, 162, 255);
+padding: 5px;
+font-weight: 500;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>storage/icons/refresh.svg</normaloff>storage/icons/refresh.svg</iconset>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item>
@@ -586,8 +626,8 @@ font-weight: 500;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>256</width>
-                   <height>480</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">

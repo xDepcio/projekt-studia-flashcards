@@ -3,7 +3,7 @@ from PySide2.QtWidgets import (
     QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
     QSizePolicy, QLabel
 )
-from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod
+from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod, QTimer
 from PySide2.QtCharts import QtCharts
 from PySide2.QtGui import QPixmap, QPainter, QBrush, QColor
 import sys
@@ -47,6 +47,7 @@ class AirQualityWindow(QMainWindow):
         self.ui.categoriesField.item(0).setSelected(True)
         self._selectCategory(self.ui.categoriesField.item(0))
         self.ui.answerInput.textChanged.connect(self._handleInputChange)
+        self.ui.flashcardButton.clicked.connect(self._handleAnswer)
 
     def _selectCategory(self, category):
         card_collection = category.card_collection
@@ -65,15 +66,44 @@ class AirQualityWindow(QMainWindow):
         self.ui.testCardInput.textChanged.connect(self._handleTestInputChange)
         self.ui.testCardBtn.clicked.connect(self._handleNextExamQuestion)
         all_cards_collection = self.state['allCardsCollection']
-        cards = all_cards_collection.draw_cards(5, False)
+        cards = all_cards_collection.draw_cards(
+            self.state['test_question_num'], False
+        )
         exam = Exam(cards, 0)
         self.state['currExam'] = exam
+        self._setupTestTimer()
         self._draw_exam_card()
+
+    def _setupTestTimer(self):
+        self.state['time_left'] = self.state['test_time_limit']
+        timer = QTimer()
+        timer.setInterval(1000)
+        self.state['activated_timer'] = timer
+
+        def timer_callback():
+            print('called cb')
+            minutes, seconds = divmod(self.state['time_left'], 60)
+            self.ui.testTimerLabel.setText("{:d}:{:02d}".format(minutes, seconds))
+            if self.state['time_left'] == 0:
+                timer.stop()
+                self._test_timer_ended()
+            self.state['time_left'] -= 1
+
+        timer.timeout.connect(timer_callback)
+        timer.start()
+
+    def _test_timer_ended(self):
+        self.ui.testTimerLabel.setText('Koniec')
+        cards = [*self.state['currExam'].unanswered_cards]
+        for card in cards:
+            self.state['currExam'].answer_card(card, '')
+        self._handleEndExam()
 
     def _draw_exam_card(self):
         self.ui.testCardInput.setText('')
         card = self.state['currExam'].draw_card()
         if self.state['currExam'].is_completed:
+            self.state['activated_timer'].stop()
             self._handleEndExam()
             return
         self.ui.testCardLabel.setText(card.learning_lang_value)
@@ -186,23 +216,33 @@ class AirQualityWindow(QMainWindow):
             StyleSheet.btnExamSelected if self.state['testDiffBtn'] == 'hard'
             else StyleSheet.btnExamNotSelected
         )
+        self._handleSetExamDiff(self.state['testDiffBtn'])
+
+    def _handleSetExamDiff(self, difficulty):
+        info_str = ''
+        if difficulty == 'easy':
+            info_str = "Czas: 3min     Ilość pytań: 5"
+            self.state['test_time_limit'] = 60 * 3
+            self.state['test_question_num'] = 5
+        elif difficulty == 'medium':
+            info_str = "Czas: 2min     Ilość pytań: 10"
+            self.state['test_time_limit'] = 60 * 2
+            self.state['test_question_num'] = 10
+        elif difficulty == 'hard':
+            info_str = "Czas: 1min     Ilość pytań: 15"
+            self.state['test_time_limit'] = 60 * 1
+            self.state['test_question_num'] = 15
+
+        self.ui.testTimerLabel.setText(info_str)
 
     def _draw_new_card(self, card_collection):
-        print(']]]]]]]]]]]]')
-        meta = self.ui.flashcardButton.metaObject()
-        singalIndex = meta.indexOfSignal('clicked()')
-        signalMethod = meta.method(singalIndex)
-        print(signalMethod)
-        signalSignature = signalMethod.methodSignature()
-        print(self.ui.flashcardButton.isSignalConnected(signalSignature))
-        SignalInstance().emit()
-        print(']]]]]]]]]]]]')
+        print(card_collection.cards)
         card = card_collection.draw_cards(1)[0]
         self.ui.cardName.setText(card.learning_lang_value)
         self.ui.flashcardButton.setText('Sprawdź')
         self.ui.answerFeedbackLabel.setText('')
         self.ui.answerInput.setText('')
-        self.ui.flashcardButton.clicked.connect(self._handleAnswer)
+        # self.ui.flashcardButton.clicked.connect(self._handleAnswer)
         self.state['current_card'] = card
 
     def _handleAnswer(self):
@@ -243,6 +283,7 @@ class AirQualityWindow(QMainWindow):
     def _handleNextCardClick(self):
         curr_card_collection = self.state['current_collection']
         self.ui.flashcardButton.clicked.disconnect(self._handleNextCardClick)
+        self.ui.flashcardButton.clicked.connect(self._handleAnswer)
         self._draw_new_card(curr_card_collection)
 
     def _setupMainNav(self):
@@ -260,8 +301,24 @@ class AirQualityWindow(QMainWindow):
             lambda: self.ui.statsStack.setCurrentIndex(1))
         self.ui.statsOtherBtn.clicked.connect(
             lambda: self.ui.statsStack.setCurrentIndex(2))
+        self._setupPlotCanvas()
+        self.ui.refreshStatsBtn.clicked.connect(self._refreshStats)
         self._setupStatsAnswersPage()
         self._setupStatsExamsPage()
+
+    def _refreshStats(self):
+        self._setupStatsAnswersPage()
+        self.ui.prevExamsList.clear()
+        self.stats.load_stats()
+        self._setupStatsExamsPage()
+
+    def __deleteWidgetChilds(self, widget, child_type):
+        self.ui.prevExamsList.clear()
+        # print(type(self.ui.prevExamsList.item(1)))
+        # for i in range(self.ui.prevExamsList.count()):
+        #     item = self.ui.prevExamsList.item(i)
+        #     item.setParent(None)
+        #     print(i)
 
     def _setupStatsExamsPage(self):
         prev_exams = self.stats.get_exams()
@@ -280,7 +337,7 @@ class AirQualityWindow(QMainWindow):
         self._display_exam_result_in_layout(exam.exam, self.ui.vbox_exam_history, self.ui.examsHistoryHolder)
 
     def _setupStatsAnswersPage(self):
-        self._setupPlotCanvas()
+        # self._setupPlotCanvas()
         if self.ui.plotCorrect:
             self.ui.plotCorrect.deleteLater()
             del self.ui.plotCorrect

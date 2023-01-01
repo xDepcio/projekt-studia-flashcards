@@ -1,4 +1,6 @@
 from answer import Answer
+from config import Config
+import json
 
 
 class Card:
@@ -38,7 +40,21 @@ class Card:
             self.popularity = min(self.popularity * 1.8, 0.99)
 
     def _save(self):
-        pass
+        cards = []
+        with open(Config.CARDS_PATH, 'r', encoding='utf-8') as fh:
+            cards = json.load(fh)
+            cards[
+                self.__keyed_index(cards, lambda ele: ele['id'] == self.id)
+            ]['popularity'] = self.popularity
+
+        with open(Config.CARDS_PATH, 'w', encoding='utf-8') as fh:
+            # fh.seek(0)
+            json.dump(cards, fh, indent=4, ensure_ascii=False)
+
+    def __keyed_index(self, array, callback):
+        for i, ele in enumerate(array):
+            if callback(ele):
+                return i
 
     def __repr__(self):
         return str({

@@ -299,6 +299,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.widget_2)
 
+        self.testTimerLabel = QLabel(self.page_2)
+        self.testTimerLabel.setObjectName(u"testTimerLabel")
+        font5 = QFont()
+        font5.setPointSize(20)
+        self.testTimerLabel.setFont(font5)
+        self.testTimerLabel.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_6.addWidget(self.testTimerLabel)
+
         self.testStack = QStackedWidget(self.page_2)
         self.testStack.setObjectName(u"testStack")
         self.page_6 = QWidget()
@@ -363,7 +372,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 500, 404))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -425,6 +434,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.statsOtherBtn)
 
+        self.refreshStatsBtn = QPushButton(self.page_3)
+        self.refreshStatsBtn.setObjectName(u"refreshStatsBtn")
+        self.refreshStatsBtn.setMaximumSize(QSize(50, 27))
+        self.refreshStatsBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: rgb(62, 162, 255);\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 5px;\n"
+"font-weight: 500;")
+        icon = QIcon()
+        icon.addFile(u"storage/icons/refresh.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.refreshStatsBtn.setIcon(icon)
+
+        self.horizontalLayout_5.addWidget(self.refreshStatsBtn)
+
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
 
@@ -462,7 +486,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 256, 480))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
@@ -499,7 +523,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(0)
+        self.pagesStack.setCurrentIndex(1)
         self.testStack.setCurrentIndex(2)
         self.statsStack.setCurrentIndex(0)
 
@@ -521,6 +545,7 @@ class Ui_MainWindow(object):
         self.testMediumBtn.setText(QCoreApplication.translate("MainWindow", u"\u015aredni", None))
         self.testHardBtn.setText(QCoreApplication.translate("MainWindow", u"Trudny", None))
         self.testStartBtn.setText(QCoreApplication.translate("MainWindow", u"Rozpocznij", None))
+        self.testTimerLabel.setText("")
         self.testCardLabel.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.testCardBtn.setText(QCoreApplication.translate("MainWindow", u"Dalej", None))
         self.examScoreHeader.setText(QCoreApplication.translate("MainWindow", u"Wynik: 14/20 pkt. (70%)", None))
@@ -528,5 +553,6 @@ class Ui_MainWindow(object):
         self.statsAnswersBtn.setText(QCoreApplication.translate("MainWindow", u"Odpowiedzi", None))
         self.statsTestsBtn.setText(QCoreApplication.translate("MainWindow", u"Testy", None))
         self.statsOtherBtn.setText(QCoreApplication.translate("MainWindow", u"Inne", None))
+        self.refreshStatsBtn.setText("")
     # retranslateUi
 

@@ -43,7 +43,7 @@ class Exam:
 
     def _calculate_score(self):
         correct = [answer for answer in self.answers if answer.is_correct]
-        percentage = len(correct)/len(self.answers)*100
+        percentage = round(len(correct)/len(self.answers)*100, 2)
         return len(correct), len(self.answers), percentage
 
     def __str__(self):
