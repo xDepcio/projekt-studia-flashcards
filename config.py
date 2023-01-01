@@ -1,2 +1,2 @@
 class Config:
-    CARDS_PATH = 'cards.json'
+    CARDS_PATH = 'storage/cards.json'

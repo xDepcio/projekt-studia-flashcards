@@ -1,74 +1,82 @@
 [
     {
-        "id": 1,
-        "originLang": "Ciężarówka",
-        "learningLang": "Truck",
-        "categories": [
-            "Vehicles"
-        ],
-        "popularity": 0.99
+        "originLang": "koszykówka",
+        "learningLang": "basketball",
+        "categories": ["Sports"]
     },
     {
-        "id": 2,
-        "originLang": "Samochód",
-        "learningLang": "Car",
-        "categories": [
-            "Vehicles"
-        ],
-        "popularity": 0.99
+        "originLang": "siatkówka",
+        "learningLang": "volleyball",
+        "categories": ["Sports"]
     },
     {
-        "id": 3,
-        "originLang": "Samolot",
-        "learningLang": "Airplane",
-        "categories": [
-            "Vehicles"
-        ],
-        "popularity": 0.99
+        "originLang": "hokej",
+        "learningLang": "hockey",
+        "categories": ["Sports"]
     },
     {
-        "id": 4,
-        "originLang": "Pociąg",
-        "learningLang": "Train",
-        "categories": [
-            "Vehicles"
-        ],
-        "popularity": 0.24300000000000005
+        "originLang": "tenis",
+        "learningLang": "tennis",
+        "categories": ["Sports"]
     },
     {
-        "id": 5,
-        "originLang": "Policjant",
-        "learningLang": "Police officer",
-        "categories": [
-            "Jobs"
-        ],
-        "popularity": 0.99
+        "originLang": "bieganie",
+        "learningLang": "running",
+        "categories": ["Sports"]
     },
     {
-        "id": 6,
-        "originLang": "Strażak",
-        "learningLang": "Firefighter",
-        "categories": [
-            "Jobs"
-        ],
-        "popularity": 0.99
+        "originLang": "pływanie",
+        "learningLang": "swimming",
+        "categories": ["Sports"]
     },
     {
-        "id": 7,
-        "originLang": "Woźny",
-        "learningLang": "Janitor",
-        "categories": [
-            "Jobs"
-        ],
-        "popularity": 0.99
+        "originLang": "skoki narciarskie",
+        "learningLang": "ski jumping",
+        "categories": ["Sports"]
     },
     {
-        "id": 8,
-        "originLang": "Żołnierz",
-        "learningLang": "Soldier",
-        "categories": [
-            "Jobs"
-        ],
-        "popularity": 0.99
+        "originLang": "kolarstwo",
+        "learningLang": "cycling",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "szermierka",
+        "learningLang": "fencing",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "lekkoatletyka",
+        "learningLang": "track and field",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "golf",
+        "learningLang": "golf",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "piłka ręczna",
+        "learningLang": "handball",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "boks",
+        "learningLang": "boxing",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "mma",
+        "learningLang": "mma",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "judo",
+        "learningLang": "judo",
+        "categories": ["Sports"]
+    },
+    {
+        "originLang": "taekwondo",
+        "learningLang": "taekwondo",
+        "categories": ["Sports"]
     }
 ]

@@ -497,6 +497,26 @@
                 "originLang": "Policjant",
                 "learningLang": "Police officer",
                 "date": "2022-12-25 22:38"
+            },
+            {
+                "originLang": "bieganie",
+                "learningLang": "running",
+                "date": "2023-1-1 17:56"
+            },
+            {
+                "originLang": "bieganie",
+                "learningLang": "running",
+                "date": "2023-1-1 17:56"
+            },
+            {
+                "originLang": "pływanie",
+                "learningLang": "swimming",
+                "date": "2023-1-1 17:56"
+            },
+            {
+                "originLang": "siatkówka",
+                "learningLang": "volleyball",
+                "date": "2023-1-1 17:56"
             }
         ],
         "wrong": [
@@ -1069,6 +1089,11 @@
                 "originLang": "Samochód",
                 "learningLang": "Car",
                 "date": "2023-1-1 1:54"
+            },
+            {
+                "originLang": "skoki narciarskie",
+                "learningLang": "ski jumping",
+                "date": "2023-1-1 17:56"
             }
         ]
     },
@@ -2152,6 +2177,74 @@
                 }
             ],
             "date": "2023-1-1 2:0"
+        },
+        {
+            "correct": 8,
+            "total": 10,
+            "percentage": 80.0,
+            "answers": [
+                {
+                    "expected": "śmigłowiec",
+                    "given": "helikopter",
+                    "toBeGuessed": "helicopter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Strażak",
+                    "given": "strażak",
+                    "toBeGuessed": "Firefighter",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Policjant",
+                    "given": "policjant",
+                    "toBeGuessed": "Police officer",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "śmigłowiec",
+                    "given": "helikopter",
+                    "toBeGuessed": "helicopter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Woźny",
+                    "given": "woźny",
+                    "toBeGuessed": "Janitor",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Żołnierz",
+                    "given": "żołnierz",
+                    "toBeGuessed": "Soldier",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "okno",
+                    "given": "okno",
+                    "toBeGuessed": "window",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Samochód",
+                    "given": "samochód",
+                    "toBeGuessed": "Car",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Samolot",
+                    "given": "samolot",
+                    "toBeGuessed": "Airplane",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Ciężarówka",
+                    "given": "ciężarówka",
+                    "toBeGuessed": "Truck",
+                    "isCorrect": true
+                }
+            ],
+            "date": "2023-1-1 17:56"
         }
     ]
 }

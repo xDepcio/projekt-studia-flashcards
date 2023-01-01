@@ -16,6 +16,7 @@ from stylesheets import StyleSheet
 from stats import Stats
 from time import time
 from exam import Exam
+from config import Config
 
 
 class AirQualityWindow(QMainWindow):
@@ -34,7 +35,7 @@ class AirQualityWindow(QMainWindow):
         self._setupExamsPage()
 
     def _setupCategories(self):
-        cards = import_cards('cards.json')
+        cards = import_cards(Config.CARDS_PATH)
         card_collections = get_categorized_cards_collections(cards)
         for card_collection in card_collections:
             collection_item = QListWidgetItem(card_collection.category)
@@ -67,7 +68,7 @@ class AirQualityWindow(QMainWindow):
         self.ui.testCardBtn.clicked.connect(self._handleNextExamQuestion)
         all_cards_collection = self.state['allCardsCollection']
         cards = all_cards_collection.draw_cards(
-            self.state['test_question_num'], False
+            self.state['test_question_num'], True
         )
         exam = Exam(cards, 0)
         self.state['currExam'] = exam
@@ -83,7 +84,9 @@ class AirQualityWindow(QMainWindow):
         def timer_callback():
             print('called cb')
             minutes, seconds = divmod(self.state['time_left'], 60)
-            self.ui.testTimerLabel.setText("{:d}:{:02d}".format(minutes, seconds))
+            self.ui.testTimerLabel.setText(
+                "{:d}:{:02d}".format(minutes, seconds)
+            )
             if self.state['time_left'] == 0:
                 timer.stop()
                 self._test_timer_ended()
@@ -119,11 +122,16 @@ class AirQualityWindow(QMainWindow):
         result = self.state['currExam'].generate_result()
         print(result)
         self.ui.testStack.setCurrentIndex(1)
+        prc = result['percentage']
         self.ui.examScoreHeader.setText(
-            f"Wynik: {result['correct']}/{result['total']} pkt. ({result['percentage']}%)"
+            f"Wynik: {result['correct']}/{result['total']} pkt. ({prc}%)"
         )
-        self._display_exam_result_in_layout(result, self.ui.vbox_exam_answers, self.ui.scrollItemsHolder)
-        self.ui.testCardInput.textChanged.disconnect(self._handleTestInputChange)
+        self._display_exam_result_in_layout(
+            result, self.ui.vbox_exam_answers, self.ui.scrollItemsHolder
+        )
+        self.ui.testCardInput.textChanged.disconnect(
+            self._handleTestInputChange
+        )
         self.ui.testCardBtn.clicked.disconnect(self._handleNextExamQuestion)
         self.ui.testEasyBtn.setDisabled(False)
         self.ui.testMediumBtn.setDisabled(False)
@@ -324,7 +332,9 @@ class AirQualityWindow(QMainWindow):
         prev_exams = self.stats.get_exams()
         print(prev_exams)
         for exam in prev_exams:
-            exam_head_str = f"{exam['correct']}/{exam['total']} pkt. ({exam['percentage']}%), {exam['date']}"
+            points = f"{exam['correct']}/{exam['total']}"
+            percentage = f"{exam['percentage']}%"
+            exam_head_str = f"{points} pkt. ({percentage}), {exam['date']}"
             list_item = QListWidgetItem(exam_head_str)
             self.ui.prevExamsList.addItem(list_item)
             list_item.exam = exam
@@ -334,7 +344,9 @@ class AirQualityWindow(QMainWindow):
         # self.ui.answerInput.textChanged.connect(self._handleInputChange)
 
     def _selectExam(self, exam):
-        self._display_exam_result_in_layout(exam.exam, self.ui.vbox_exam_history, self.ui.examsHistoryHolder)
+        self._display_exam_result_in_layout(
+            exam.exam, self.ui.vbox_exam_history, self.ui.examsHistoryHolder
+        )
 
     def _setupStatsAnswersPage(self):
         # self._setupPlotCanvas()

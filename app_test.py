@@ -1,7 +1,6 @@
 from card import Card
 from card_collection import CardCollection
-from utils import import_cards, export_cards
-import sys
+from utils import import_cards
 from stats import Stats
 from datetime import datetime
 from time import time
