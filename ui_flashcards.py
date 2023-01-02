@@ -716,4 +716,3 @@ class Ui_MainWindow(object):
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Czas nauki:", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"25 h", None))
     # retranslateUi
-
