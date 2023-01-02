@@ -555,4 +555,3 @@ class Ui_MainWindow(object):
         self.statsOtherBtn.setText(QCoreApplication.translate("MainWindow", u"Inne", None))
         self.refreshStatsBtn.setText("")
     # retranslateUi
-
