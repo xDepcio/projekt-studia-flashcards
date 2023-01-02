@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.24300000000000005
+        "popularity": 0.4374000000000001
     },
     {
         "id": 5,
@@ -51,7 +51,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 9,
@@ -77,7 +77,8 @@
         "learningLang": "motorcycle",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 10,
@@ -101,7 +102,8 @@
         "learningLang": "tram",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 13,
@@ -189,7 +191,8 @@
         "learningLang": "loader",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 24,
@@ -270,7 +273,8 @@
         "learningLang": "ambulance",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 34,
@@ -326,7 +330,8 @@
         "learningLang": "electric car",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 42,
@@ -342,7 +347,8 @@
         "learningLang": "pick-up truck",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 44,
@@ -366,7 +372,8 @@
         "learningLang": "lowrider",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 47,
@@ -478,7 +485,8 @@
         "categories": [
             "Home"
         ],
-        "id": 60
+        "id": 60,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "pokój",
@@ -502,7 +510,8 @@
         "categories": [
             "Home"
         ],
-        "id": 63
+        "id": 63,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "sypialnia",
@@ -566,7 +575,8 @@
         "categories": [
             "Home"
         ],
-        "id": 71
+        "id": 71,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "piwnica",
@@ -582,7 +592,8 @@
         "categories": [
             "Home"
         ],
-        "id": 73
+        "id": 73,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "okno",
@@ -599,7 +610,8 @@
         "categories": [
             "Home"
         ],
-        "id": 75
+        "id": 75,
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "koszykówka",
@@ -667,7 +679,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 83
+        "id": 83,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "szermierka",

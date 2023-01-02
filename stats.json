@@ -517,6 +517,11 @@
                 "originLang": "siatkówka",
                 "learningLang": "volleyball",
                 "date": "2023-1-1 17:56"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "2023-1-2 1:38"
             }
         ],
         "wrong": [
@@ -1094,6 +1099,56 @@
                 "originLang": "skoki narciarskie",
                 "learningLang": "ski jumping",
                 "date": "2023-1-1 17:56"
+            },
+            {
+                "originLang": "motocykl",
+                "learningLang": "motorcycle",
+                "date": "2023-1-2 1:51"
+            },
+            {
+                "originLang": "Samochód",
+                "learningLang": "Car",
+                "date": "2023-1-2 1:51"
+            },
+            {
+                "originLang": "drzwi",
+                "learningLang": "door",
+                "date": "2023-1-2 1:52"
+            },
+            {
+                "originLang": "taras",
+                "learningLang": "terrace",
+                "date": "2023-1-2 1:52"
+            },
+            {
+                "originLang": "mieszkanie",
+                "learningLang": "apartment",
+                "date": "2023-1-2 1:52"
+            },
+            {
+                "originLang": "łazienka",
+                "learningLang": "bathroom",
+                "date": "2023-1-2 1:53"
+            },
+            {
+                "originLang": "Samochód",
+                "learningLang": "Car",
+                "date": "2023-1-2 1:54"
+            },
+            {
+                "originLang": "samochód z kratką",
+                "learningLang": "pick-up truck",
+                "date": "2023-1-2 1:54"
+            },
+            {
+                "originLang": "samochód z niskim zawieszeniem",
+                "learningLang": "lowrider",
+                "date": "2023-1-2 1:55"
+            },
+            {
+                "originLang": "Woźny",
+                "learningLang": "Janitor",
+                "date": "2023-1-2 1:55"
             }
         ]
     },
@@ -2245,6 +2300,104 @@
                 }
             ],
             "date": "2023-1-1 17:56"
+        },
+        {
+            "correct": 0,
+            "total": 15,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "Samolot",
+                    "given": "",
+                    "toBeGuessed": "Airplane",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Policjant",
+                    "given": "",
+                    "toBeGuessed": "Police officer",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "dach",
+                    "given": "",
+                    "toBeGuessed": "roof",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "drzwi",
+                    "given": "",
+                    "toBeGuessed": "door",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód elektryczny",
+                    "given": "",
+                    "toBeGuessed": "electric car",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "ładowarka",
+                    "given": "",
+                    "toBeGuessed": "loader",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "kolarstwo",
+                    "given": "",
+                    "toBeGuessed": "cycling",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "tramwaj",
+                    "given": "",
+                    "toBeGuessed": "tram",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Pociąg",
+                    "given": "",
+                    "toBeGuessed": "Train",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Strażak",
+                    "given": "",
+                    "toBeGuessed": "Firefighter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód ratunkowy",
+                    "given": "",
+                    "toBeGuessed": "ambulance",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Ciężarówka",
+                    "given": "",
+                    "toBeGuessed": "Truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Samochód",
+                    "given": "",
+                    "toBeGuessed": "Car",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Żołnierz",
+                    "given": "",
+                    "toBeGuessed": "Soldier",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód z kratką",
+                    "given": "",
+                    "toBeGuessed": "pick-up truck",
+                    "isCorrect": false
+                }
+            ],
+            "date": "2023-1-2 1:12"
         }
     ]
 }
