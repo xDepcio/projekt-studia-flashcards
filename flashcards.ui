@@ -101,7 +101,7 @@ font-size: 16px</string>
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -488,8 +488,8 @@ background-color: rgb(227, 227, 227);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>98</width>
-                      <height>28</height>
+                      <width>45</width>
+                      <height>18</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -592,7 +592,7 @@ font-weight: 500;</string>
              <bool>false</bool>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_4">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -626,8 +626,8 @@ font-weight: 500;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>98</width>
-                   <height>28</height>
+                   <width>268</width>
+                   <height>512</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -640,7 +640,264 @@ font-weight: 500;</string>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_9"/>
+            <widget class="QWidget" name="page_9">
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QWidget" name="widget_5" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+border-radius: 7px;</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <property name="spacing">
+                  <number>6</number>
+                 </property>
+                 <property name="sizeConstraint">
+                  <enum>QLayout::SetDefaultConstraint</enum>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="widget_6" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_14">
+                    <item>
+                     <widget class="QWidget" name="widget_7" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_12">
+                       <item>
+                        <widget class="QLabel" name="label_2">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                           <weight>50</weight>
+                           <bold>false</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Odpowiedzi:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelAllAnswers">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>222</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_8" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_11">
+                       <item>
+                        <widget class="QLabel" name="label_5">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Poprawne:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelCorrectAnswers">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>122</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_9" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_10">
+                       <item>
+                        <widget class="QLabel" name="label_9">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Błędne</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelWrongAnswers">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>100</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_10" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_9">
+                       <item>
+                        <widget class="QLabel" name="label_11">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Celność:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelAccuracy">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>88%</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_11" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <item>
+                     <widget class="QWidget" name="widget_12" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_13">
+                       <item>
+                        <widget class="QLabel" name="label_13">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Czas nauki:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_14">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>25 h</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
          </layout>

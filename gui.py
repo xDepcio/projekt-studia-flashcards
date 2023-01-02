@@ -23,7 +23,7 @@ class AirQualityWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.stats = Stats('stats.json')
-        self.stats.load_stats()
+        # self.stats.load_stats()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.vbox_exam_answers = QVBoxLayout(self.ui.scrollItemsHolder)
@@ -313,11 +313,21 @@ class AirQualityWindow(QMainWindow):
         self.ui.refreshStatsBtn.clicked.connect(self._refreshStats)
         self._setupStatsAnswersPage()
         self._setupStatsExamsPage()
+        self._setupStatsMiscPage()
+
+    def _setupStatsMiscPage(self):
+        self.ui.labelAllAnswers.setText(f"{self.stats.answers_count()}")
+        self.ui.labelCorrectAnswers.setText(
+            f"{self.stats.correct_answers_count()}"
+        )
+        self.ui.labelWrongAnswers.setText(f"{self.stats.wrong_answers_count()}")
+        self.ui.labelAccuracy.setText(f"{self.stats.answers_accuracy()}%")
 
     def _refreshStats(self):
+        self.stats.reload_stats()
+        self._setupStatsMiscPage()
         self._setupStatsAnswersPage()
         self.ui.prevExamsList.clear()
-        self.stats.load_stats()
         self._setupStatsExamsPage()
 
     def __deleteWidgetChilds(self, widget, child_type):

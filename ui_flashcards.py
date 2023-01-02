@@ -372,7 +372,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 45, 18))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -486,7 +486,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 268, 512))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
@@ -501,6 +501,157 @@ class Ui_MainWindow(object):
         self.statsStack.addWidget(self.page_5)
         self.page_9 = QWidget()
         self.page_9.setObjectName(u"page_9")
+        self.verticalLayout_13 = QVBoxLayout(self.page_9)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.widget_5 = QWidget(self.page_9)
+        self.widget_5.setObjectName(u"widget_5")
+        sizePolicy1.setHeightForWidth(self.widget_5.sizePolicy().hasHeightForWidth())
+        self.widget_5.setSizePolicy(sizePolicy1)
+        self.widget_5.setAutoFillBackground(False)
+        self.widget_5.setStyleSheet(u"background-color: white;\n"
+"border-radius: 7px;")
+        self.verticalLayout_16 = QVBoxLayout(self.widget_5)
+        self.verticalLayout_16.setSpacing(6)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.widget_6 = QWidget(self.widget_5)
+        self.widget_6.setObjectName(u"widget_6")
+        sizePolicy1.setHeightForWidth(self.widget_6.sizePolicy().hasHeightForWidth())
+        self.widget_6.setSizePolicy(sizePolicy1)
+        self.verticalLayout_14 = QVBoxLayout(self.widget_6)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.widget_7 = QWidget(self.widget_6)
+        self.widget_7.setObjectName(u"widget_7")
+        sizePolicy1.setHeightForWidth(self.widget_7.sizePolicy().hasHeightForWidth())
+        self.widget_7.setSizePolicy(sizePolicy1)
+        self.horizontalLayout_12 = QHBoxLayout(self.widget_7)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.label_2 = QLabel(self.widget_7)
+        self.label_2.setObjectName(u"label_2")
+        font6 = QFont()
+        font6.setFamily(u"Arial")
+        font6.setPointSize(12)
+        font6.setBold(False)
+        font6.setWeight(50)
+        self.label_2.setFont(font6)
+
+        self.horizontalLayout_12.addWidget(self.label_2)
+
+        self.labelAllAnswers = QLabel(self.widget_7)
+        self.labelAllAnswers.setObjectName(u"labelAllAnswers")
+        font7 = QFont()
+        font7.setFamily(u"Arial")
+        font7.setPointSize(12)
+        self.labelAllAnswers.setFont(font7)
+
+        self.horizontalLayout_12.addWidget(self.labelAllAnswers)
+
+
+        self.verticalLayout_14.addWidget(self.widget_7)
+
+        self.widget_8 = QWidget(self.widget_6)
+        self.widget_8.setObjectName(u"widget_8")
+        sizePolicy1.setHeightForWidth(self.widget_8.sizePolicy().hasHeightForWidth())
+        self.widget_8.setSizePolicy(sizePolicy1)
+        self.horizontalLayout_11 = QHBoxLayout(self.widget_8)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.label_5 = QLabel(self.widget_8)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font7)
+
+        self.horizontalLayout_11.addWidget(self.label_5)
+
+        self.labelCorrectAnswers = QLabel(self.widget_8)
+        self.labelCorrectAnswers.setObjectName(u"labelCorrectAnswers")
+        self.labelCorrectAnswers.setFont(font7)
+
+        self.horizontalLayout_11.addWidget(self.labelCorrectAnswers)
+
+
+        self.verticalLayout_14.addWidget(self.widget_8)
+
+        self.widget_9 = QWidget(self.widget_6)
+        self.widget_9.setObjectName(u"widget_9")
+        sizePolicy1.setHeightForWidth(self.widget_9.sizePolicy().hasHeightForWidth())
+        self.widget_9.setSizePolicy(sizePolicy1)
+        self.horizontalLayout_10 = QHBoxLayout(self.widget_9)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.label_9 = QLabel(self.widget_9)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setFont(font7)
+
+        self.horizontalLayout_10.addWidget(self.label_9)
+
+        self.labelWrongAnswers = QLabel(self.widget_9)
+        self.labelWrongAnswers.setObjectName(u"labelWrongAnswers")
+        self.labelWrongAnswers.setFont(font7)
+
+        self.horizontalLayout_10.addWidget(self.labelWrongAnswers)
+
+
+        self.verticalLayout_14.addWidget(self.widget_9)
+
+        self.widget_10 = QWidget(self.widget_6)
+        self.widget_10.setObjectName(u"widget_10")
+        sizePolicy1.setHeightForWidth(self.widget_10.sizePolicy().hasHeightForWidth())
+        self.widget_10.setSizePolicy(sizePolicy1)
+        self.horizontalLayout_9 = QHBoxLayout(self.widget_10)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.label_11 = QLabel(self.widget_10)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setFont(font7)
+
+        self.horizontalLayout_9.addWidget(self.label_11)
+
+        self.labelAccuracy = QLabel(self.widget_10)
+        self.labelAccuracy.setObjectName(u"labelAccuracy")
+        self.labelAccuracy.setFont(font7)
+
+        self.horizontalLayout_9.addWidget(self.labelAccuracy)
+
+
+        self.verticalLayout_14.addWidget(self.widget_10)
+
+
+        self.verticalLayout_16.addWidget(self.widget_6)
+
+        self.widget_11 = QWidget(self.widget_5)
+        self.widget_11.setObjectName(u"widget_11")
+        sizePolicy1.setHeightForWidth(self.widget_11.sizePolicy().hasHeightForWidth())
+        self.widget_11.setSizePolicy(sizePolicy1)
+        self.verticalLayout_15 = QVBoxLayout(self.widget_11)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.widget_12 = QWidget(self.widget_11)
+        self.widget_12.setObjectName(u"widget_12")
+        sizePolicy1.setHeightForWidth(self.widget_12.sizePolicy().hasHeightForWidth())
+        self.widget_12.setSizePolicy(sizePolicy1)
+        self.horizontalLayout_13 = QHBoxLayout(self.widget_12)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.label_13 = QLabel(self.widget_12)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setFont(font7)
+
+        self.horizontalLayout_13.addWidget(self.label_13)
+
+        self.label_14 = QLabel(self.widget_12)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setFont(font7)
+
+        self.horizontalLayout_13.addWidget(self.label_14)
+
+
+        self.verticalLayout_15.addWidget(self.widget_12)
+
+
+        self.verticalLayout_16.addWidget(self.widget_11)
+
+
+        self.verticalLayout_13.addWidget(self.widget_5)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.verticalSpacer)
+
         self.statsStack.addWidget(self.page_9)
 
         self.verticalLayout_4.addWidget(self.statsStack)
@@ -523,9 +674,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(1)
+        self.pagesStack.setCurrentIndex(2)
         self.testStack.setCurrentIndex(2)
-        self.statsStack.setCurrentIndex(0)
+        self.statsStack.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -554,5 +705,15 @@ class Ui_MainWindow(object):
         self.statsTestsBtn.setText(QCoreApplication.translate("MainWindow", u"Testy", None))
         self.statsOtherBtn.setText(QCoreApplication.translate("MainWindow", u"Inne", None))
         self.refreshStatsBtn.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Odpowiedzi:", None))
+        self.labelAllAnswers.setText(QCoreApplication.translate("MainWindow", u"222", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Poprawne:", None))
+        self.labelCorrectAnswers.setText(QCoreApplication.translate("MainWindow", u"122", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"B\u0142\u0119dne", None))
+        self.labelWrongAnswers.setText(QCoreApplication.translate("MainWindow", u"100", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Celno\u015b\u0107:", None))
+        self.labelAccuracy.setText(QCoreApplication.translate("MainWindow", u"88%", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Czas nauki:", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"25 h", None))
     # retranslateUi
 

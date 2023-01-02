@@ -3,11 +3,14 @@ from datetime import datetime
 
 
 class Stats:
-    def __init__(self, file_path, data=None):
+    def __init__(self, file_path):
         self.file_path = file_path
-        self.data = data
+        self.data = None
+        with open(self.file_path, encoding='utf-8') as fh:
+            stats = json.load(fh)
+            self.data = stats
 
-    def load_stats(self):
+    def reload_stats(self):
         with open(self.file_path, encoding='utf-8') as fh:
             stats = json.load(fh)
             self.data = stats
@@ -32,6 +35,23 @@ class Stats:
             exam_result = exam.generate_result()
             self.data['exams'].append(exam_result)
             json.dump(self.data, fh, indent=4, ensure_ascii=False)
+
+    def answers_count(self):
+        correct_len = len(self.data['answers']['correct'])
+        wrong_len = len(self.data['answers']['wrong'])
+        return correct_len + wrong_len
+
+    def correct_answers_count(self):
+        return len(self.data['answers']['correct'])
+
+    def wrong_answers_count(self):
+        return len(self.data['answers']['wrong'])
+
+    def answers_accuracy(self):
+        correct = self.correct_answers_count()
+        wrong = self.wrong_answers_count()
+        ratio = round(correct/(correct+wrong)*100, 2)
+        return ratio
 
     def save_answer(self, answer):
         with open(self.file_path, 'w', encoding='utf-8') as fh:
