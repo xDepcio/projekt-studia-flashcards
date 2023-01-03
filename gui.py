@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import (
     QApplication, QHBoxLayout, QVBoxLayout, QWidget, QSlider, QSpinBox,
     QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
-    QSizePolicy, QLabel
+    QSizePolicy, QLabel, QMessageBox
 )
 from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod, QTimer
 from PySide2.QtCharts import QtCharts
@@ -33,6 +33,7 @@ class AirQualityWindow(QMainWindow):
         self._setupMainNav()
         self._setupStatsPage()
         self._setupExamsPage()
+        self._setupUseTimer()
 
     def _setupCategories(self):
         cards = import_cards(Config.CARDS_PATH)
@@ -49,6 +50,28 @@ class AirQualityWindow(QMainWindow):
         self._selectCategory(self.ui.categoriesField.item(0))
         self.ui.answerInput.textChanged.connect(self._handleInputChange)
         self.ui.flashcardButton.clicked.connect(self._handleAnswer)
+
+    def _setupUseTimer(self):
+        self.state['sessionStartTime'] = time()
+        app = QApplication.instance()
+        app.lastWindowClosed.connect(self._saveUseTime())
+
+    def _saveUseTime(self):
+        session_time = time() - self.state['sessionStartTime']
+        self.stats.save_use_time(session_time)
+        self.state['sessionStartTime'] = time()
+
+    def _shouldShowPopup(self):
+        show_after = Config.POPUP_ANSWERS_COUNT
+        if self.stats.answers_since_last_exam() == show_after:
+            return True
+        return False
+
+    def _showReminderPopup(self):
+        msg = QMessageBox()
+        msg.setWindowTitle(Config.POPUP_TITLE)
+        msg.setText(Config.POPUP_MSG)
+        msg.exec_()
 
     def _selectCategory(self, category):
         card_collection = category.card_collection
@@ -260,6 +283,10 @@ class AirQualityWindow(QMainWindow):
         self.__format_answer_label(answer.is_correct)
         print('------executed------')
         self.stats.save_answer(answer)
+
+        if self._shouldShowPopup():
+            self._showReminderPopup()
+
         self.ui.flashcardButton.setText('Następna')
         self.ui.flashcardButton.clicked.disconnect(self._handleAnswer)
         self.ui.flashcardButton.clicked.connect(self._handleNextCardClick)
@@ -320,10 +347,23 @@ class AirQualityWindow(QMainWindow):
         self.ui.labelCorrectAnswers.setText(
             f"{self.stats.correct_answers_count()}"
         )
-        self.ui.labelWrongAnswers.setText(f"{self.stats.wrong_answers_count()}")
+        self.ui.labelWrongAnswers.setText(
+            f"{self.stats.wrong_answers_count()}"
+        )
         self.ui.labelAccuracy.setText(f"{self.stats.answers_accuracy()}%")
+        self.ui.labelExamsCount.setText(str(self.stats.exams_count()))
+        self.ui.labelExamsAccuracy.setText(
+            str(self.stats.exams_avg_accuracy()) + '%'
+        )
+
+        days, hours, minutes = self.stats.app_use_time()
+        days_str = '' if days == 0 else f"{days} d"
+        hours_str = '' if hours == 0 else f"{hours} h"
+        minutes_str = '' if minutes == 0 else f"{minutes} m"
+        self.ui.labelAppUseTime.setText(days_str + hours_str + minutes_str)
 
     def _refreshStats(self):
+        self._saveUseTime()
         self.stats.reload_stats()
         self._setupStatsMiscPage()
         self._setupStatsAnswersPage()

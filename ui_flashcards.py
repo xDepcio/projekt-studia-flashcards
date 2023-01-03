@@ -226,6 +226,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.testEasyBtn = QPushButton(self.widget_2)
         self.testEasyBtn.setObjectName(u"testEasyBtn")
+        self.testEasyBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.testEasyBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
@@ -239,6 +240,7 @@ class Ui_MainWindow(object):
 
         self.testMediumBtn = QPushButton(self.widget_2)
         self.testMediumBtn.setObjectName(u"testMediumBtn")
+        self.testMediumBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.testMediumBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
@@ -252,6 +254,7 @@ class Ui_MainWindow(object):
 
         self.testHardBtn = QPushButton(self.widget_2)
         self.testHardBtn.setObjectName(u"testHardBtn")
+        self.testHardBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.testHardBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
@@ -270,6 +273,7 @@ class Ui_MainWindow(object):
         self.testStartBtn = QPushButton(self.widget_2)
         self.testStartBtn.setObjectName(u"testStartBtn")
         self.testStartBtn.setEnabled(False)
+        self.testStartBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.testStartBtn.setStyleSheet(u"QPushButton:enabled {\n"
 "color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
@@ -320,6 +324,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.testCardLabel = QLabel(self.testsMainDisplay)
         self.testCardLabel.setObjectName(u"testCardLabel")
+        font6 = QFont()
+        font6.setFamily(u"Arial")
+        font6.setPointSize(20)
+        self.testCardLabel.setFont(font6)
         self.testCardLabel.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_7.addWidget(self.testCardLabel)
@@ -372,7 +380,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 45, 18))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 512, 397))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -403,6 +411,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.statsAnswersBtn = QPushButton(self.page_3)
         self.statsAnswersBtn.setObjectName(u"statsAnswersBtn")
+        self.statsAnswersBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.statsAnswersBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
@@ -414,6 +423,7 @@ class Ui_MainWindow(object):
 
         self.statsTestsBtn = QPushButton(self.page_3)
         self.statsTestsBtn.setObjectName(u"statsTestsBtn")
+        self.statsTestsBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.statsTestsBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
@@ -425,6 +435,7 @@ class Ui_MainWindow(object):
 
         self.statsOtherBtn = QPushButton(self.page_3)
         self.statsOtherBtn.setObjectName(u"statsOtherBtn")
+        self.statsOtherBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.statsOtherBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
@@ -437,6 +448,7 @@ class Ui_MainWindow(object):
         self.refreshStatsBtn = QPushButton(self.page_3)
         self.refreshStatsBtn.setObjectName(u"refreshStatsBtn")
         self.refreshStatsBtn.setMaximumSize(QSize(50, 27))
+        self.refreshStatsBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.refreshStatsBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: rgb(62, 162, 255);\n"
@@ -528,21 +540,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.label_2 = QLabel(self.widget_7)
         self.label_2.setObjectName(u"label_2")
-        font6 = QFont()
-        font6.setFamily(u"Arial")
-        font6.setPointSize(12)
-        font6.setBold(False)
-        font6.setWeight(50)
-        self.label_2.setFont(font6)
+        font7 = QFont()
+        font7.setFamily(u"Arial")
+        font7.setPointSize(12)
+        font7.setBold(False)
+        font7.setWeight(50)
+        self.label_2.setFont(font7)
 
         self.horizontalLayout_12.addWidget(self.label_2)
 
         self.labelAllAnswers = QLabel(self.widget_7)
         self.labelAllAnswers.setObjectName(u"labelAllAnswers")
-        font7 = QFont()
-        font7.setFamily(u"Arial")
-        font7.setPointSize(12)
-        self.labelAllAnswers.setFont(font7)
+        font8 = QFont()
+        font8.setFamily(u"Arial")
+        font8.setPointSize(12)
+        self.labelAllAnswers.setFont(font8)
 
         self.horizontalLayout_12.addWidget(self.labelAllAnswers)
 
@@ -557,13 +569,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.label_5 = QLabel(self.widget_8)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font7)
+        self.label_5.setFont(font8)
 
         self.horizontalLayout_11.addWidget(self.label_5)
 
         self.labelCorrectAnswers = QLabel(self.widget_8)
         self.labelCorrectAnswers.setObjectName(u"labelCorrectAnswers")
-        self.labelCorrectAnswers.setFont(font7)
+        self.labelCorrectAnswers.setFont(font8)
 
         self.horizontalLayout_11.addWidget(self.labelCorrectAnswers)
 
@@ -578,13 +590,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.label_9 = QLabel(self.widget_9)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font7)
+        self.label_9.setFont(font8)
 
         self.horizontalLayout_10.addWidget(self.label_9)
 
         self.labelWrongAnswers = QLabel(self.widget_9)
         self.labelWrongAnswers.setObjectName(u"labelWrongAnswers")
-        self.labelWrongAnswers.setFont(font7)
+        self.labelWrongAnswers.setFont(font8)
 
         self.horizontalLayout_10.addWidget(self.labelWrongAnswers)
 
@@ -599,13 +611,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.label_11 = QLabel(self.widget_10)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font7)
+        self.label_11.setFont(font8)
 
         self.horizontalLayout_9.addWidget(self.label_11)
 
         self.labelAccuracy = QLabel(self.widget_10)
         self.labelAccuracy.setObjectName(u"labelAccuracy")
-        self.labelAccuracy.setFont(font7)
+        self.labelAccuracy.setFont(font8)
 
         self.horizontalLayout_9.addWidget(self.labelAccuracy)
 
@@ -614,6 +626,51 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_16.addWidget(self.widget_6)
+
+        self.widget_13 = QWidget(self.widget_5)
+        self.widget_13.setObjectName(u"widget_13")
+        self.verticalLayout_17 = QVBoxLayout(self.widget_13)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.widget_14 = QWidget(self.widget_13)
+        self.widget_14.setObjectName(u"widget_14")
+        self.horizontalLayout_14 = QHBoxLayout(self.widget_14)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.label_4 = QLabel(self.widget_14)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setFont(font8)
+
+        self.horizontalLayout_14.addWidget(self.label_4)
+
+        self.labelExamsCount = QLabel(self.widget_14)
+        self.labelExamsCount.setObjectName(u"labelExamsCount")
+        self.labelExamsCount.setFont(font8)
+
+        self.horizontalLayout_14.addWidget(self.labelExamsCount)
+
+
+        self.verticalLayout_17.addWidget(self.widget_14)
+
+        self.widget_exams_misc = QWidget(self.widget_13)
+        self.widget_exams_misc.setObjectName(u"widget_exams_misc")
+        self.horizontalLayout_15 = QHBoxLayout(self.widget_exams_misc)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.label_7 = QLabel(self.widget_exams_misc)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setFont(font8)
+
+        self.horizontalLayout_15.addWidget(self.label_7)
+
+        self.labelExamsAccuracy = QLabel(self.widget_exams_misc)
+        self.labelExamsAccuracy.setObjectName(u"labelExamsAccuracy")
+        self.labelExamsAccuracy.setFont(font8)
+
+        self.horizontalLayout_15.addWidget(self.labelExamsAccuracy)
+
+
+        self.verticalLayout_17.addWidget(self.widget_exams_misc)
+
+
+        self.verticalLayout_16.addWidget(self.widget_13)
 
         self.widget_11 = QWidget(self.widget_5)
         self.widget_11.setObjectName(u"widget_11")
@@ -629,15 +686,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.label_13 = QLabel(self.widget_12)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setFont(font7)
+        self.label_13.setFont(font8)
 
         self.horizontalLayout_13.addWidget(self.label_13)
 
-        self.label_14 = QLabel(self.widget_12)
-        self.label_14.setObjectName(u"label_14")
-        self.label_14.setFont(font7)
+        self.labelAppUseTime = QLabel(self.widget_12)
+        self.labelAppUseTime.setObjectName(u"labelAppUseTime")
+        self.labelAppUseTime.setFont(font8)
 
-        self.horizontalLayout_13.addWidget(self.label_14)
+        self.horizontalLayout_13.addWidget(self.labelAppUseTime)
 
 
         self.verticalLayout_15.addWidget(self.widget_12)
@@ -674,9 +731,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(2)
+        self.pagesStack.setCurrentIndex(0)
         self.testStack.setCurrentIndex(2)
-        self.statsStack.setCurrentIndex(2)
+        self.statsStack.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -713,6 +770,11 @@ class Ui_MainWindow(object):
         self.labelWrongAnswers.setText(QCoreApplication.translate("MainWindow", u"100", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Celno\u015b\u0107:", None))
         self.labelAccuracy.setText(QCoreApplication.translate("MainWindow", u"88%", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Rozwi\u0105zane testy:", None))
+        self.labelExamsCount.setText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u015aredni wynik testu:", None))
+        self.labelExamsAccuracy.setText(QCoreApplication.translate("MainWindow", u"40.0%", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Czas nauki:", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"25 h", None))
+        self.labelAppUseTime.setText(QCoreApplication.translate("MainWindow", u"25 h", None))
     # retranslateUi
+

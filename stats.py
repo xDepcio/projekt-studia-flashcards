@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+import math
 
 
 class Stats:
@@ -34,7 +35,25 @@ class Stats:
         with open(self.file_path, 'w', encoding='utf-8') as fh:
             exam_result = exam.generate_result()
             self.data['exams'].append(exam_result)
+            self.data['answersToLastExam'] = self.answers_count()
             json.dump(self.data, fh, indent=4, ensure_ascii=False)
+        self.reload_stats()
+
+    def answers_since_last_exam(self):
+        return self.answers_count() - self.data['answersToLastExam']
+
+    def save_use_time(self, current_session_time):
+        with open(self.file_path, 'w', encoding='utf-8') as fh:
+            self.data['appUseTimeSeconds'] += current_session_time
+            json.dump(self.data, fh, indent=4, ensure_ascii=False)
+        self.reload_stats()
+
+    def app_use_time(self):
+        time_s = self.data['appUseTimeSeconds']
+        days = math.floor(time_s / 86400)
+        hours = math.floor((time_s % 86400) / 3600)
+        minutes = math.floor((time_s % 3600) / 60)
+        return days, hours, minutes
 
     def answers_count(self):
         correct_len = len(self.data['answers']['correct'])
@@ -53,6 +72,14 @@ class Stats:
         ratio = round(correct/(correct+wrong)*100, 2)
         return ratio
 
+    def exams_count(self):
+        return len(self.get_exams())
+
+    def exams_avg_accuracy(self):
+        total = sum([exam['percentage'] for exam in self.get_exams()])
+        avg = round(total/len(self.get_exams()), 2)
+        return avg
+
     def save_answer(self, answer):
         with open(self.file_path, 'w', encoding='utf-8') as fh:
             answer_str = {
@@ -65,6 +92,7 @@ class Stats:
             else:
                 self.data['answers']['wrong'].append(answer_str)
             json.dump(self.data, fh, indent=4, ensure_ascii=False)
+        self.reload_stats()
 
     def get_exams(self):
         return self.data['exams']

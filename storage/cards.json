@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.99
+        "popularity": 0.2
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 3,
@@ -42,7 +42,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.556875
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 7,
@@ -69,7 +69,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 9,
@@ -103,7 +103,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.135
     },
     {
         "id": 13,
@@ -217,7 +217,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.4374000000000001
     },
     {
         "id": 27,
@@ -265,7 +265,8 @@
         "learningLang": "fire truck",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 33,
@@ -285,15 +286,16 @@
         ]
     },
     {
-        "id": 36,
+        "id": 35,
         "originLang": "samochód towarowy",
         "learningLang": "cargo truck",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
-        "id": 37,
+        "id": 36,
         "originLang": "samochód kempingowy",
         "learningLang": "recreational vehicle (RV)",
         "categories": [
@@ -301,7 +303,7 @@
         ]
     },
     {
-        "id": 38,
+        "id": 37,
         "originLang": "samochód kabriolet",
         "learningLang": "convertible",
         "categories": [
@@ -309,7 +311,7 @@
         ]
     },
     {
-        "id": 39,
+        "id": 38,
         "originLang": "samochód z otwartym dachem",
         "learningLang": "sunroof car",
         "categories": [
@@ -317,7 +319,7 @@
         ]
     },
     {
-        "id": 40,
+        "id": 39,
         "originLang": "samochód sportowy",
         "learningLang": "sports car",
         "categories": [
@@ -325,7 +327,7 @@
         ]
     },
     {
-        "id": 41,
+        "id": 40,
         "originLang": "samochód elektryczny",
         "learningLang": "electric car",
         "categories": [
@@ -334,7 +336,7 @@
         "popularity": 0.18000000000000002
     },
     {
-        "id": 42,
+        "id": 41,
         "originLang": "samochód hybrydowy",
         "learningLang": "hybrid car",
         "categories": [
@@ -342,7 +344,7 @@
         ]
     },
     {
-        "id": 43,
+        "id": 42,
         "originLang": "samochód z kratką",
         "learningLang": "pick-up truck",
         "categories": [
@@ -351,7 +353,7 @@
         "popularity": 0.32400000000000007
     },
     {
-        "id": 44,
+        "id": 43,
         "originLang": "samochód z windą",
         "learningLang": "lift truck",
         "categories": [
@@ -359,7 +361,7 @@
         ]
     },
     {
-        "id": 45,
+        "id": 44,
         "originLang": "samochód z naczepą",
         "learningLang": "semi-trailer truck",
         "categories": [
@@ -367,7 +369,7 @@
         ]
     },
     {
-        "id": 46,
+        "id": 45,
         "originLang": "samochód z niskim zawieszeniem",
         "learningLang": "lowrider",
         "categories": [
@@ -376,23 +378,25 @@
         "popularity": 0.18000000000000002
     },
     {
-        "id": 47,
+        "id": 46,
         "originLang": "pielęgniarka",
         "learningLang": "nurse",
         "categories": [
             "Jobs"
-        ]
+        ],
+        "popularity": 0.07500000000000001
     },
     {
-        "id": 48,
+        "id": 47,
         "originLang": "inżynier",
         "learningLang": "engineer",
         "categories": [
             "Jobs"
-        ]
+        ],
+        "popularity": 0.07500000000000001
     },
     {
-        "id": 49,
+        "id": 48,
         "originLang": "nauczyciel",
         "learningLang": "teacher",
         "categories": [
@@ -400,7 +404,7 @@
         ]
     },
     {
-        "id": 50,
+        "id": 49,
         "originLang": "mechanik",
         "learningLang": "mechanic",
         "categories": [
@@ -408,15 +412,16 @@
         ]
     },
     {
-        "id": 51,
+        "id": 50,
         "originLang": "prawnik",
         "learningLang": "lawyer",
         "categories": [
             "Jobs"
-        ]
+        ],
+        "popularity": 0.07500000000000001
     },
     {
-        "id": 52,
+        "id": 51,
         "originLang": "księgowy",
         "learningLang": "accountant",
         "categories": [
@@ -424,7 +429,7 @@
         ]
     },
     {
-        "id": 53,
+        "id": 52,
         "originLang": "murarz",
         "learningLang": "bricklayer",
         "categories": [
@@ -432,7 +437,7 @@
         ]
     },
     {
-        "id": 54,
+        "id": 53,
         "originLang": "spawacz",
         "learningLang": "welder",
         "categories": [
@@ -440,7 +445,7 @@
         ]
     },
     {
-        "id": 55,
+        "id": 54,
         "originLang": "kucharz",
         "learningLang": "chef",
         "categories": [
@@ -448,7 +453,7 @@
         ]
     },
     {
-        "id": 56,
+        "id": 55,
         "originLang": "piekarz",
         "learningLang": "baker",
         "categories": [
@@ -456,15 +461,16 @@
         ]
     },
     {
-        "id": 57,
+        "id": 56,
         "originLang": "fryzjer",
         "learningLang": "hairdresser",
         "categories": [
             "Jobs"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
-        "id": 58,
+        "id": 57,
         "originLang": "kowal",
         "learningLang": "blacksmith",
         "categories": [
@@ -472,7 +478,7 @@
         ]
     },
     {
-        "id": 59,
+        "id": 58,
         "originLang": "dziennikarz",
         "learningLang": "journalist",
         "categories": [
@@ -485,7 +491,7 @@
         "categories": [
             "Home"
         ],
-        "id": 60,
+        "id": 59,
         "popularity": 0.18000000000000002
     },
     {
@@ -494,7 +500,7 @@
         "categories": [
             "Home"
         ],
-        "id": 61
+        "id": 60
     },
     {
         "originLang": "kuchnia",
@@ -502,7 +508,8 @@
         "categories": [
             "Home"
         ],
-        "id": 62
+        "id": 61,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "łazienka",
@@ -510,8 +517,8 @@
         "categories": [
             "Home"
         ],
-        "id": 63,
-        "popularity": 0.18000000000000002
+        "id": 62,
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "sypialnia",
@@ -519,7 +526,7 @@
         "categories": [
             "Home"
         ],
-        "id": 64
+        "id": 63
     },
     {
         "originLang": "pokój dzienny",
@@ -527,7 +534,8 @@
         "categories": [
             "Home"
         ],
-        "id": 65
+        "id": 64,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "przedpokój",
@@ -535,7 +543,7 @@
         "categories": [
             "Home"
         ],
-        "id": 66
+        "id": 65
     },
     {
         "originLang": "korytarz",
@@ -543,7 +551,8 @@
         "categories": [
             "Home"
         ],
-        "id": 67
+        "id": 66,
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "garaż",
@@ -551,7 +560,7 @@
         "categories": [
             "Home"
         ],
-        "id": 68
+        "id": 67
     },
     {
         "originLang": "ogród",
@@ -559,7 +568,7 @@
         "categories": [
             "Home"
         ],
-        "id": 69
+        "id": 68
     },
     {
         "originLang": "balkon",
@@ -567,7 +576,7 @@
         "categories": [
             "Home"
         ],
-        "id": 70
+        "id": 69
     },
     {
         "originLang": "taras",
@@ -575,8 +584,8 @@
         "categories": [
             "Home"
         ],
-        "id": 71,
-        "popularity": 0.18000000000000002
+        "id": 70,
+        "popularity": 0.135
     },
     {
         "originLang": "piwnica",
@@ -584,7 +593,7 @@
         "categories": [
             "Home"
         ],
-        "id": 72
+        "id": 71
     },
     {
         "originLang": "dach",
@@ -592,7 +601,7 @@
         "categories": [
             "Home"
         ],
-        "id": 73,
+        "id": 72,
         "popularity": 0.18000000000000002
     },
     {
@@ -601,7 +610,7 @@
         "categories": [
             "Home"
         ],
-        "id": 74,
+        "id": 73,
         "popularity": 0.07500000000000001
     },
     {
@@ -610,8 +619,8 @@
         "categories": [
             "Home"
         ],
-        "id": 75,
-        "popularity": 0.32400000000000007
+        "id": 74,
+        "popularity": 0.7424999999999999
     },
     {
         "originLang": "koszykówka",
@@ -619,7 +628,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 76
+        "id": 75,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "siatkówka",
@@ -627,7 +637,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 77,
+        "id": 76,
         "popularity": 0.07500000000000001
     },
     {
@@ -636,7 +646,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 78
+        "id": 77
     },
     {
         "originLang": "tenis",
@@ -644,7 +654,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 79
+        "id": 78
     },
     {
         "originLang": "bieganie",
@@ -652,7 +662,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 80,
+        "id": 79,
         "popularity": 0.05625000000000001
     },
     {
@@ -661,7 +671,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 81,
+        "id": 80,
         "popularity": 0.07500000000000001
     },
     {
@@ -670,7 +680,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 82,
+        "id": 81,
         "popularity": 0.18000000000000002
     },
     {
@@ -679,8 +689,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 83,
-        "popularity": 0.18000000000000002
+        "id": 82,
+        "popularity": 0.7424999999999999
     },
     {
         "originLang": "szermierka",
@@ -688,7 +698,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 84
+        "id": 83,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "lekkoatletyka",
@@ -696,7 +707,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 85
+        "id": 84,
+        "popularity": 0.5832000000000002
     },
     {
         "originLang": "golf",
@@ -704,7 +716,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 86
+        "id": 85
     },
     {
         "originLang": "piłka ręczna",
@@ -712,7 +724,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 87
+        "id": 86
     },
     {
         "originLang": "boks",
@@ -720,7 +732,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 88
+        "id": 87,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "mma",
@@ -728,7 +741,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 89
+        "id": 88
     },
     {
         "originLang": "judo",
@@ -736,7 +749,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 90
+        "id": 89,
+        "popularity": 0.07500000000000001
     },
     {
         "originLang": "taekwondo",
@@ -744,6 +758,7 @@
         "categories": [
             "Sports"
         ],
-        "id": 91
+        "id": 90,
+        "popularity": 0.18000000000000002
     }
 ]

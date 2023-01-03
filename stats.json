@@ -522,6 +522,11 @@
                 "originLang": "Policjant",
                 "learningLang": "Police officer",
                 "date": "2023-1-2 1:38"
+            },
+            {
+                "originLang": "judo",
+                "learningLang": "judo",
+                "date": "2023-1-3 1:5"
             }
         ],
         "wrong": [
@@ -1149,6 +1154,61 @@
                 "originLang": "Woźny",
                 "learningLang": "Janitor",
                 "date": "2023-1-2 1:55"
+            },
+            {
+                "originLang": "Strażak",
+                "learningLang": "Firefighter",
+                "date": "2023-1-3 0:55"
+            },
+            {
+                "originLang": "Strażak",
+                "learningLang": "Firefighter",
+                "date": "2023-1-3 0:55"
+            },
+            {
+                "originLang": "taekwondo",
+                "learningLang": "taekwondo",
+                "date": "2023-1-3 0:55"
+            },
+            {
+                "originLang": "kolarstwo",
+                "learningLang": "cycling",
+                "date": "2023-1-3 1:4"
+            },
+            {
+                "originLang": "koszykówka",
+                "learningLang": "basketball",
+                "date": "2023-1-3 1:4"
+            },
+            {
+                "originLang": "boks",
+                "learningLang": "boxing",
+                "date": "2023-1-3 1:4"
+            },
+            {
+                "originLang": "kolarstwo",
+                "learningLang": "cycling",
+                "date": "2023-1-3 1:4"
+            },
+            {
+                "originLang": "kolarstwo",
+                "learningLang": "cycling",
+                "date": "2023-1-3 1:4"
+            },
+            {
+                "originLang": "lekkoatletyka",
+                "learningLang": "track and field",
+                "date": "2023-1-3 1:5"
+            },
+            {
+                "originLang": "drzwi",
+                "learningLang": "door",
+                "date": "2023-1-3 1:52"
+            },
+            {
+                "originLang": "korytarz",
+                "learningLang": "corridor",
+                "date": "2023-1-3 1:52"
             }
         ]
     },
@@ -2040,104 +2100,6 @@
         {
             "correct": 4,
             "total": 15,
-            "percentage": 26.666666666666668,
-            "answers": [
-                {
-                    "expected": "Policjant",
-                    "given": "policjant",
-                    "toBeGuessed": "Police officer",
-                    "isCorrect": true
-                },
-                {
-                    "expected": "Strażak",
-                    "given": "strażak",
-                    "toBeGuessed": "Firefighter",
-                    "isCorrect": true
-                },
-                {
-                    "expected": "Samochód",
-                    "given": "samochód",
-                    "toBeGuessed": "Car",
-                    "isCorrect": true
-                },
-                {
-                    "expected": "Ciężarówka",
-                    "given": "ciężarówka",
-                    "toBeGuessed": "Truck",
-                    "isCorrect": true
-                },
-                {
-                    "expected": "Samochód",
-                    "given": "das",
-                    "toBeGuessed": "Car",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Policjant",
-                    "given": "asd",
-                    "toBeGuessed": "Police officer",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Policjant",
-                    "given": "asd",
-                    "toBeGuessed": "Police officer",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Pociąg",
-                    "given": "asd",
-                    "toBeGuessed": "Train",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Woźny",
-                    "given": "asd",
-                    "toBeGuessed": "Janitor",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Samochód",
-                    "given": "asd",
-                    "toBeGuessed": "Car",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Ciężarówka",
-                    "given": "asd",
-                    "toBeGuessed": "Truck",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Strażak",
-                    "given": "asd",
-                    "toBeGuessed": "Firefighter",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Żołnierz",
-                    "given": "asd",
-                    "toBeGuessed": "Soldier",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Woźny",
-                    "given": "asd",
-                    "toBeGuessed": "Janitor",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Ciężarówka",
-                    "given": "asd",
-                    "toBeGuessed": "Truck",
-                    "isCorrect": false
-                }
-            ],
-            "date": "2023-1-1 1:55"
-        },
-        {
-            "correct": 4,
-            "total": 15,
             "percentage": 26.67,
             "answers": [
                 {
@@ -2398,6 +2360,182 @@
                 }
             ],
             "date": "2023-1-2 1:12"
+        },
+        {
+            "correct": 0,
+            "total": 5,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "lekkoatletyka",
+                    "given": "das",
+                    "toBeGuessed": "track and field",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "fryzjer",
+                    "given": "asd",
+                    "toBeGuessed": "hairdresser",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód strażacki",
+                    "given": "asd",
+                    "toBeGuessed": "fire truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Żołnierz",
+                    "given": "asd",
+                    "toBeGuessed": "Soldier",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "śmigłowiec",
+                    "given": "asd",
+                    "toBeGuessed": "helicopter",
+                    "isCorrect": false
+                }
+            ],
+            "date": "2023-1-3 1:4"
+        },
+        {
+            "correct": 0,
+            "total": 5,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "łazienka",
+                    "given": "dsad",
+                    "toBeGuessed": "bathroom",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "korytarz",
+                    "given": "asd",
+                    "toBeGuessed": "corridor",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Strażak",
+                    "given": "asd",
+                    "toBeGuessed": "Firefighter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "kuchnia",
+                    "given": "asd",
+                    "toBeGuessed": "kitchen",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "lekkoatletyka",
+                    "given": "asd",
+                    "toBeGuessed": "track and field",
+                    "isCorrect": false
+                }
+            ],
+            "date": "2023-1-3 1:4"
+        },
+        {
+            "correct": 12,
+            "total": 15,
+            "percentage": 80.0,
+            "answers": [
+                {
+                    "expected": "pokój dzienny",
+                    "given": "salon",
+                    "toBeGuessed": "living room",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "śmigłowiec",
+                    "given": "śmigłowiec",
+                    "toBeGuessed": "helicopter",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Żołnierz",
+                    "given": "żołnierz",
+                    "toBeGuessed": "Soldier",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Strażak",
+                    "given": "strażak",
+                    "toBeGuessed": "Firefighter",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "inżynier",
+                    "given": "inżynier",
+                    "toBeGuessed": "engineer",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "drzwi",
+                    "given": "drzwi",
+                    "toBeGuessed": "door",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Policjant",
+                    "given": "policjant",
+                    "toBeGuessed": "Police officer",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "pielęgniarka",
+                    "given": "pielęgniarka",
+                    "toBeGuessed": "nurse",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "kolarstwo",
+                    "given": "kolarstwo",
+                    "toBeGuessed": "cycling",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "szermierka",
+                    "given": "fsa",
+                    "toBeGuessed": "fencing",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Samochód",
+                    "given": "samochód",
+                    "toBeGuessed": "Car",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "taras",
+                    "given": "taras",
+                    "toBeGuessed": "terrace",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "tramwaj",
+                    "given": "tramwaj",
+                    "toBeGuessed": "tram",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "prawnik",
+                    "given": "prawnik",
+                    "toBeGuessed": "lawyer",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "samochód strażacki",
+                    "given": "das",
+                    "toBeGuessed": "fire truck",
+                    "isCorrect": false
+                }
+            ],
+            "date": "2023-1-3 1:55"
         }
-    ]
+    ],
+    "answersToLastExam": 241,
+    "appUseTimeSeconds": 759.5218498706818
 }

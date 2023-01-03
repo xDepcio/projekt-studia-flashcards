@@ -101,7 +101,7 @@ font-size: 16px</string>
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -288,6 +288,9 @@ font-weight: 400;</string>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
               <widget class="QPushButton" name="testEasyBtn">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -305,6 +308,9 @@ font-weight: 500;</string>
              </item>
              <item>
               <widget class="QPushButton" name="testMediumBtn">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -322,6 +328,9 @@ font-weight: 500;</string>
              </item>
              <item>
               <widget class="QPushButton" name="testHardBtn">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -354,6 +363,9 @@ font-weight: 500;</string>
               <widget class="QPushButton" name="testStartBtn">
                <property name="enabled">
                 <bool>false</bool>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton:enabled {
@@ -415,6 +427,12 @@ background-color: rgb(227, 227, 227);
                 <layout class="QVBoxLayout" name="verticalLayout_7">
                  <item>
                   <widget class="QLabel" name="testCardLabel">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>20</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>TextLabel</string>
                    </property>
@@ -488,8 +506,8 @@ background-color: rgb(227, 227, 227);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>45</width>
-                      <height>18</height>
+                      <width>512</width>
+                      <height>397</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -516,6 +534,9 @@ background-color: rgb(227, 227, 227);
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
              <widget class="QPushButton" name="statsAnswersBtn">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -531,6 +552,9 @@ font-weight: 500;</string>
             </item>
             <item>
              <widget class="QPushButton" name="statsTestsBtn">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -546,6 +570,9 @@ font-weight: 500;</string>
             </item>
             <item>
              <widget class="QPushButton" name="statsOtherBtn">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
 border-radius: 5px;
@@ -566,6 +593,9 @@ font-weight: 500;</string>
                 <width>50</width>
                 <height>27</height>
                </size>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(62, 162, 255);
@@ -592,7 +622,7 @@ font-weight: 500;</string>
              <bool>false</bool>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_4">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -831,6 +861,76 @@ border-radius: 7px;</string>
                   </widget>
                  </item>
                  <item>
+                  <widget class="QWidget" name="widget_13" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_17">
+                    <item>
+                     <widget class="QWidget" name="widget_14" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_14">
+                       <item>
+                        <widget class="QLabel" name="label_4">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Rozwiązane testy:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelExamsCount">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>2</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_exams_misc" native="true">
+                      <layout class="QHBoxLayout" name="horizontalLayout_15">
+                       <item>
+                        <widget class="QLabel" name="label_7">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Średni wynik testu:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelExamsAccuracy">
+                         <property name="font">
+                          <font>
+                           <family>Arial</family>
+                           <pointsize>12</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>40.0%</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QWidget" name="widget_11" native="true">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -862,7 +962,7 @@ border-radius: 7px;</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_14">
+                        <widget class="QLabel" name="labelAppUseTime">
                          <property name="font">
                           <font>
                            <family>Arial</family>
