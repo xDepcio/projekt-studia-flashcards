@@ -6,6 +6,11 @@ class CardCollectionEmpty(Exception):
         super().__init__(title)
 
 
+class CardCollectionNotEnoughUnique(Exception):
+    def __init__(self, title):
+        super().__init__(title)
+
+
 class CardCollection:
     def __init__(self, cards, category):
         self.cards = cards
@@ -20,6 +25,11 @@ class CardCollection:
     def draw_cards(self, amount, unique=True):
         if len(self.cards) <= 0:
             raise CardCollectionEmpty('Cannot draw from empty CardCollection')
+
+        if unique and amount > len(self.cards):
+            raise CardCollectionNotEnoughUnique(
+                'Not enough cards to draw only uniques'
+            )
 
         choosen_cards = []
         weights = [card.popularity for card in self.cards]

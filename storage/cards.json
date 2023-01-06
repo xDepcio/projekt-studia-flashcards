@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.2
+        "popularity": 0.07500000000000001
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.18000000000000002
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.99
+        "popularity": 0.18000000000000002
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.4374000000000001
+        "popularity": 0.18000000000000002
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.556875
+        "popularity": 0.99
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 7,
@@ -78,7 +78,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.135
     },
     {
         "id": 10,
@@ -86,7 +86,8 @@
         "learningLang": "boat",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 11,
@@ -135,7 +136,8 @@
         "learningLang": "cable car",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 17,
@@ -183,7 +185,8 @@
         "learningLang": "excavator",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 23,
@@ -217,7 +220,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.4374000000000001
+        "popularity": 0.99
     },
     {
         "id": 27,
@@ -225,7 +228,8 @@
         "learningLang": "SUV",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 28,
@@ -266,7 +270,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.99
     },
     {
         "id": 33,
@@ -283,7 +287,8 @@
         "learningLang": "military vehicle",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 35,
@@ -292,7 +297,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 36,
@@ -300,7 +305,8 @@
         "learningLang": "recreational vehicle (RV)",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.5832000000000002
     },
     {
         "id": 37,
@@ -333,7 +339,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.135
     },
     {
         "id": 41,
@@ -350,7 +356,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 43,
@@ -483,7 +489,8 @@
         "learningLang": "journalist",
         "categories": [
             "Jobs"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "mieszkanie",
@@ -518,7 +525,7 @@
             "Home"
         ],
         "id": 62,
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "originLang": "sypialnia",
@@ -535,7 +542,7 @@
             "Home"
         ],
         "id": 64,
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "przedpokój",
@@ -552,7 +559,7 @@
             "Home"
         ],
         "id": 66,
-        "popularity": 0.32400000000000007
+        "popularity": 0.24300000000000005
     },
     {
         "originLang": "garaż",
@@ -690,7 +697,7 @@
             "Sports"
         ],
         "id": 82,
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "originLang": "szermierka",
@@ -759,6 +766,6 @@
             "Sports"
         ],
         "id": 90,
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     }
 ]

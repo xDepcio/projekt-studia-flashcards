@@ -380,7 +380,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 512, 397))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -478,8 +478,31 @@ class Ui_MainWindow(object):
 
         self.wrongPlot = QWidget(self.page_4)
         self.wrongPlot.setObjectName(u"wrongPlot")
+        self.wrongPlot.setStyleSheet(u"")
 
         self.verticalLayout_5.addWidget(self.wrongPlot)
+
+        self.daysShownLabel = QLabel(self.page_4)
+        self.daysShownLabel.setObjectName(u"daysShownLabel")
+        sizePolicy1.setHeightForWidth(self.daysShownLabel.sizePolicy().hasHeightForWidth())
+        self.daysShownLabel.setSizePolicy(sizePolicy1)
+        font7 = QFont()
+        font7.setPointSize(12)
+        font7.setBold(False)
+        font7.setWeight(50)
+        self.daysShownLabel.setFont(font7)
+        self.daysShownLabel.setStyleSheet(u"")
+        self.daysShownLabel.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.daysShownLabel)
+
+        self.daysSlider = QSlider(self.page_4)
+        self.daysSlider.setObjectName(u"daysSlider")
+        self.daysSlider.setMinimum(7)
+        self.daysSlider.setMaximum(60)
+        self.daysSlider.setOrientation(Qt.Horizontal)
+
+        self.verticalLayout_5.addWidget(self.daysSlider)
 
         self.statsStack.addWidget(self.page_4)
         self.page_5 = QWidget()
@@ -498,7 +521,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 268, 512))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
@@ -540,21 +563,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.label_2 = QLabel(self.widget_7)
         self.label_2.setObjectName(u"label_2")
-        font7 = QFont()
-        font7.setFamily(u"Arial")
-        font7.setPointSize(12)
-        font7.setBold(False)
-        font7.setWeight(50)
-        self.label_2.setFont(font7)
+        font8 = QFont()
+        font8.setFamily(u"Arial")
+        font8.setPointSize(12)
+        font8.setBold(False)
+        font8.setWeight(50)
+        self.label_2.setFont(font8)
 
         self.horizontalLayout_12.addWidget(self.label_2)
 
         self.labelAllAnswers = QLabel(self.widget_7)
         self.labelAllAnswers.setObjectName(u"labelAllAnswers")
-        font8 = QFont()
-        font8.setFamily(u"Arial")
-        font8.setPointSize(12)
-        self.labelAllAnswers.setFont(font8)
+        font9 = QFont()
+        font9.setFamily(u"Arial")
+        font9.setPointSize(12)
+        self.labelAllAnswers.setFont(font9)
 
         self.horizontalLayout_12.addWidget(self.labelAllAnswers)
 
@@ -569,13 +592,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.label_5 = QLabel(self.widget_8)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font8)
+        self.label_5.setFont(font9)
 
         self.horizontalLayout_11.addWidget(self.label_5)
 
         self.labelCorrectAnswers = QLabel(self.widget_8)
         self.labelCorrectAnswers.setObjectName(u"labelCorrectAnswers")
-        self.labelCorrectAnswers.setFont(font8)
+        self.labelCorrectAnswers.setFont(font9)
 
         self.horizontalLayout_11.addWidget(self.labelCorrectAnswers)
 
@@ -590,13 +613,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.label_9 = QLabel(self.widget_9)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font8)
+        self.label_9.setFont(font9)
 
         self.horizontalLayout_10.addWidget(self.label_9)
 
         self.labelWrongAnswers = QLabel(self.widget_9)
         self.labelWrongAnswers.setObjectName(u"labelWrongAnswers")
-        self.labelWrongAnswers.setFont(font8)
+        self.labelWrongAnswers.setFont(font9)
 
         self.horizontalLayout_10.addWidget(self.labelWrongAnswers)
 
@@ -611,13 +634,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.label_11 = QLabel(self.widget_10)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font8)
+        self.label_11.setFont(font9)
 
         self.horizontalLayout_9.addWidget(self.label_11)
 
         self.labelAccuracy = QLabel(self.widget_10)
         self.labelAccuracy.setObjectName(u"labelAccuracy")
-        self.labelAccuracy.setFont(font8)
+        self.labelAccuracy.setFont(font9)
 
         self.horizontalLayout_9.addWidget(self.labelAccuracy)
 
@@ -637,13 +660,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.label_4 = QLabel(self.widget_14)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setFont(font8)
+        self.label_4.setFont(font9)
 
         self.horizontalLayout_14.addWidget(self.label_4)
 
         self.labelExamsCount = QLabel(self.widget_14)
         self.labelExamsCount.setObjectName(u"labelExamsCount")
-        self.labelExamsCount.setFont(font8)
+        self.labelExamsCount.setFont(font9)
 
         self.horizontalLayout_14.addWidget(self.labelExamsCount)
 
@@ -656,13 +679,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.label_7 = QLabel(self.widget_exams_misc)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font8)
+        self.label_7.setFont(font9)
 
         self.horizontalLayout_15.addWidget(self.label_7)
 
         self.labelExamsAccuracy = QLabel(self.widget_exams_misc)
         self.labelExamsAccuracy.setObjectName(u"labelExamsAccuracy")
-        self.labelExamsAccuracy.setFont(font8)
+        self.labelExamsAccuracy.setFont(font9)
 
         self.horizontalLayout_15.addWidget(self.labelExamsAccuracy)
 
@@ -686,13 +709,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.label_13 = QLabel(self.widget_12)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setFont(font8)
+        self.label_13.setFont(font9)
 
         self.horizontalLayout_13.addWidget(self.label_13)
 
         self.labelAppUseTime = QLabel(self.widget_12)
         self.labelAppUseTime.setObjectName(u"labelAppUseTime")
-        self.labelAppUseTime.setFont(font8)
+        self.labelAppUseTime.setFont(font9)
 
         self.horizontalLayout_13.addWidget(self.labelAppUseTime)
 
@@ -731,7 +754,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(0)
+        self.pagesStack.setCurrentIndex(2)
         self.testStack.setCurrentIndex(2)
         self.statsStack.setCurrentIndex(0)
 
@@ -762,6 +785,7 @@ class Ui_MainWindow(object):
         self.statsTestsBtn.setText(QCoreApplication.translate("MainWindow", u"Testy", None))
         self.statsOtherBtn.setText(QCoreApplication.translate("MainWindow", u"Inne", None))
         self.refreshStatsBtn.setText("")
+        self.daysShownLabel.setText(QCoreApplication.translate("MainWindow", u"Wy\u015bwietlane ostatnie: 7 dni", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Odpowiedzi:", None))
         self.labelAllAnswers.setText(QCoreApplication.translate("MainWindow", u"222", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Poprawne:", None))

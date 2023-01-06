@@ -101,7 +101,7 @@ font-size: 16px</string>
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -506,8 +506,8 @@ background-color: rgb(227, 227, 227);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>512</width>
-                      <height>397</height>
+                      <width>98</width>
+                      <height>28</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -630,7 +630,50 @@ font-weight: 500;</string>
                <widget class="QWidget" name="correctPlot" native="true"/>
               </item>
               <item>
-               <widget class="QWidget" name="wrongPlot" native="true"/>
+               <widget class="QWidget" name="wrongPlot" native="true">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="daysShownLabel">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>Wyświetlane ostatnie: 7 dni</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="daysSlider">
+                <property name="minimum">
+                 <number>7</number>
+                </property>
+                <property name="maximum">
+                 <number>60</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -656,8 +699,8 @@ font-weight: 500;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>268</width>
-                   <height>512</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">

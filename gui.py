@@ -11,10 +11,14 @@ from matplotlib import pyplot as plt
 from io import BytesIO
 from datetime import datetime
 from ui_flashcards import Ui_MainWindow
-from utils import export_cards, import_cards, get_categorized_cards_collections
 from stylesheets import StyleSheet
-from stats import Stats
 from time import time
+from utils import (
+    export_cards,
+    import_cards,
+    get_categorized_cards_collections
+)
+from stats import Stats
 from exam import Exam
 from config import Config
 
@@ -23,7 +27,6 @@ class AirQualityWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.stats = Stats('stats.json')
-        # self.stats.load_stats()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.vbox_exam_answers = QVBoxLayout(self.ui.scrollItemsHolder)
@@ -134,11 +137,6 @@ class AirQualityWindow(QMainWindow):
             return
         self.ui.testCardLabel.setText(card.learning_lang_value)
         self.state['currExamCard'] = card
-        print(' ')
-        print(self.state)
-        print('-------------------')
-        print(self.state['currExam'])
-        print(' ')
 
     def _handleEndExam(self):
         self.stats.save_exam(self.state['currExam'])
@@ -163,23 +161,16 @@ class AirQualityWindow(QMainWindow):
 
     def _display_exam_result_in_layout(self, result, layout, widget_holder):
         if self.state.get('attachedExamAnswerWidget'):
-            print('+++++++++++++++++++++')
             for child in widget_holder.children():
-                print(type(child))
-                print(type(child) == QWidget)
                 if type(child) == QWidget:
                     child.setParent(None)
-                # self.ui.vbox_exam_answers.removeWidget(child)
-            print('+++++++++++++++++++++')
+
         for answer in result['answers']:
 
             answer_widget = QWidget(widget_holder)
             layout.addWidget(answer_widget)
             answer_vbox_layout = QVBoxLayout(answer_widget)
             self.state['attachedExamAnswerWidget'] = answer_widget
-
-            # answer_widget.deleteLater()
-            # answer_vbox_layout.deleteLater()
 
             question_label = QLabel(
                 f'Pytanie: {answer["toBeGuessed"]}',
@@ -273,7 +264,6 @@ class AirQualityWindow(QMainWindow):
         self.ui.flashcardButton.setText('Sprawdź')
         self.ui.answerFeedbackLabel.setText('')
         self.ui.answerInput.setText('')
-        # self.ui.flashcardButton.clicked.connect(self._handleAnswer)
         self.state['current_card'] = card
 
     def _handleAnswer(self):
@@ -336,6 +326,8 @@ class AirQualityWindow(QMainWindow):
             lambda: self.ui.statsStack.setCurrentIndex(1))
         self.ui.statsOtherBtn.clicked.connect(
             lambda: self.ui.statsStack.setCurrentIndex(2))
+        self.ui.daysSlider.valueChanged.connect(self._handleSliderChange)
+        self.state['daysRange'] = Config.DEFAULT_DAYS_RANGE
         self._setupPlotCanvas()
         self.ui.refreshStatsBtn.clicked.connect(self._refreshStats)
         self._setupStatsAnswersPage()
@@ -370,14 +362,6 @@ class AirQualityWindow(QMainWindow):
         self.ui.prevExamsList.clear()
         self._setupStatsExamsPage()
 
-    def __deleteWidgetChilds(self, widget, child_type):
-        self.ui.prevExamsList.clear()
-        # print(type(self.ui.prevExamsList.item(1)))
-        # for i in range(self.ui.prevExamsList.count()):
-        #     item = self.ui.prevExamsList.item(i)
-        #     item.setParent(None)
-        #     print(i)
-
     def _setupStatsExamsPage(self):
         prev_exams = self.stats.get_exams()
         print(prev_exams)
@@ -389,17 +373,21 @@ class AirQualityWindow(QMainWindow):
             self.ui.prevExamsList.addItem(list_item)
             list_item.exam = exam
         self.ui.prevExamsList.itemClicked.connect(self._selectExam)
-        # self.ui.categoriesField.item(0).setSelected(True)
-        # self._selectExam(self.ui.categoriesField.item(0))
-        # self.ui.answerInput.textChanged.connect(self._handleInputChange)
 
     def _selectExam(self, exam):
         self._display_exam_result_in_layout(
             exam.exam, self.ui.vbox_exam_history, self.ui.examsHistoryHolder
         )
 
+    def _handleSliderChange(self):
+        value = self.ui.daysSlider.value()
+        self.state['daysRange'] = value
+        self.ui.daysShownLabel.setText(
+            f"Wyświetlane ostatnie: {value} dni"
+        )
+        self._refreshStats()
+
     def _setupStatsAnswersPage(self):
-        # self._setupPlotCanvas()
         if self.ui.plotCorrect:
             self.ui.plotCorrect.deleteLater()
             del self.ui.plotCorrect
@@ -407,44 +395,42 @@ class AirQualityWindow(QMainWindow):
             self.ui.plotWrong.deleteLater()
             del self.ui.plotWrong
 
-        self.ui.plotCorrect = QtCharts.QChartView()
-        self.ui.plotCorrect.setRenderHint(QPainter.Antialiasing)
-        self.ui.plotCanvasLayoutCorrect.addWidget(self.ui.plotCorrect)
-        series = QtCharts.QLineSeries()
-        series.setName('Poprawne odpowiedzi')
-        epoch = datetime.utcfromtimestamp(0)
-        date_answ_count_correct = self.stats.get_date_answers_count('correct')
-        for date, count in date_answ_count_correct:
-            reading_date = datetime.strptime(date, '%Y-%m-%d %H')
-            x = (reading_date - epoch).total_seconds()*1000
-            series.append(x, count)
-        self.ui.plotCorrect.chart().addSeries(series)
-        dateAxisCorrect = QtCharts.QDateTimeAxis()
-        valueAxisCorrect = QtCharts.QValueAxis()
-        self.ui.plotCorrect.chart().addAxis(dateAxisCorrect, Qt.AlignBottom)
-        self.ui.plotCorrect.chart().addAxis(valueAxisCorrect, Qt.AlignLeft)
-        series.attachAxis(dateAxisCorrect)
-        series.attachAxis(valueAxisCorrect)
+        set0 = QtCharts.QBarSet('Poprawne')
+        set1 = QtCharts.QBarSet('Niepoprawne')
+        set0.setBrush(QColor(157, 216, 102))
+        set0.setPen(Qt.NoPen)
+        set1.setBrush(QColor(202, 71, 47))
+        set1.setPen(Qt.NoPen)
 
-        self.ui.plotWrong = QtCharts.QChartView()
-        self.ui.plotWrong.setRenderHint(QPainter.Antialiasing)
-        self.ui.plotCanvasLayoutWrong.addWidget(self.ui.plotWrong)
-        series = QtCharts.QLineSeries()
-        series.setName('Niepoprawne odpowiedzi')
-        epoch = datetime.utcfromtimestamp(0)
-        readings_wrong = self.stats.get_date_answers_count('wrong')
-        print(readings_wrong)
-        for reading in readings_wrong:
-            reading_date = datetime.strptime(reading[0], '%Y-%m-%d %H')
-            x = (reading_date - epoch).total_seconds()*1000
-            series.append(x, reading[1])
-        self.ui.plotWrong.chart().addSeries(series)
-        dateAxisWrong = QtCharts.QDateTimeAxis()
-        valueAxisWrong = QtCharts.QValueAxis()
-        self.ui.plotWrong.chart().addAxis(dateAxisWrong, Qt.AlignBottom)
-        self.ui.plotWrong.chart().addAxis(valueAxisWrong, Qt.AlignLeft)
-        series.attachAxis(dateAxisWrong)
-        series.attachAxis(valueAxisWrong)
+        correct, wrong, dates = self.stats.get_answers_date_range_count(
+            self.state['daysRange'], datetime.fromtimestamp(time())
+        )
+
+        set0.append(correct)
+        set1.append(wrong)
+
+        series = QtCharts.QStackedBarSeries()
+        series.append(set0)
+        series.append(set1)
+
+        chart = QtCharts.QChart()
+        chart.addSeries(series)
+        chart.setTitle('Odpowiedzi')
+        chart.setAnimationOptions(QtCharts.QChart.SeriesAnimations)
+
+        axisX = QtCharts.QBarCategoryAxis()
+        axisX.append(dates)
+        axisX.setLabelsAngle(90)
+        chart.addAxis(axisX, Qt.AlignBottom)
+        series.attachAxis(axisX)
+
+        axisY = QtCharts.QValueAxis()
+        chart.addAxis(axisY, Qt.AlignLeft)
+        series.attachAxis(axisY)
+
+        chartView = QtCharts.QChartView(chart)
+        self.ui.plotCorrect = chartView
+        self.ui.plotCanvasLayoutCorrect.addWidget(self.ui.plotCorrect)
 
     def _setupPlotCanvas(self):
         self.ui.plotCanvasLayoutCorrect = QVBoxLayout(self.ui.correctPlot)

@@ -1,6 +1,7 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 import math
+from time import time
 
 
 class Stats:
@@ -23,13 +24,53 @@ class Stats:
     def get_date_answers_count(self, answer_type):
         date_map_answers = {}
         for answer in self.data['answers'][answer_type]:
-            date = datetime.strptime(answer['date'], '%Y-%m-%d %H:%M')
-            date_str = f'{date.year}-{date.month}-{date.day} {date.hour}'
+            date = datetime.strptime(answer['date'], '%d-%m-%Y %H:%M')
+            date_str = f'{date.year}-{date.month}-{date.day}'
             if date_str not in date_map_answers:
                 date_map_answers[date_str] = 1
             else:
                 date_map_answers[date_str] += 1
         return list(date_map_answers.items())
+
+    def get_answers_date_range_count(self, days_range, from_date):
+        timestamp = from_date.timestamp()
+        days = self._get_days_list(timestamp, days_range, '%d-%m-%Y')
+        days_dict = {}
+        for day in days:
+            days_dict[day] = {
+                'correct': 0,
+                'wrong': 0,
+            }
+
+        answers_c = self.data['answers']['correct']
+        for answer in answers_c:
+            answ_date = answer['date'].split(' ')[0]
+            if answ_date in days_dict:
+                days_dict[answ_date]['correct'] += 1
+
+        answers_w = self.data['answers']['wrong']
+        for answer in answers_w:
+            answ_date = answer['date'].split(' ')[0]
+            if answ_date in days_dict:
+                days_dict[answ_date]['wrong'] += 1
+
+        correct = []
+        wrong = []
+        for day in days_dict.values():
+            correct.append(day['correct'])
+            wrong.append(day['wrong'])
+
+        return correct, wrong, days
+
+    def _get_days_list(self, timestamp, days_range, format):
+        timestamp_day = datetime.fromtimestamp(timestamp)
+        timestamp_day_str = str(timestamp_day.strftime(format))
+        days_list = [timestamp_day_str]
+        for i in range(days_range - 1):
+            dt = timestamp_day - timedelta(days=i+1)
+            dt_str = str(dt.strftime(format))
+            days_list.insert(0, dt_str)
+        return days_list
 
     def save_exam(self, exam):
         with open(self.file_path, 'w', encoding='utf-8') as fh:

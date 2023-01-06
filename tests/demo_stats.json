@@ -6,39 +6,44 @@
             {
                 "originLang": "Samochód",
                 "learningLang": "Car",
-                "date": "2022-12-19 1:15"
+                "date": "19-12-2022 01:15"
             },
             {
                 "originLang": "Samochód",
                 "learningLang": "Car",
-                "date": "2022-12-19 3:15"
+                "date": "19-12-2022 03:15"
             },
             {
                 "originLang": "Samochód",
                 "learningLang": "Car",
-                "date": "2022-12-19 3:15"
+                "date": "20-12-2022 03:15"
             },
             {
                 "originLang": "Samochód",
                 "learningLang": "Car",
-                "date": "2022-12-19 3:15"
+                "date": "21-12-2022 03:15"
+            },
+            {
+                "originLang": "Samochód",
+                "learningLang": "Car",
+                "date": "03-01-2023 01:05"
             }
         ],
         "wrong": [
             {
                 "originLang": "Samolot",
                 "learningLang": "Airplane",
-                "date": "2022-12-19 1:57"
+                "date": "19-12-2022 01:57"
             },
             {
                 "originLang": "Samolot",
                 "learningLang": "Airplane",
-                "date": "2022-12-19 1:58"
+                "date": "19-12-2022 01:58"
             },
             {
                 "originLang": "Ciężarówka",
                 "learningLang": "Truck",
-                "date": "2022-12-19 15:23"
+                "date": "19-12-2022 15:23"
             }
         ]
     },
@@ -79,7 +84,7 @@
                     "isCorrect": false
                 }
             ],
-            "date": "2022-12-22 19:29"
+            "date": "22-12-2022 19:29"
         },
         {
             "correct": 4,
@@ -117,7 +122,7 @@
                     "isCorrect": true
                 }
             ],
-            "date": "2022-12-23 0:27"
+            "date": "23-12-2022 00:27"
         }
     ],
     "appUseTimeSeconds": 450000

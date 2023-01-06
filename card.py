@@ -48,7 +48,6 @@ class Card:
             ]['popularity'] = self.popularity
 
         with open(Config.CARDS_PATH, 'w', encoding='utf-8') as fh:
-            # fh.seek(0)
             json.dump(cards, fh, indent=4, ensure_ascii=False)
 
     def __keyed_index(self, array, callback):
@@ -56,11 +55,11 @@ class Card:
             if callback(ele):
                 return i
 
-    def __repr__(self):
-        return str({
-            'id': self.id,
-            'origin_lang_value': self.origin_lang_value,
-            'learning_lang_value': self.learning_lang_value,
-            'categories': self.categories,
-            'popularity': self.popularity,
-        })
+    # def __repr__(self):
+    #     return str({
+    #         'id': self.id,
+    #         'origin_lang_value': self.origin_lang_value,
+    #         'learning_lang_value': self.learning_lang_value,
+    #         'categories': self.categories,
+    #         'popularity': self.popularity,
+    #     })

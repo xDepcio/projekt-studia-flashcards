@@ -9,8 +9,8 @@ class Exam:
         self.answers = []
         self.is_completed = False
         date = datetime.fromtimestamp(time())
-        date = f'{date.year}-{date.month}-{date.day} {date.hour}:{date.minute}'
-        self.date = date
+        date_str = date.strftime('%d-%m-%Y %H:%M')
+        self.date = date_str
 
     def draw_card(self):
         if len(self.unanswered_cards) <= 0:
