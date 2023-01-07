@@ -78,7 +78,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.135
+        "popularity": 0.24300000000000002
     },
     {
         "id": 10,
@@ -87,7 +87,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 11,
@@ -120,7 +120,8 @@
         "learningLang": "bike",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 15,
@@ -186,7 +187,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 23,
@@ -195,7 +196,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 24,
@@ -261,7 +262,8 @@
         "learningLang": "police car",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 32,
@@ -288,7 +290,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 35,
@@ -297,7 +299,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 36,
@@ -306,7 +308,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 37,
@@ -314,7 +316,8 @@
         "learningLang": "convertible",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 38,
@@ -347,7 +350,8 @@
         "learningLang": "hybrid car",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 42,
@@ -356,7 +360,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 43,
@@ -381,7 +385,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.5832000000000002
     },
     {
         "id": 46,
@@ -473,7 +477,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 57,
@@ -516,7 +520,7 @@
             "Home"
         ],
         "id": 61,
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "łazienka",
@@ -525,7 +529,7 @@
             "Home"
         ],
         "id": 62,
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "originLang": "sypialnia",
@@ -559,7 +563,7 @@
             "Home"
         ],
         "id": 66,
-        "popularity": 0.24300000000000005
+        "popularity": 0.7873200000000002
     },
     {
         "originLang": "garaż",
@@ -636,7 +640,7 @@
             "Sports"
         ],
         "id": 75,
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "siatkówka",
@@ -670,7 +674,7 @@
             "Sports"
         ],
         "id": 79,
-        "popularity": 0.05625000000000001
+        "popularity": 0.10125000000000002
     },
     {
         "originLang": "pływanie",
@@ -715,7 +719,7 @@
             "Sports"
         ],
         "id": 84,
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "originLang": "golf",
@@ -731,7 +735,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 86
+        "id": 86,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "boks",

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
-    <height>702</height>
+    <width>630</width>
+    <height>681</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,7 +101,7 @@ font-size: 16px</string>
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -506,8 +506,8 @@ background-color: rgb(227, 227, 227);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>98</width>
-                      <height>28</height>
+                      <width>554</width>
+                      <height>376</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -630,13 +630,6 @@ font-weight: 500;</string>
                <widget class="QWidget" name="correctPlot" native="true"/>
               </item>
               <item>
-               <widget class="QWidget" name="wrongPlot" native="true">
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-               </widget>
-              </item>
-              <item>
                <widget class="QLabel" name="daysShownLabel">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -699,8 +692,8 @@ font-weight: 500;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>98</width>
-                   <height>28</height>
+                   <width>310</width>
+                   <height>491</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1056,7 +1049,7 @@ border-radius: 7px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>588</width>
+     <width>630</width>
      <height>21</height>
     </rect>
    </property>

@@ -18,6 +18,15 @@ def test_card_init_bare_min():
     assert c.categories == []
 
 
+def test_card_init_full():
+    c = Card(1, 'samochód', 'car', ['Vehicles'], 0.5)
+    assert c.id == 1
+    assert c.origin_lang_value == 'samochód'
+    assert c.learning_lang_value == 'car'
+    assert c.popularity == 0.5
+    assert c.categories == ['Vehicles']
+
+
 def test_card_evaluate_answer():
     c = Card(1, 'samochód', 'car')
     assert c.evaluate_answer('samochód') is True

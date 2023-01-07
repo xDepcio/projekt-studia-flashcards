@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "originLang": "a",
+        "learningLang": "_a",
+        "categories": [
+            "Vehicles"
+        ],
+        "popularity": 0.5
+    },
+    {
+        "id": 2,
+        "originLang": "a",
+        "learningLang": "_a",
+        "categories": [
+            "Vehicles",
+            "Sports"
+        ],
+        "popularity": 0.2
+    },
+    {
+        "id": 3,
+        "originLang": "a",
+        "learningLang": "_a",
+        "categories": [],
+        "popularity": 0.1
+    },
+    {
+        "id": 4,
+        "originLang": "a",
+        "learningLang": "_a",
+        "categories": [],
+        "popularity": 0.1
+    }
+]

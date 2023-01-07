@@ -1,5 +1,6 @@
 class Config:
     CARDS_PATH = 'storage/cards.json'
+    STATS_PATH = 'storage/stats.json'
     POPUP_ANSWERS_COUNT = 5
     POPUP_MSG = (
         f'Od ostatniego testu minęło {POPUP_ANSWERS_COUNT} odpowiedzi. '

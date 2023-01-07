@@ -13,17 +13,21 @@ class Exam:
         self.date = date_str
 
     def draw_card(self):
+        """Return random Card() object from Exam().unanswered_cards array"""
         if len(self.unanswered_cards) <= 0:
             self.is_completed = True
             return
         return choice(self.unanswered_cards)
 
     def answer_card(self, card, answer):
+        """Removes answered Card() object from unanswered_cards
+        and appends its answer to answers"""
         self.unanswered_cards.remove(card)
         answer_res = card.answer(answer)
         self.answers.append(answer_res)
 
     def generate_result(self):
+        """Generates dict containing exam results"""
         correct, total, percentage = self._calculate_score()
         return {
             "correct": correct,
@@ -42,6 +46,12 @@ class Exam:
         }
 
     def _calculate_score(self):
+        """Returns tuple (
+            exam_correct_answers_length,
+            exam_answers_length,
+            ratio
+            ) where ration is exam_correct_answers_length/exam_answers_length
+            rounded to two decimal points"""
         correct = [answer for answer in self.answers if answer.is_correct]
         percentage = round(len(correct)/len(self.answers)*100, 2)
         return len(correct), len(self.answers), percentage

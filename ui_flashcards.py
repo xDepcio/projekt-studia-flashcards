@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(588, 702)
+        MainWindow.resize(630, 681)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -380,7 +380,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 554, 376))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -476,12 +476,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.correctPlot)
 
-        self.wrongPlot = QWidget(self.page_4)
-        self.wrongPlot.setObjectName(u"wrongPlot")
-        self.wrongPlot.setStyleSheet(u"")
-
-        self.verticalLayout_5.addWidget(self.wrongPlot)
-
         self.daysShownLabel = QLabel(self.page_4)
         self.daysShownLabel.setObjectName(u"daysShownLabel")
         sizePolicy1.setHeightForWidth(self.daysShownLabel.sizePolicy().hasHeightForWidth())
@@ -521,7 +515,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 310, 491))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
@@ -746,7 +740,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 588, 21))
+        self.menubar.setGeometry(QRect(0, 0, 630, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -754,7 +748,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(2)
+        self.pagesStack.setCurrentIndex(0)
         self.testStack.setCurrentIndex(2)
         self.statsStack.setCurrentIndex(0)
 

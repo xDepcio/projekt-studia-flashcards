@@ -26,7 +26,7 @@ from config import Config
 class AirQualityWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.stats = Stats('stats.json')
+        self.stats = Stats(Config.STATS_PATH)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.vbox_exam_answers = QVBoxLayout(self.ui.scrollItemsHolder)
@@ -391,9 +391,6 @@ class AirQualityWindow(QMainWindow):
         if self.ui.plotCorrect:
             self.ui.plotCorrect.deleteLater()
             del self.ui.plotCorrect
-        if self.ui.plotWrong:
-            self.ui.plotWrong.deleteLater()
-            del self.ui.plotWrong
 
         set0 = QtCharts.QBarSet('Poprawne')
         set1 = QtCharts.QBarSet('Niepoprawne')
@@ -435,8 +432,6 @@ class AirQualityWindow(QMainWindow):
     def _setupPlotCanvas(self):
         self.ui.plotCanvasLayoutCorrect = QVBoxLayout(self.ui.correctPlot)
         self.ui.plotCorrect = None
-        self.ui.plotCanvasLayoutWrong = QVBoxLayout(self.ui.wrongPlot)
-        self.ui.plotWrong = None
 
     # def _setupStationList(self):
     #     stations = get_stations()

@@ -4,6 +4,15 @@ from card_collection import CardCollection
 
 
 def import_cards(path):
+    """Reads list of cards from .json file at path formatted as:
+    {
+        "id": id, // int
+        "originLang": originLang, // string
+        "learningLang": learningLang, // string
+        "categories": categories_arr, // strings array - optional
+        "popularity": popularity // int (0.01 to 0.99)- optional
+    }
+    and returns array of Card() objects created from this list"""
     file = open(path, encoding='utf-8')
     imported_cards = json.load(file)
     cards = [
@@ -20,6 +29,13 @@ def import_cards(path):
 
 
 def extend_cards_storage(from_file, dest_file):
+    """Reads list of cards from .json file at from_file path formatted as:
+    {
+        "originLang": originLang, // string
+        "learningLang": learningLang, // string
+        "categories": categories_arr, // strings array - optional
+    }
+    and saves only new ones to file at dest_file path"""
     file_new = open(from_file, encoding='utf-8')
     new_cards = json.load(file_new)
     file_old = open(dest_file, encoding='utf-8')
@@ -41,6 +57,8 @@ def extend_cards_storage(from_file, dest_file):
 
 
 def export_cards(destination_file_name, cards):
+    """Saves Card() objects from cards array to file at
+    destination_file_name path"""
     file = open(destination_file_name, 'x')
     data = []
     for card in cards:
@@ -48,13 +66,17 @@ def export_cards(destination_file_name, cards):
             'id': card.id,
             'originLang': card.origin_lang_value,
             'learningLang': card.learning_lang_value,
-            'category': card.category,
+            'categories': card.categories,
+            'popularity': card.popularity,
         }
         data.append(card_data)
     json.dump(data, file, indent=4, ensure_ascii=False)
 
 
 def get_categorized_cards_collections(cards):
+    """Returns array of CardCollection() objects where each collection
+    contains cards of only certain category.
+    One collection contains all cards"""
     categories_map = {'Wszystkie': CardCollection([], 'Wszystkie')}
     for card in cards:
         categories_map['Wszystkie'].add_cards([card])

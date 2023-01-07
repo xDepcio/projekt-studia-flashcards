@@ -1,7 +1,6 @@
 import json
 from datetime import datetime, timedelta
 import math
-from time import time
 
 
 class Stats:
@@ -13,26 +12,31 @@ class Stats:
             self.data = stats
 
     def reload_stats(self):
+        """Re-read file from given filepath"""
         with open(self.file_path, encoding='utf-8') as fh:
             stats = json.load(fh)
             self.data = stats
 
-    # def save_stats(self):
-    #     with open(self.file_path, 'w', encoding='utf-8') as fh:
-    #         json.dump(self.data, fh, indent=4, ensure_ascii=False)
-
-    def get_date_answers_count(self, answer_type):
-        date_map_answers = {}
-        for answer in self.data['answers'][answer_type]:
-            date = datetime.strptime(answer['date'], '%d-%m-%Y %H:%M')
-            date_str = f'{date.year}-{date.month}-{date.day}'
-            if date_str not in date_map_answers:
-                date_map_answers[date_str] = 1
-            else:
-                date_map_answers[date_str] += 1
-        return list(date_map_answers.items())
+    # def get_date_answers_count(self, answer_type):
+    #     date_map_answers = {}
+    #     for answer in self.data['answers'][answer_type]:
+    #         date = datetime.strptime(answer['date'], '%d-%m-%Y %H:%M')
+    #         date_str = f'{date.year}-{date.month}-{date.day}'
+    #         if date_str not in date_map_answers:
+    #             date_map_answers[date_str] = 1
+    #         else:
+    #             date_map_answers[date_str] += 1
+    #     return list(date_map_answers.items())
 
     def get_answers_date_range_count(self, days_range, from_date):
+        """Returns tupple: (
+            correct answers array,
+            wrong answers array,
+            days array
+        )
+        Where each entry in both answers array is answers count in certain day,
+        ending at <from_date> ranging <days_range>
+        """
         timestamp = from_date.timestamp()
         days = self._get_days_list(timestamp, days_range, '%d-%m-%Y')
         days_dict = {}
@@ -73,6 +77,8 @@ class Stats:
         return days_list
 
     def save_exam(self, exam):
+        """Saves (appends) exam result to file at
+        path given during initilization"""
         with open(self.file_path, 'w', encoding='utf-8') as fh:
             exam_result = exam.generate_result()
             self.data['exams'].append(exam_result)
@@ -81,15 +87,20 @@ class Stats:
         self.reload_stats()
 
     def answers_since_last_exam(self):
+        """Return count of answers since last exam"""
         return self.answers_count() - self.data['answersToLastExam']
 
     def save_use_time(self, current_session_time):
+        """Saves app use time in seconds to file at
+        path given during initilization"""
         with open(self.file_path, 'w', encoding='utf-8') as fh:
             self.data['appUseTimeSeconds'] += current_session_time
             json.dump(self.data, fh, indent=4, ensure_ascii=False)
         self.reload_stats()
 
     def app_use_time(self):
+        """Returns tuple of app use time
+        -> (days, hours, minutes)"""
         time_s = self.data['appUseTimeSeconds']
         days = math.floor(time_s / 86400)
         hours = math.floor((time_s % 86400) / 3600)
@@ -97,31 +108,41 @@ class Stats:
         return days, hours, minutes
 
     def answers_count(self):
+        """Returns total answers count"""
         correct_len = len(self.data['answers']['correct'])
         wrong_len = len(self.data['answers']['wrong'])
         return correct_len + wrong_len
 
     def correct_answers_count(self):
+        """Returns correct answers count"""
         return len(self.data['answers']['correct'])
 
     def wrong_answers_count(self):
+        """Returns wrong answers count"""
         return len(self.data['answers']['wrong'])
 
     def answers_accuracy(self):
+        """Returns ration of correct_answers/total_answers
+        as floating point (0 to 1) rounded to two decimal points"""
         correct = self.correct_answers_count()
         wrong = self.wrong_answers_count()
         ratio = round(correct/(correct+wrong)*100, 2)
         return ratio
 
     def exams_count(self):
+        """Returns total taken exams count"""
         return len(self.get_exams())
 
     def exams_avg_accuracy(self):
+        """Returns average percentage score of all taken exams
+        as floating point (0 to 1) rounded to two decimal points"""
         total = sum([exam['percentage'] for exam in self.get_exams()])
         avg = round(total/len(self.get_exams()), 2)
         return avg
 
     def save_answer(self, answer):
+        """Takes Answer() object as answer and saves it (appends)
+        to file at path given during initilization"""
         with open(self.file_path, 'w', encoding='utf-8') as fh:
             answer_str = {
                 "originLang": answer.expected,
@@ -136,4 +157,5 @@ class Stats:
         self.reload_stats()
 
     def get_exams(self):
+        """Returns list of all taken"""
         return self.data['exams']
