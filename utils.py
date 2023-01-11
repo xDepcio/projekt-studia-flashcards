@@ -1,6 +1,7 @@
 import json
 from card import Card
 from card_collection import CardCollection
+from config import Config as cfg
 
 
 def import_cards(path):
@@ -86,3 +87,38 @@ def get_categorized_cards_collections(cards):
             else:
                 categories_map[category].add_cards([card])
     return list(categories_map.values())
+
+
+def add_card(origin_name, learn_name, categories=None, popularity=None):
+    """Adds card with given arguments to file
+    at path in CARDS_PATH env variable"""
+    with open('temp_cards.json', 'w') as fh:
+        card_data = {
+            'originLang': origin_name,
+            'learningLang': learn_name,
+        }
+        if categories is not None:
+            card_data['categories'] = [categories]
+        if popularity is not None:
+            card_data['popularity'] = popularity
+
+        json.dump([card_data], fh, indent=4, ensure_ascii=False)
+
+    extend_cards_storage('temp_cards.json', cfg.CARDS_PATH)
+
+
+def remove_card(card_obj):
+    """Removes card associated to given Card() object from database in
+    file at path CARDS_PATH env variable"""
+    id = card_obj.id
+
+    with open(cfg.CARDS_PATH, 'r') as fh:
+        cards = json.load(fh)
+
+    for card in cards:
+        if card['id'] == id:
+            cards.remove(card)
+            break
+
+    with open(cfg.CARDS_PATH, 'w') as fh:
+        json.dump(cards, fh, indent=4, ensure_ascii=False)

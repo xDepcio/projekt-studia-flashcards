@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(630, 681)
+        MainWindow.resize(681, 699)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -138,6 +138,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.categoriesField)
 
+        self.btnAddCard = QPushButton(self.page)
+        self.btnAddCard.setObjectName(u"btnAddCard")
+
+        self.verticalLayout_2.addWidget(self.btnAddCard)
+
 
         self.horizontalLayout_4.addLayout(self.verticalLayout_2)
 
@@ -196,6 +201,11 @@ class Ui_MainWindow(object):
         self.flashcardsInputsContainer.setBaseSize(QSize(0, 0))
         self.horizontalLayout_3 = QHBoxLayout(self.flashcardsInputsContainer)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.btnDelCard = QPushButton(self.flashcardsInputsContainer)
+        self.btnDelCard.setObjectName(u"btnDelCard")
+
+        self.horizontalLayout_3.addWidget(self.btnDelCard)
+
         self.answerInput = QLineEdit(self.flashcardsInputsContainer)
         self.answerInput.setObjectName(u"answerInput")
 
@@ -380,7 +390,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 554, 376))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 45, 18))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -515,7 +525,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 310, 491))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 19, 28))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
@@ -740,7 +750,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 630, 21))
+        self.menubar.setGeometry(QRect(0, 0, 681, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -762,9 +772,11 @@ class Ui_MainWindow(object):
         self.examButton.setText(QCoreApplication.translate("MainWindow", u"Test", None))
         self.statsButton.setText(QCoreApplication.translate("MainWindow", u"Statystyki", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Kategorie", None))
+        self.btnAddCard.setText(QCoreApplication.translate("MainWindow", u"Dodaj fiszke", None))
         self.choosenCategoryHeader.setText(QCoreApplication.translate("MainWindow", u"Wybrana kategoria:", None))
         self.cardName.setText(QCoreApplication.translate("MainWindow", u"Airplane", None))
         self.answerFeedbackLabel.setText("")
+        self.btnDelCard.setText(QCoreApplication.translate("MainWindow", u"Usu\u0144 fiszke", None))
         self.flashcardButton.setText(QCoreApplication.translate("MainWindow", u"Sprawd\u017a", None))
         self.testEasyBtn.setText(QCoreApplication.translate("MainWindow", u"\u0141atwy", None))
         self.testMediumBtn.setText(QCoreApplication.translate("MainWindow", u"\u015aredni", None))

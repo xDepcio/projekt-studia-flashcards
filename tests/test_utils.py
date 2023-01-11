@@ -1,6 +1,14 @@
-from utils import extend_cards_storage, import_cards, export_cards
+from utils import (
+    extend_cards_storage,
+    import_cards,
+    export_cards,
+    get_categorized_cards_collections,
+    add_card
+)
 from card import Card
 import os
+import json
+import utils
 
 
 def test_utils_extend_cards_storage():
@@ -37,3 +45,24 @@ def test_export_cards():
     assert imported_cards[2].learning_lang_value == '_a'
     assert imported_cards[2].popularity == 0.1
     assert imported_cards[2].categories == []
+
+
+def test_get_categorized_cards_collections():
+    c1 = Card(1, 'a', '_a', ['Vehicles'], 0.5)
+    c2 = Card(2, 'a', '_a', ['Vehicles', 'Sports'], 0.2)
+    c3 = Card(3, 'a', '_a')
+    c4 = Card(4, 'a', '_a')
+
+    cards = [c1, c2, c3, c4]
+
+    cc_arr = get_categorized_cards_collections(cards)
+    assert len(cc_arr) == 3
+    for cc in cc_arr:
+        assert cc.category in ['Wszystkie', 'Vehicles', 'Sports']
+        for card in cc.cards:
+            if cc.category == 'Wszystkie':
+                assert card in cards
+            elif cc.category == 'Vehicles':
+                assert card in [c1, c2]
+            elif cc.category == 'Sports':
+                assert card in [c2]

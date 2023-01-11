@@ -16,14 +16,18 @@ from time import time
 from utils import (
     export_cards,
     import_cards,
-    get_categorized_cards_collections
+    get_categorized_cards_collections,
+    add_card,
+    remove_card
 )
 from stats import Stats
 from exam import Exam
 from config import Config
+from card_dialog_gui import CreateCardDialog
+from card import Card
 
 
-class AirQualityWindow(QMainWindow):
+class FlashcardsWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.stats = Stats(Config.STATS_PATH)
@@ -33,10 +37,27 @@ class AirQualityWindow(QMainWindow):
         self.ui.vbox_exam_history = QVBoxLayout(self.ui.examsHistoryHolder)
         self.state = {}
         self._setupCategories()
+        self._connectCategoriesBtns()
         self._setupMainNav()
         self._setupStatsPage()
         self._setupExamsPage()
         self._setupUseTimer()
+        self._setupCardAddDialog()
+
+    def _setupCardAddDialog(self):
+        self.card_dialog = CreateCardDialog(self)
+        self.ui.btnAddCard.clicked.connect(lambda: self.card_dialog.show())
+        self.card_dialog.ui.btnBox.accepted.connect(self._handleAddCard)
+
+    def _handleAddCard(self):
+        origin_name = self.card_dialog.ui.originNameInput.text()
+        learn_name = self.card_dialog.ui.learnNameInput.text()
+        category = self.card_dialog.ui.categoryInput.text().capitalize()
+        pop = self.card_dialog.ui.horizontalSlider.value()/100
+        add_card(origin_name, learn_name, category, pop)
+        print('ADDING CARD')
+        self.ui.categoriesField.clear()
+        self._setupCategories()
 
     def _setupCategories(self):
         cards = import_cards(Config.CARDS_PATH)
@@ -47,12 +68,20 @@ class AirQualityWindow(QMainWindow):
             self.ui.categoriesField.addItem(collection_item)
             if card_collection.category == 'Wszystkie':
                 self.state['allCardsCollection'] = card_collection
-
-        self.ui.categoriesField.itemClicked.connect(self._selectCategory)
         self.ui.categoriesField.item(0).setSelected(True)
-        self._selectCategory(self.ui.categoriesField.item(0))
+
+    def _connectCategoriesBtns(self):
+        self.ui.categoriesField.itemClicked.connect(self._selectCategory)
         self.ui.answerInput.textChanged.connect(self._handleInputChange)
         self.ui.flashcardButton.clicked.connect(self._handleAnswer)
+        self.ui.btnDelCard.clicked.connect(self._handleDeleteCard)
+
+    def _handleDeleteCard(self):
+        card = self.state['current_card']
+        remove_card(card)
+        self.ui.categoriesField.clear()
+        self._setupCategories()
+        self._draw_new_card(self.state['current_collection'])
 
     def _setupUseTimer(self):
         self.state['sessionStartTime'] = time()
@@ -515,7 +544,7 @@ class AirQualityWindow(QMainWindow):
 
 def guiMain(args):
     app = QApplication(args)
-    window = AirQualityWindow()
+    window = FlashcardsWindow()
     window.show()
     return app.exec_()
 

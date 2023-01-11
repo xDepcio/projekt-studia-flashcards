@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "originLang": "Ciężarówka",
+        "learningLang": "Truck",
+        "categories": [
+            "Vehicles"
+        ],
+        "popularity": 0.3
+    },
+    {
+        "id": 2,
+        "originLang": "Samochód",
+        "learningLang": "Car",
+        "categories": [
+            "Vehicles"
+        ],
+        "popularity": 0.7424999999999999
+    }
+]

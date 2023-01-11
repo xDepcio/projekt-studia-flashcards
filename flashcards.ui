@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
-    <height>681</height>
+    <width>681</width>
+    <height>699</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -162,6 +162,13 @@ QListView
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="btnAddCard">
+              <property name="text">
+               <string>Dodaj fiszke</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item>
@@ -254,6 +261,13 @@ font-weight: 400;</string>
                 </size>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QPushButton" name="btnDelCard">
+                  <property name="text">
+                   <string>Usuń fiszke</string>
+                  </property>
+                 </widget>
+                </item>
                 <item>
                  <widget class="QLineEdit" name="answerInput"/>
                 </item>
@@ -506,8 +520,8 @@ background-color: rgb(227, 227, 227);
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>554</width>
-                      <height>376</height>
+                      <width>45</width>
+                      <height>18</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -692,8 +706,8 @@ font-weight: 500;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>310</width>
-                   <height>491</height>
+                   <width>19</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1049,7 +1063,7 @@ border-radius: 7px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>630</width>
+     <width>681</width>
      <height>21</height>
     </rect>
    </property>

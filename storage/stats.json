@@ -557,6 +557,11 @@
                 "originLang": "Samochód",
                 "learningLang": "Car",
                 "date": "06-01-2023 15:13"
+            },
+            {
+                "originLang": "bandyta",
+                "learningLang": "thug",
+                "date": "11-01-2023 22:47"
             }
         ],
         "wrong": [
@@ -1324,6 +1329,16 @@
                 "originLang": "samochód kempingowy",
                 "learningLang": "recreational vehicle (RV)",
                 "date": "06-01-2023 15:15"
+            },
+            {
+                "originLang": "Policjant",
+                "learningLang": "Police officer",
+                "date": "11-01-2023 21:35"
+            },
+            {
+                "originLang": "murarz",
+                "learningLang": "bricklayer",
+                "date": "11-01-2023 21:35"
             }
         ]
     },
@@ -2845,8 +2860,302 @@
                 }
             ],
             "date": "07-01-2023 23:01"
+        },
+        {
+            "correct": 0,
+            "total": 15,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "mieszkanie",
+                    "given": "",
+                    "toBeGuessed": "apartment",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "śmigłowiec",
+                    "given": "",
+                    "toBeGuessed": "helicopter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "boks",
+                    "given": "",
+                    "toBeGuessed": "boxing",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "metro",
+                    "given": "",
+                    "toBeGuessed": "subway",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód z kratką",
+                    "given": "",
+                    "toBeGuessed": "pick-up truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód osobowy",
+                    "given": "",
+                    "toBeGuessed": "passenger car",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "kuchnia",
+                    "given": "",
+                    "toBeGuessed": "kitchen",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "prawnik",
+                    "given": "",
+                    "toBeGuessed": "lawyer",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "przedpokój",
+                    "given": "",
+                    "toBeGuessed": "hallway",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód wojskowy",
+                    "given": "",
+                    "toBeGuessed": "military vehicle",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód hybrydowy",
+                    "given": "",
+                    "toBeGuessed": "hybrid car",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód terenowy",
+                    "given": "",
+                    "toBeGuessed": "SUV",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "pokój dzienny",
+                    "given": "",
+                    "toBeGuessed": "living room",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "dach",
+                    "given": "",
+                    "toBeGuessed": "roof",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "lekkoatletyka",
+                    "given": "",
+                    "toBeGuessed": "track and field",
+                    "isCorrect": false
+                }
+            ],
+            "date": "11-01-2023 21:34"
+        },
+        {
+            "correct": 0,
+            "total": 15,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "Strażak",
+                    "given": "",
+                    "toBeGuessed": "Firefighter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "golf",
+                    "given": "",
+                    "toBeGuessed": "golf",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód dostawczy",
+                    "given": "",
+                    "toBeGuessed": "delivery truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód kempingowy",
+                    "given": "",
+                    "toBeGuessed": "recreational vehicle (RV)",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "tramwaj",
+                    "given": "",
+                    "toBeGuessed": "tram",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "dach",
+                    "given": "",
+                    "toBeGuessed": "roof",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "boks",
+                    "given": "",
+                    "toBeGuessed": "boxing",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód strażacki",
+                    "given": "",
+                    "toBeGuessed": "fire truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód sportowy",
+                    "given": "",
+                    "toBeGuessed": "sports car",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "korytarz",
+                    "given": "",
+                    "toBeGuessed": "corridor",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "skuter",
+                    "given": "",
+                    "toBeGuessed": "scooter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód wojskowy",
+                    "given": "",
+                    "toBeGuessed": "military vehicle",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "wózek widłowy",
+                    "given": "",
+                    "toBeGuessed": "forklift",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "lekkoatletyka",
+                    "given": "",
+                    "toBeGuessed": "track and field",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód towarowy",
+                    "given": "",
+                    "toBeGuessed": "cargo truck",
+                    "isCorrect": false
+                }
+            ],
+            "date": "11-01-2023 23:08"
+        },
+        {
+            "correct": 0,
+            "total": 15,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "samochód wojskowy",
+                    "given": "",
+                    "toBeGuessed": "military vehicle",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "lekkoatletyka",
+                    "given": "",
+                    "toBeGuessed": "track and field",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "wózek widłowy",
+                    "given": "",
+                    "toBeGuessed": "forklift",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "gitara elektryczna",
+                    "given": "",
+                    "toBeGuessed": "electric guitar",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "łazienka",
+                    "given": "",
+                    "toBeGuessed": "bathroom",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "ładowarka",
+                    "given": "",
+                    "toBeGuessed": "loader",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Woźny",
+                    "given": "",
+                    "toBeGuessed": "Janitor",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "pokój dzienny",
+                    "given": "",
+                    "toBeGuessed": "living room",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "boks",
+                    "given": "",
+                    "toBeGuessed": "boxing",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "taras",
+                    "given": "",
+                    "toBeGuessed": "terrace",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Żołnierz",
+                    "given": "",
+                    "toBeGuessed": "Soldier",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód z windą",
+                    "given": "",
+                    "toBeGuessed": "lift truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "kolarstwo",
+                    "given": "",
+                    "toBeGuessed": "cycling",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Strażak",
+                    "given": "",
+                    "toBeGuessed": "Firefighter",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód towarowy",
+                    "given": "",
+                    "toBeGuessed": "cargo truck",
+                    "isCorrect": false
+                }
+            ],
+            "date": "11-01-2023 23:08"
         }
     ],
-    "answersToLastExam": 264,
-    "appUseTimeSeconds": 6730.225608825684
+    "answersToLastExam": 267,
+    "appUseTimeSeconds": 6914.527570486069
 }

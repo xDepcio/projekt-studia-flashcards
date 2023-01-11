@@ -17,12 +17,15 @@ class CardCollection:
         self.category = category
 
     def add_cards(self, cards):
+        """Appends Card() objects from cards array to CardCollection()"""
         self.cards = [*self.cards, *cards]
 
     def remove_cards(self, cards):
         pass
 
     def draw_cards(self, amount, unique=True):
+        """Returns array of Card() objects choosen from CardCollection().
+        Cards with higher `popularity` attribute are choosen more often."""
         if len(self.cards) <= 0:
             raise CardCollectionEmpty('Cannot draw from empty CardCollection')
 

@@ -60,12 +60,3 @@ class Card:
         for i, ele in enumerate(array):
             if callback(ele):
                 return i
-
-    # def __repr__(self):
-    #     return str({
-    #         'id': self.id,
-    #         'origin_lang_value': self.origin_lang_value,
-    #         'learning_lang_value': self.learning_lang_value,
-    #         'categories': self.categories,
-    #         'popularity': self.popularity,
-    #     })
