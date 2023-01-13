@@ -2,6 +2,7 @@ import json
 from card import Card
 from card_collection import CardCollection
 from config import Config as cfg
+import csv
 
 
 def import_cards(path):
@@ -29,12 +30,13 @@ def import_cards(path):
     return cards
 
 
-def extend_cards_storage(from_file, dest_file):
+def extend_cards_storage_from_json(from_file, dest_file):
     """Reads list of cards from .json file at from_file path formatted as:
     {
         "originLang": originLang, // string
         "learningLang": learningLang, // string
         "categories": categories_arr, // strings array - optional
+        "popularity": popularity // int (0.01 to 0.99)- optional
     }
     and saves only new ones to file at dest_file path"""
     file_new = open(from_file, encoding='utf-8')
@@ -57,14 +59,56 @@ def extend_cards_storage(from_file, dest_file):
         json.dump(cards, fh, indent=4, ensure_ascii=False)
 
 
-def export_cards(destination_file_name, cards):
-    """Saves Card() objects from cards array to file at
-    destination_file_name path"""
-    file = open(destination_file_name, 'x')
+def extend_cards_storage_from_csv(from_file, dest_file):
+    """Reads list of cards from .txt (csv) file
+    at from_file path formatted as example:
+
+    pokój,room,['Home'],0.1
+
+    1st - origin lang value
+    2nd - learning lang value
+    3rd - categories array
+    4th - popularity (0.01 to 0.99)
+    and saves only new ones to file at dest_file path"""
+    new_cards = []
+    with open(from_file, 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            originLang, learningLang, categories, popularity = row
+            categories = json.loads(categories)
+            popularity = json.loads(popularity)
+            new_cards.append({
+                "originLang": originLang,
+                "learningLang": learningLang,
+                "categories": categories,
+                "popularity": popularity
+            })
+
+    file_old = open(dest_file, encoding='utf-8')
+    old_cards = json.load(file_old)
+
+    unique_words = set()
+    cards = []
+
+    id = 1
+    for card in [*old_cards, *new_cards]:
+        if card['originLang'].lower() not in unique_words:
+            unique_words.add(card['originLang'].lower())
+            card['id'] = id
+            cards.append(card)
+            id += 1
+
+    with open(dest_file, 'w', encoding='utf-8') as fh:
+        json.dump(cards, fh, indent=4, ensure_ascii=False)
+
+
+def export_cards_to_json(destination_file_name, cards):
+    """Saves Card() objects from cards array to .json file
+    at destination_file_name path"""
+    file = open(destination_file_name, 'w', encoding='utf-8')
     data = []
     for card in cards:
         card_data = {
-            'id': card.id,
             'originLang': card.origin_lang_value,
             'learningLang': card.learning_lang_value,
             'categories': card.categories,
@@ -72,6 +116,20 @@ def export_cards(destination_file_name, cards):
         }
         data.append(card_data)
     json.dump(data, file, indent=4, ensure_ascii=False)
+
+
+def export_cards_to_csv(dest_file_name, cards):
+    """Saves Card() objects from cards array to .txt file
+    at destination_file_name path"""
+    with open(dest_file_name, 'w', encoding='utf-8', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        # csvwriter.writerow(['originLang', 'learningLang', 'categories', 'popularity'])
+        for card in cards:
+            originLang = card.origin_lang_value
+            learningLang = card.learning_lang_value
+            categories = card.categories
+            popularity = card.popularity
+            csvwriter.writerow([originLang, learningLang, categories, popularity])
 
 
 def get_categorized_cards_collections(cards):
@@ -92,7 +150,7 @@ def get_categorized_cards_collections(cards):
 def add_card(origin_name, learn_name, categories=None, popularity=None):
     """Adds card with given arguments to file
     at path in CARDS_PATH env variable"""
-    with open('temp_cards.json', 'w') as fh:
+    with open('temp_cards.json', 'w', encoding='utf-8') as fh:
         card_data = {
             'originLang': origin_name,
             'learningLang': learn_name,
@@ -104,7 +162,7 @@ def add_card(origin_name, learn_name, categories=None, popularity=None):
 
         json.dump([card_data], fh, indent=4, ensure_ascii=False)
 
-    extend_cards_storage('temp_cards.json', cfg.CARDS_PATH)
+    extend_cards_storage_from_json('temp_cards.json', cfg.CARDS_PATH)
 
 
 def remove_card(card_obj):
@@ -112,7 +170,7 @@ def remove_card(card_obj):
     file at path CARDS_PATH env variable"""
     id = card_obj.id
 
-    with open(cfg.CARDS_PATH, 'r') as fh:
+    with open(cfg.CARDS_PATH, 'r', encoding='utf-8') as fh:
         cards = json.load(fh)
 
     for card in cards:
@@ -120,5 +178,5 @@ def remove_card(card_obj):
             cards.remove(card)
             break
 
-    with open(cfg.CARDS_PATH, 'w') as fh:
+    with open(cfg.CARDS_PATH, 'w', encoding='utf-8') as fh:
         json.dump(cards, fh, indent=4, ensure_ascii=False)

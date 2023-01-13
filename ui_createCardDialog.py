@@ -125,12 +125,26 @@ class Ui_Dialog(object):
 
         self.verticalLayout_3.addWidget(self.widget_5)
 
-        self.btnBox = QDialogButtonBox(Dialog)
+        self.widget_6 = QWidget(Dialog)
+        self.widget_6.setObjectName(u"widget_6")
+        sizePolicy.setHeightForWidth(self.widget_6.sizePolicy().hasHeightForWidth())
+        self.widget_6.setSizePolicy(sizePolicy)
+        self.horizontalLayout_4 = QHBoxLayout(self.widget_6)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.btnImport = QPushButton(self.widget_6)
+        self.btnImport.setObjectName(u"btnImport")
+
+        self.horizontalLayout_4.addWidget(self.btnImport)
+
+        self.btnBox = QDialogButtonBox(self.widget_6)
         self.btnBox.setObjectName(u"btnBox")
         self.btnBox.setOrientation(Qt.Horizontal)
         self.btnBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
 
-        self.verticalLayout_3.addWidget(self.btnBox)
+        self.horizontalLayout_4.addWidget(self.btnBox)
+
+
+        self.verticalLayout_3.addWidget(self.widget_6)
 
 
         self.retranslateUi(Dialog)
@@ -148,5 +162,6 @@ class Ui_Dialog(object):
         self.label_6.setText(QCoreApplication.translate("Dialog", u"Cz\u0119sto\u015b\u0107 wy\u015bwietlania:", None))
         self.label_5.setText(QCoreApplication.translate("Dialog", u"Bardzo \u017cadko", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Bardzo cz\u0119sto", None))
+        self.btnImport.setText(QCoreApplication.translate("Dialog", u"Importuj z pliku", None))
     # retranslateUi
 

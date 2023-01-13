@@ -1,0 +1,95 @@
+Ciężarówka,Truck,['Vehicles'],0.07500000000000001
+Samochód,Car,['Vehicles'],0.18000000000000002
+Samolot,Airplane,['Vehicles'],0.18000000000000002
+Pociąg,Train,['Vehicles'],0.18000000000000002
+Policjant,Police officer,['Jobs'],0.99
+Strażak,Firefighter,['Jobs'],0.99
+Woźny,Janitor,['Jobs'],0.99
+motocykl,motorcycle,['Vehicles'],0.24300000000000002
+łódź,boat,['Vehicles'],0.99
+autobus,bus,['Vehicles'],0.1
+tramwaj,tram,['Vehicles'],0.43740000000000007
+metro,subway,['Vehicles'],0.32400000000000007
+rower,bike,['Vehicles'],0.5832000000000002
+skuter,scooter,['Vehicles'],0.32400000000000007
+kolejka linowa,cable car,['Vehicles'],0.5832000000000002
+statek,ship,['Vehicles'],0.1
+wózek widłowy,forklift,['Vehicles'],0.5832000000000002
+traktor,tractor,['Vehicles'],0.18000000000000002
+przyczepa,trailer,['Vehicles'],0.1
+kombajn,combine,['Vehicles'],0.1
+koparka,excavator,['Vehicles'],0.32400000000000007
+ładowarka,loader,['Vehicles'],0.99
+walec,roller,['Vehicles'],0.1
+koparko-ładowarka,bulldozer,['Vehicles'],0.18000000000000002
+śmigłowiec,helicopter,['Vehicles'],0.99
+samochód terenowy,SUV,['Vehicles'],0.5832000000000002
+samochód ciężarowy,semi-truck,['Vehicles'],0.18000000000000002
+samochód osobowy,passenger car,['Vehicles'],0.18000000000000002
+samochód dostawczy,delivery truck,['Vehicles'],0.18000000000000002
+samochód policyjny,police car,['Vehicles'],0.32400000000000007
+samochód strażacki,fire truck,['Vehicles'],0.99
+samochód ratunkowy,ambulance,['Vehicles'],0.18000000000000002
+samochód wojskowy,military vehicle,['Vehicles'],0.99
+samochód towarowy,cargo truck,['Vehicles'],0.99
+samochód kempingowy,recreational vehicle (RV),['Vehicles'],0.99
+samochód kabriolet,convertible,['Vehicles'],0.18000000000000002
+samochód z otwartym dachem,sunroof car,['Vehicles'],0.1
+samochód sportowy,sports car,['Vehicles'],0.5832000000000002
+samochód elektryczny,electric car,['Vehicles'],0.135
+samochód hybrydowy,hybrid car,['Vehicles'],0.32400000000000007
+samochód z kratką,pick-up truck,['Vehicles'],0.99
+samochód z windą,lift truck,['Vehicles'],0.5832000000000002
+samochód z naczepą,semi-trailer truck,['Vehicles'],0.1
+samochód z niskim zawieszeniem,lowrider,['Vehicles'],0.99
+pielęgniarka,nurse,['Jobs'],0.07500000000000001
+inżynier,engineer,['Jobs'],0.07500000000000001
+nauczyciel,teacher,['Jobs'],0.1
+mechanik,mechanic,['Jobs'],0.18000000000000002
+prawnik,lawyer,['Jobs'],0.13500000000000004
+księgowy,accountant,['Jobs'],0.18000000000000002
+murarz,bricklayer,['Jobs'],0.18000000000000002
+spawacz,welder,['Jobs'],0.1
+kucharz,chef,['Jobs'],0.1
+piekarz,baker,['Jobs'],0.1
+fryzjer,hairdresser,['Jobs'],0.5832000000000002
+kowal,blacksmith,['Jobs'],0.1
+dziennikarz,journalist,['Jobs'],0.18000000000000002
+mieszkanie,apartment,['Home'],0.5832000000000002
+pokój,room,['Home'],0.1
+kuchnia,kitchen,['Home'],0.5832000000000002
+łazienka,bathroom,['Home'],0.99
+sypialnia,bedroom,['Home'],0.1
+pokój dzienny,living room,['Home'],0.99
+przedpokój,hallway,['Home'],0.18000000000000002
+korytarz,corridor,['Home'],0.99
+garaż,garage,['Home'],0.1
+ogród,garden,['Home'],0.1
+balkon,balcony,['Home'],0.1
+taras,terrace,['Home'],0.24300000000000002
+piwnica,basement,['Home'],0.1
+dach,roof,['Home'],0.99
+okno,window,['Home'],0.13500000000000004
+drzwi,door,['Home'],0.99
+koszykówka,basketball,['Sports'],0.32400000000000007
+siatkówka,volleyball,['Sports'],0.07500000000000001
+hokej,hockey,['Sports'],0.1
+tenis,tennis,['Sports'],0.1
+bieganie,running,['Sports'],0.10125000000000002
+pływanie,swimming,['Sports'],0.13500000000000004
+skoki narciarskie,ski jumping,['Sports'],0.32400000000000007
+kolarstwo,cycling,['Sports'],0.99
+szermierka,fencing,['Sports'],0.18000000000000002
+lekkoatletyka,track and field,['Sports'],0.99
+golf,golf,['Sports'],0.18000000000000002
+piłka ręczna,handball,['Sports'],0.18000000000000002
+boks,boxing,['Sports'],0.99
+mma,mma,['Sports'],0.1
+judo,judo,['Sports'],0.07500000000000001
+taekwondo,taekwondo,['Sports'],0.5832000000000002
+bandyta,thug,['Jobs'],0.07500000000000001
+żeglarstwo,sailing,['Sports'],0.99
+Czołgggg,Tankkkk,[],0.1
+Rx-7,FD3S,[],0.1
+AAAACzołgggg,AAATankkkk,[],0.5
+AAAARx-7,AAAAFD3S,[],0.1

@@ -1,6 +1,10 @@
 [
     {
-        "originLang": "f",
-        "learningLang": "_f"
+        "originLang": "",
+        "learningLang": "",
+        "categories": [
+            ""
+        ],
+        "popularity": 0.1
     }
 ]

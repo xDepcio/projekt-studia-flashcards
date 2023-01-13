@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import (
     QApplication, QHBoxLayout, QVBoxLayout, QWidget, QSlider, QSpinBox,
     QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
-    QSizePolicy, QLabel, QMessageBox
+    QSizePolicy, QLabel, QMessageBox, QFileDialog
 )
 from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod, QTimer
 from PySide2.QtCharts import QtCharts
@@ -14,17 +14,17 @@ from ui_flashcards import Ui_MainWindow
 from stylesheets import StyleSheet
 from time import time
 from utils import (
-    export_cards,
+    export_cards_to_json,
     import_cards,
     get_categorized_cards_collections,
     add_card,
-    remove_card
+    remove_card, export_cards_to_csv
 )
 from stats import Stats
 from exam import Exam
 from config import Config
 from card_dialog_gui import CreateCardDialog
-from card import Card
+import os
 
 
 class FlashcardsWindow(QMainWindow):
@@ -55,7 +55,6 @@ class FlashcardsWindow(QMainWindow):
         category = self.card_dialog.ui.categoryInput.text().capitalize()
         pop = self.card_dialog.ui.horizontalSlider.value()/100
         add_card(origin_name, learn_name, category, pop)
-        print('ADDING CARD')
         self.ui.categoriesField.clear()
         self._setupCategories()
 
@@ -68,6 +67,7 @@ class FlashcardsWindow(QMainWindow):
             self.ui.categoriesField.addItem(collection_item)
             if card_collection.category == 'Wszystkie':
                 self.state['allCardsCollection'] = card_collection
+                self._selectCategory(collection_item)
         self.ui.categoriesField.item(0).setSelected(True)
 
     def _connectCategoriesBtns(self):
@@ -75,13 +75,34 @@ class FlashcardsWindow(QMainWindow):
         self.ui.answerInput.textChanged.connect(self._handleInputChange)
         self.ui.flashcardButton.clicked.connect(self._handleAnswer)
         self.ui.btnDelCard.clicked.connect(self._handleDeleteCard)
+        self.ui.btnExport.clicked.connect(self._handleExportCategory)
+
+    def _handleExportCategory(self):
+        options = QFileDialog.Options()
+        # options |= QFileDialog.DontConfirmOverwrite
+        file_path, _ = QFileDialog.getSaveFileName(
+            None,
+            "Eksportuj fiszki",
+            "",
+            "Text Files (*.txt);;JSON Files (*.json)",
+            options=options
+        )
+        base, ext = os.path.splitext(file_path)
+        if ext == '.json':
+            export_cards_to_json(
+                file_path, self.ui.btnExport.CardCollection.cards
+            )
+        if ext == '.txt':
+            export_cards_to_csv(
+                file_path, self.ui.btnExport.CardCollection.cards
+            )
 
     def _handleDeleteCard(self):
         card = self.state['current_card']
         remove_card(card)
         self.ui.categoriesField.clear()
         self._setupCategories()
-        self._draw_new_card(self.state['current_collection'])
+        self._selectCategory(self.ui.categoriesField.item(0))
 
     def _setupUseTimer(self):
         self.state['sessionStartTime'] = time()
@@ -112,6 +133,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.choosenCategoryHeader.setText(
             f'Wybrana kategoria: {card_collection.category}'
         )
+        self.ui.btnExport.CardCollection = card_collection
 
     def _handleStartTestClick(self):
         self.ui.testEasyBtn.setDisabled(True)
@@ -378,9 +400,9 @@ class FlashcardsWindow(QMainWindow):
         )
 
         days, hours, minutes = self.stats.app_use_time()
-        days_str = '' if days == 0 else f"{days} d"
-        hours_str = '' if hours == 0 else f"{hours} h"
-        minutes_str = '' if minutes == 0 else f"{minutes} m"
+        days_str = '' if days == 0 else f"{days} d "
+        hours_str = '' if hours == 0 else f"{hours} h "
+        minutes_str = '' if minutes == 0 else f"{minutes} m "
         self.ui.labelAppUseTime.setText(days_str + hours_str + minutes_str)
 
     def _refreshStats(self):

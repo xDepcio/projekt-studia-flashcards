@@ -20,8 +20,9 @@ class CardCollection:
         """Appends Card() objects from cards array to CardCollection()"""
         self.cards = [*self.cards, *cards]
 
-    def remove_cards(self, cards):
-        pass
+    def remove_card(self, card):
+        """Removes Card() object from cards array"""
+        self.cards.remove(card)
 
     def draw_cards(self, amount, unique=True):
         """Returns array of Card() objects choosen from CardCollection().

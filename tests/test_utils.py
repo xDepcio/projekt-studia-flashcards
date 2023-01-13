@@ -1,18 +1,17 @@
 from utils import (
-    extend_cards_storage,
+    extend_cards_storage_from_json,
     import_cards,
-    export_cards,
+    export_cards_to_json,
     get_categorized_cards_collections,
     add_card
 )
 from card import Card
 import os
 import json
-import utils
 
 
-def test_utils_extend_cards_storage():
-    extend_cards_storage('cards.json', 'storage/cards.json')
+def test_utils_extend_cards_storage_from_json():
+    extend_cards_storage_from_json('cards.json', 'storage/cards.json')
 
 
 def test_import_cards():
@@ -24,27 +23,26 @@ def test_import_cards():
     assert cards[0].popularity == 0.3
 
 
-def test_export_cards():
+def test_export_cards_to_json():
     cards = [
         Card(1, 'a', '_a', ['Vehicles'], 0.5),
         Card(2, 'a', '_a', ['Vehicles', 'Sports'], 0.2),
-        Card(3, 'a', '_a'),
+        Card(3, 'aź', '_aż'),
         Card(4, 'a', '_a'),
     ]
     if os.path.exists('tests/test_export.json'):
         os.remove('tests/test_export.json')
-    export_cards('tests/test_export.json', cards)
-    imported_cards = import_cards('tests/test_export.json')
-    assert len(imported_cards) == 4
-    assert imported_cards[0].categories == ['Vehicles']
-    assert imported_cards[0].popularity == 0.5
-    assert imported_cards[1].categories == ['Vehicles', 'Sports']
-    assert imported_cards[1].popularity == 0.2
-    assert imported_cards[2].id == 3
-    assert imported_cards[2].origin_lang_value == 'a'
-    assert imported_cards[2].learning_lang_value == '_a'
-    assert imported_cards[2].popularity == 0.1
-    assert imported_cards[2].categories == []
+    export_cards_to_json('tests/test_export.json', cards)
+    cards = json.load(open('tests/test_export.json', 'r', encoding='utf-8'))
+    assert len(cards) == 4
+    assert cards[0]['categories'] == ['Vehicles']
+    assert cards[0]['popularity'] == 0.5
+    assert cards[1]['categories'] == ['Vehicles', 'Sports']
+    assert cards[1]['popularity'] == 0.2
+    assert cards[2]['originLang'] == 'aź'
+    assert cards[2]['learningLang'] == '_aż'
+    assert cards[2]['popularity'] == 0.1
+    assert cards[2]['categories'] == []
 
 
 def test_get_categorized_cards_collections():

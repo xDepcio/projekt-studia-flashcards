@@ -17,17 +17,6 @@ class Stats:
             stats = json.load(fh)
             self.data = stats
 
-    # def get_date_answers_count(self, answer_type):
-    #     date_map_answers = {}
-    #     for answer in self.data['answers'][answer_type]:
-    #         date = datetime.strptime(answer['date'], '%d-%m-%Y %H:%M')
-    #         date_str = f'{date.year}-{date.month}-{date.day}'
-    #         if date_str not in date_map_answers:
-    #             date_map_answers[date_str] = 1
-    #         else:
-    #             date_map_answers[date_str] += 1
-    #     return list(date_map_answers.items())
-
     def get_answers_date_range_count(self, days_range, from_date):
         """Returns tupple: (
             correct answers array,
@@ -67,6 +56,8 @@ class Stats:
         return correct, wrong, days
 
     def _get_days_list(self, timestamp, days_range, format):
+        """Returns array of days of days_range length
+        where timestamp day is last entry"""
         timestamp_day = datetime.fromtimestamp(timestamp)
         timestamp_day_str = str(timestamp_day.strftime(format))
         days_list = [timestamp_day_str]
