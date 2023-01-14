@@ -147,7 +147,7 @@ class FlashcardsWindow(QMainWindow):
         cards = all_cards_collection.draw_cards(
             self.state['test_question_num'], True
         )
-        exam = Exam(cards, 0)
+        exam = Exam(cards)
         self.state['currExam'] = exam
         self._setupTestTimer()
         self._draw_exam_card()

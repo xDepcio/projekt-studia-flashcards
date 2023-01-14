@@ -1,4 +1,5 @@
 from random import choices
+from typing import List
 
 
 class CardCollectionEmpty(Exception):
@@ -12,11 +13,11 @@ class CardCollectionNotEnoughUnique(Exception):
 
 
 class CardCollection:
-    def __init__(self, cards, category):
+    def __init__(self, cards, category: str):
         self.cards = cards
         self.category = category
 
-    def add_cards(self, cards):
+    def add_cards(self, cards: List):
         """Appends Card() objects from cards array to CardCollection()"""
         self.cards = [*self.cards, *cards]
 
@@ -24,7 +25,7 @@ class CardCollection:
         """Removes Card() object from cards array"""
         self.cards.remove(card)
 
-    def draw_cards(self, amount, unique=True):
+    def draw_cards(self, amount: int, unique=True):
         """Returns array of Card() objects choosen from CardCollection().
         Cards with higher `popularity` attribute are choosen more often."""
         if len(self.cards) <= 0:
@@ -34,6 +35,9 @@ class CardCollection:
             raise CardCollectionNotEnoughUnique(
                 'Not enough cards to draw only uniques'
             )
+
+        if amount <= 0 or type(amount) is not int:
+            raise ValueError('Amount to draw must be positive int')
 
         choosen_cards = []
         weights = [card.popularity for card in self.cards]

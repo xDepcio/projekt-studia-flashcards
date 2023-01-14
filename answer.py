@@ -3,7 +3,7 @@ from time import time
 
 
 class Answer:
-    def __init__(self, card, answer):
+    def __init__(self, card, answer: str):
         self.expected = card.origin_lang_value
         self.given = answer
         self.to_be_guessed = card.learning_lang_value

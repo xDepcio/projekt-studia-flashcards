@@ -1,5 +1,9 @@
 from stats import Stats
 from datetime import datetime
+from card import Card
+from exam import Exam
+import json
+from answer import Answer
 
 
 def test_stats_init():
@@ -63,3 +67,59 @@ def test_stats_get_answers_date_range_count():
         ]
     assert correct == [2, 1, 1, 0]
     assert wrong == [3, 0, 0, 0]
+
+
+def test_stats_get_days_list():
+    stats = Stats('tests/demo_stats.json')
+    days = stats._get_days_list(1234567, 3, '%d-%m-%Y %H:%M')
+    assert days == ['13-01-1970 07:56', '14-01-1970 07:56', '15-01-1970 07:56']
+
+
+def test_stats_save_exam():
+    with open('tests/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
+        staged_data = json.load(fh)
+    stats = Stats('tests/test_stats_save_exam.json')
+    card1 = Card(1, 'a', '_a')
+    card2 = Card(2, 'a', '_a')
+    dummy_cards = [card1, card2]
+    exam = Exam(dummy_cards)
+    exam.answer_card(card1, '')
+    exam.answer_card(card2, 'a')
+    exam.is_completed = True
+    ex_result = exam.generate_result()
+
+    stats.save_exam(exam)
+    with open('tests/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
+        data = json.load(fh)
+        assert len(data['exams']) == 2
+        assert data['exams'][1] == ex_result
+
+    with open('tests/test_stats_save_exam.json', 'w', encoding='utf-8') as fh:
+        json.dump(staged_data, fh, indent=4, ensure_ascii=False)
+
+
+def test_stats_save_answer():
+    with open('tests/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
+        staged_data = json.load(f)
+    stats = Stats('tests/test_stats_save_answer.json')
+    card1 = Card(1, 'a', '_a')
+    ans = Answer(card1, 'a')
+    stats.save_answer(ans)
+
+    with open('tests/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        assert data['answers']['wrong'] == [
+            {
+                "originLang": "Samolot",
+                "learningLang": "Airplane",
+                "date": "19-12-2022 01:57"
+            }
+        ]
+        assert data['answers']['correct'][1] == {
+                "originLang": "a",
+                "learningLang": "_a",
+                "date": ans.date
+            }
+
+    with open('tests/test_stats_save_answer.json', 'w', encoding='utf-8') as f:
+        json.dump(staged_data, f, indent=4, ensure_ascii=False)

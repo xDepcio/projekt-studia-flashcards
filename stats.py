@@ -1,6 +1,7 @@
 import json
 from datetime import datetime, timedelta
 import math
+from typing import Tuple, List
 
 
 class Stats:
@@ -17,7 +18,9 @@ class Stats:
             stats = json.load(fh)
             self.data = stats
 
-    def get_answers_date_range_count(self, days_range, from_date):
+    def get_answers_date_range_count(
+        self, days_range: int, from_date: datetime
+            ) -> Tuple[List[int], List[int], List[str]]:
         """Returns tupple: (
             correct answers array,
             wrong answers array,
@@ -55,7 +58,7 @@ class Stats:
 
         return correct, wrong, days
 
-    def _get_days_list(self, timestamp, days_range, format):
+    def _get_days_list(self, timestamp: int, days_range: int, format: str):
         """Returns array of days of days_range length
         where timestamp day is last entry"""
         timestamp_day = datetime.fromtimestamp(timestamp)
@@ -68,7 +71,7 @@ class Stats:
         return days_list
 
     def save_exam(self, exam):
-        """Saves (appends) exam result to file at
+        """Saves (appends) exam result from Exam() to file at
         path given during initilization"""
         with open(self.file_path, 'w', encoding='utf-8') as fh:
             exam_result = exam.generate_result()
@@ -81,7 +84,7 @@ class Stats:
         """Return count of answers since last exam"""
         return self.answers_count() - self.data['answersToLastExam']
 
-    def save_use_time(self, current_session_time):
+    def save_use_time(self, current_session_time: float):
         """Saves app use time in seconds to file at
         path given during initilization"""
         with open(self.file_path, 'w', encoding='utf-8') as fh:

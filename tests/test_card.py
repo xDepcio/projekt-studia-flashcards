@@ -1,7 +1,6 @@
 from card import Card
 import pytest
 from utils import import_cards
-from config import Config
 
 
 def test_card_init_empty():
@@ -25,6 +24,15 @@ def test_card_init_full():
     assert c.learning_lang_value == 'car'
     assert c.popularity == 0.5
     assert c.categories == ['Vehicles']
+
+
+def test_card_init_wrong_pop():
+    with pytest.raises(ValueError):
+        Card(1, 'samochód', 'car', popularity=0)
+    with pytest.raises(ValueError):
+        Card(1, 'samochód', 'car', popularity=1)
+    with pytest.raises(ValueError):
+        Card(1, 'samochód', 'car', popularity='sd')
 
 
 def test_card_evaluate_answer():
@@ -52,7 +60,7 @@ def test_card_handle_answer():
 
 
 def test_card_save():
-    card1 = import_cards(Config.CARDS_PATH)[0]
+    card1 = import_cards('tests/test_card_save.json')[0]
     pop = None
     if card1.popularity == 0.2:
         pop = 0.3
@@ -60,7 +68,7 @@ def test_card_save():
         pop = 0.2
 
     card1.popularity = pop
-    card1._save()
+    card1._save('tests/test_card_save.json')
 
-    card2 = import_cards(Config.CARDS_PATH)[0]
+    card2 = import_cards('tests/test_card_save.json')[0]
     assert card2.popularity == pop

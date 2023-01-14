@@ -3,9 +3,10 @@ from card import Card
 from card_collection import CardCollection
 from config import Config as cfg
 import csv
+from typing import List
 
 
-def import_cards(path):
+def import_cards(path: str) -> List[Card]:
     """Reads list of cards from .json file at path formatted as:
     {
         "id": id, // int
@@ -30,7 +31,7 @@ def import_cards(path):
     return cards
 
 
-def extend_cards_storage_from_json(from_file, dest_file):
+def extend_cards_storage_from_json(from_file: str, dest_file: str):
     """Reads list of cards from .json file at from_file path formatted as:
     {
         "originLang": originLang, // string
@@ -59,7 +60,7 @@ def extend_cards_storage_from_json(from_file, dest_file):
         json.dump(cards, fh, indent=4, ensure_ascii=False)
 
 
-def extend_cards_storage_from_csv(from_file, dest_file):
+def extend_cards_storage_from_csv(from_file: str, dest_file: str):
     """Reads list of cards from .txt (csv) file
     at from_file path formatted as example:
 
@@ -102,7 +103,7 @@ def extend_cards_storage_from_csv(from_file, dest_file):
         json.dump(cards, fh, indent=4, ensure_ascii=False)
 
 
-def export_cards_to_json(destination_file_name, cards):
+def export_cards_to_json(destination_file_name: str, cards: List[Card]):
     """Saves Card() objects from cards array to .json file
     at destination_file_name path"""
     file = open(destination_file_name, 'w', encoding='utf-8')
@@ -118,21 +119,23 @@ def export_cards_to_json(destination_file_name, cards):
     json.dump(data, file, indent=4, ensure_ascii=False)
 
 
-def export_cards_to_csv(dest_file_name, cards):
+def export_cards_to_csv(dest_file_name: str, cards: List[Card]):
     """Saves Card() objects from cards array to .txt file
     at destination_file_name path"""
     with open(dest_file_name, 'w', encoding='utf-8', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
-        # csvwriter.writerow(['originLang', 'learningLang', 'categories', 'popularity'])
         for card in cards:
             originLang = card.origin_lang_value
             learningLang = card.learning_lang_value
             categories = card.categories
             popularity = card.popularity
-            csvwriter.writerow([originLang, learningLang, categories, popularity])
+            csvwriter.writerow(
+                [originLang, learningLang, categories, popularity]
+            )
 
 
-def get_categorized_cards_collections(cards):
+def get_categorized_cards_collections(
+        cards: List[Card]) -> List[CardCollection]:
     """Returns array of CardCollection() objects where each collection
     contains cards of only certain category.
     One collection contains all cards"""
@@ -147,7 +150,9 @@ def get_categorized_cards_collections(cards):
     return list(categories_map.values())
 
 
-def add_card(origin_name, learn_name, categories=None, popularity=None):
+def add_card(
+        origin_name: str, learn_name: str, categories: List[str] = None,
+        popularity: float = None):
     """Adds card with given arguments to file
     at path in CARDS_PATH env variable"""
     with open('temp_cards.json', 'w', encoding='utf-8') as fh:
@@ -165,7 +170,7 @@ def add_card(origin_name, learn_name, categories=None, popularity=None):
     extend_cards_storage_from_json('temp_cards.json', cfg.CARDS_PATH)
 
 
-def remove_card(card_obj):
+def remove_card(card_obj: Card):
     """Removes card associated to given Card() object from database in
     file at path CARDS_PATH env variable"""
     id = card_obj.id

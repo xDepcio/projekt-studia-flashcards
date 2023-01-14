@@ -1,10 +1,16 @@
 from random import choice
 from datetime import datetime
 from time import time
+from typing import Tuple
+
+
+class ExamNotCompleted(Exception):
+    def __init__(self, title) -> None:
+        super().__init__(title)
 
 
 class Exam:
-    def __init__(self, cards, time_limit):
+    def __init__(self, cards):
         self.unanswered_cards = cards
         self.answers = []
         self.is_completed = False
@@ -19,15 +25,20 @@ class Exam:
             return
         return choice(self.unanswered_cards)
 
-    def answer_card(self, card, answer):
+    def answer_card(self, card, answer: str):
         """Removes answered Card() object from unanswered_cards
         and appends its answer to answers"""
         self.unanswered_cards.remove(card)
         answer_res = card.answer(answer)
         self.answers.append(answer_res)
 
-    def generate_result(self):
+    def generate_result(self) -> dict:
         """Generates dict containing exam results"""
+        if not self.is_completed:
+            raise ExamNotCompleted(
+                'Cannot generate result of not finished exam'
+            )
+
         correct, total, percentage = self._calculate_score()
         return {
             "correct": correct,
@@ -45,7 +56,7 @@ class Exam:
             "date": self.date
         }
 
-    def _calculate_score(self):
+    def _calculate_score(self) -> Tuple[int, int, float]:
         """Returns tuple (
             exam_correct_answers_length,
             exam_answers_length,

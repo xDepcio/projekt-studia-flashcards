@@ -1349,6 +1349,21 @@
                 "originLang": "",
                 "learningLang": "",
                 "date": "12-01-2023 23:27"
+            },
+            {
+                "originLang": "kolejka linowa",
+                "learningLang": "cable car",
+                "date": "13-01-2023 21:17"
+            },
+            {
+                "originLang": "śmigłowiec",
+                "learningLang": "helicopter",
+                "date": "13-01-2023 21:17"
+            },
+            {
+                "originLang": "motocykl",
+                "learningLang": "motorcycle",
+                "date": "13-01-2023 22:00"
             }
         ]
     },
@@ -3559,5 +3574,5 @@
         }
     ],
     "answersToLastExam": 267,
-    "appUseTimeSeconds": 7057.4357187747955
+    "appUseTimeSeconds": 7068.119573354721
 }
