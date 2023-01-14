@@ -1,6 +1,8 @@
 from ui_createCardDialog import Ui_Dialog
 from PySide2.QtWidgets import QDialog, QFileDialog
-from utils import extend_cards_storage_from_json, extend_cards_storage_from_csv
+from utils import (
+    extend_cards_storage_from_json,
+    extend_cards_storage_from_csv, add_card)
 from config import Config as cfg
 import os
 
@@ -10,7 +12,25 @@ class CreateCardDialog(QDialog):
         super().__init__(parent)
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
+        self._setupAddCard()
         self._setupImport()
+
+    def _setupAddCard(self):
+        self.ui.btnBox.accepted.connect(self._handleAddCard)
+
+    def _handleAddCard(self):
+        origin_name = self.ui.originNameInput.text()
+        learn_name = self.ui.learnNameInput.text()
+        cat_input = self.ui.categoryInput.text()
+        if cat_input.strip() == '':
+            categories = None
+        else:
+            categories_arr = cat_input.split(',')
+            categories = [cat.strip().capitalize() for cat in categories_arr]
+        pop = self.ui.horizontalSlider.value()/100
+        add_card(origin_name, learn_name, categories, pop)
+        self.parent().ui.categoriesField.clear()
+        self.parent()._setupCategories()
 
     def _setupImport(self):
         self.ui.btnImport.clicked.connect(self._handleImport)

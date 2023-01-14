@@ -7,50 +7,50 @@ from answer import Answer
 
 
 def test_stats_init():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert len(stats.data['answers']['correct']) > 0
     assert len(stats.data['answers']['wrong']) > 0
     assert len(stats.data['exams']) > 0
 
 
 def test_stats__answers_count():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert stats.answers_count() == 8
 
 
 def test_stats_correct_answers_count():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert stats.correct_answers_count() == 5
 
 
 def test_stats_wrong_answers_count():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert stats.wrong_answers_count() == 3
 
 
 def test_stats_answers_accuracy():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert stats.answers_accuracy() == 62.5
 
 
 def test_stats_exams_count():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert stats.exams_count() == 2
 
 
 def test_stats_exams_avg_accuracy():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     assert stats.exams_avg_accuracy() == 40.00
 
 
 def test_stats_app_use_time():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     use_time_stats = stats.app_use_time()
     assert use_time_stats == (5, 5, 0)
 
 
 def test_stats_get_answers_date_range_count():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     correct, wrong, dates = stats.get_answers_date_range_count(
         4,
         datetime.strptime('22-12-2022 1:05', '%d-%m-%Y %H:%M')
@@ -70,15 +70,15 @@ def test_stats_get_answers_date_range_count():
 
 
 def test_stats_get_days_list():
-    stats = Stats('tests/demo_stats.json')
+    stats = Stats('tests/dummy_data/demo_stats.json')
     days = stats._get_days_list(1234567, 3, '%d-%m-%Y %H:%M')
     assert days == ['13-01-1970 07:56', '14-01-1970 07:56', '15-01-1970 07:56']
 
 
 def test_stats_save_exam():
-    with open('tests/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
+    with open('tests/dummy_data/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
         staged_data = json.load(fh)
-    stats = Stats('tests/test_stats_save_exam.json')
+    stats = Stats('tests/dummy_data/test_stats_save_exam.json')
     card1 = Card(1, 'a', '_a')
     card2 = Card(2, 'a', '_a')
     dummy_cards = [card1, card2]
@@ -89,24 +89,24 @@ def test_stats_save_exam():
     ex_result = exam.generate_result()
 
     stats.save_exam(exam)
-    with open('tests/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
+    with open('tests/dummy_data/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
         data = json.load(fh)
         assert len(data['exams']) == 2
         assert data['exams'][1] == ex_result
 
-    with open('tests/test_stats_save_exam.json', 'w', encoding='utf-8') as fh:
+    with open('tests/dummy_data/test_stats_save_exam.json', 'w', encoding='utf-8') as fh:
         json.dump(staged_data, fh, indent=4, ensure_ascii=False)
 
 
 def test_stats_save_answer():
-    with open('tests/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
+    with open('tests/dummy_data/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
         staged_data = json.load(f)
-    stats = Stats('tests/test_stats_save_answer.json')
+    stats = Stats('tests/dummy_data/test_stats_save_answer.json')
     card1 = Card(1, 'a', '_a')
     ans = Answer(card1, 'a')
     stats.save_answer(ans)
 
-    with open('tests/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
+    with open('tests/dummy_data/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
         assert data['answers']['wrong'] == [
             {
@@ -121,5 +121,5 @@ def test_stats_save_answer():
                 "date": ans.date
             }
 
-    with open('tests/test_stats_save_answer.json', 'w', encoding='utf-8') as f:
+    with open('tests/dummy_data/test_stats_save_answer.json', 'w', encoding='utf-8') as f:
         json.dump(staged_data, f, indent=4, ensure_ascii=False)

@@ -47,16 +47,6 @@ class FlashcardsWindow(QMainWindow):
     def _setupCardAddDialog(self):
         self.card_dialog = CreateCardDialog(self)
         self.ui.btnAddCard.clicked.connect(lambda: self.card_dialog.show())
-        self.card_dialog.ui.btnBox.accepted.connect(self._handleAddCard)
-
-    def _handleAddCard(self):
-        origin_name = self.card_dialog.ui.originNameInput.text()
-        learn_name = self.card_dialog.ui.learnNameInput.text()
-        category = self.card_dialog.ui.categoryInput.text().capitalize()
-        pop = self.card_dialog.ui.horizontalSlider.value()/100
-        add_card(origin_name, learn_name, category, pop)
-        self.ui.categoriesField.clear()
-        self._setupCategories()
 
     def _setupCategories(self):
         cards = import_cards(Config.CARDS_PATH)
@@ -483,85 +473,6 @@ class FlashcardsWindow(QMainWindow):
     def _setupPlotCanvas(self):
         self.ui.plotCanvasLayoutCorrect = QVBoxLayout(self.ui.correctPlot)
         self.ui.plotCorrect = None
-
-    # def _setupStationList(self):
-    #     stations = get_stations()
-    #     self._scene = QGraphicsScene()
-    #     self.ui.stationMap.setScene(self._scene)
-    #     self.ui.stationMap.setRenderHint(QPainter.Antialiasing)
-    #     for station in stations:
-    #         item = QListWidgetItem(str(station))
-    #         item.station = station
-    #         self.ui.stations.addItem(item)
-    #         lat, lon = station.pos()
-    #         marker = self._scene.addEllipse(-5, -5, 10, 10)
-    #         marker.setBrush(QBrush(Qt.red))
-    #         marker.setPos(lon*100, -lat*100)
-    #         marker.setFlag(marker.ItemIgnoresTransformations)
-    #         text_item = QGraphicsSimpleTextItem(str(station), marker)
-    #         text_item.setPos(10, -10)
-    #         font = text_item.font()
-    #         font.setPixelSize(font.pointSize()+2)
-    #         text_item.setFont(font)
-    #         item.text_item = text_item
-
-        # self.ui.stations.itemDoubleClicked.connect(self._selectStation)
-    #     self.ui.stations.itemClicked.connect(self._highlightStation)
-    #     self.ui.sensors.itemClicked.connect(self._selectSensor)
-    #     self._highlighted_item = None
-
-    # def _selectStation(self, item):
-    #     self.ui.stack.setCurrentIndex(1)
-    #     stationName = item.station.name()
-    #     self.ui.stationName.setText(stationName)
-    #     sensors = item.station.sensors()
-    #     self.ui.sensors.clear()
-    #     for sensor in sensors:
-    #         sensor_item = QListWidgetItem(sensor.name())
-    #         sensor_item.sensor = sensor
-    #         self.ui.sensors.addItem(sensor_item)
-
-    # def _highlightStation(self, item):
-    #     if self._highlighted_item:
-    #         font = self._highlighted_item.font()
-    #         font.setBold(False)
-    #         self._highlighted_item.setFont(font)
-    #         self._highlighted_item.setBrush(Qt.black)
-
-    #     text_item = item.text_item
-    #     font = text_item.font()
-    #     font.setBold(True)
-    #     text_item.setFont(font)
-    #     text_item.setBrush(Qt.red)
-    #     self._highlighted_item = text_item
-
-    # def _selectSensor(self, item):
-    #     sensor = item.sensor
-    #     if self.ui.plot:
-    #         self.ui.plot.deleteLater()
-    #         del self.ui.plot
-    #     self.ui.plot = QtCharts.QChartView()
-    #     self.ui.plot.setRenderHint(QPainter.Antialiasing)
-    #     self.ui.plotCanvasLayout.addWidget(self.ui.plot)
-    #     readings = sensor.readings()
-    #     series = QtCharts.QLineSeries()
-    #     series.setName(sensor.name())
-    #     epoch = datetime.utcfromtimestamp(0)
-    #     for reading in readings:
-    #         if reading.value is not None:
-    #             x = (reading.date - epoch).total_seconds()*1000
-    #             series.append(x, reading.value)
-    #     self.ui.plot.chart().addSeries(series)
-    #     dateAxis = QtCharts.QDateTimeAxis()
-    #     valueAxis = QtCharts.QValueAxis()
-    #     self.ui.plot.chart().addAxis(dateAxis, Qt.AlignBottom)
-    #     self.ui.plot.chart().addAxis(valueAxis, Qt.AlignLeft)
-    #     series.attachAxis(dateAxis)
-    #     series.attachAxis(valueAxis)
-
-    # def _setupPlotCanvas(self):
-    #     self.ui.plotCanvasLayout = QVBoxLayout(self.ui.plotContainer)
-    #     self.ui.plot = None
 
 
 def guiMain(args):

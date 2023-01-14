@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "originLang": "Ciężarówka",
+        "learningLang": "Truck",
+        "categories": [
+            "Vehicles"
+        ],
+        "popularity": 0.3
+    },
+    {
+        "id": 2,
+        "originLang": "Samochód",
+        "learningLang": "Car",
+        "categories": [
+            "Vehicles"
+        ],
+        "popularity": 0.7
+    },
+    {
+        "originLang": "koszykówka",
+        "learningLang": "basketball",
+        "categories": [
+            "Sports"
+        ],
+        "popularity": 0.1,
+        "id": 3
+    },
+    {
+        "originLang": "noga",
+        "learningLang": "football",
+        "categories": [],
+        "popularity": 0.1,
+        "id": 4
+    }
+]

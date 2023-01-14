@@ -161,7 +161,7 @@ def add_card(
             'learningLang': learn_name,
         }
         if categories is not None:
-            card_data['categories'] = [categories]
+            card_data['categories'] = categories
         if popularity is not None:
             card_data['popularity'] = popularity
 

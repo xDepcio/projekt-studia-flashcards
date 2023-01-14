@@ -17,7 +17,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(498, 387)
+        Dialog.resize(582, 371)
         self.verticalLayout_3 = QVBoxLayout(Dialog)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.widget_3 = QWidget(Dialog)
@@ -158,7 +158,7 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.label.setText(QCoreApplication.translate("Dialog", u"Nazwa po Polsku:", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Nazwa po Angielsku:", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"Kategoria:", None))
+        self.label_3.setText(QCoreApplication.translate("Dialog", u"Kategorie (rozdzielone przecinkami):", None))
         self.label_6.setText(QCoreApplication.translate("Dialog", u"Cz\u0119sto\u015b\u0107 wy\u015bwietlania:", None))
         self.label_5.setText(QCoreApplication.translate("Dialog", u"Bardzo \u017cadko", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Bardzo cz\u0119sto", None))

@@ -22,7 +22,7 @@ def test_exam_init():
 
 
 def test_exam_end_with_empty_answers():
-    cards = import_cards('tests/demo_cards.json')
+    cards = import_cards('tests/dummy_data/demo_cards.json')
     card_collections = get_categorized_cards_collections(cards)
     collection = ''
     for cc in card_collections:
@@ -36,7 +36,7 @@ def test_exam_end_with_empty_answers():
 
 
 def test_exam_generate_result():
-    cards = import_cards('tests/demo_cards.json')
+    cards = import_cards('tests/dummy_data/demo_cards.json')
     card_collection = get_categorized_cards_collections(cards)[0]
     cards = card_collection.draw_cards(5, False)
     exam = Exam(cards)

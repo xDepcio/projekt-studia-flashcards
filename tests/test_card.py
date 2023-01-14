@@ -60,7 +60,7 @@ def test_card_handle_answer():
 
 
 def test_card_save():
-    card1 = import_cards('tests/test_card_save.json')[0]
+    card1 = import_cards('tests/dummy_data/test_card_save.json')[0]
     pop = None
     if card1.popularity == 0.2:
         pop = 0.3
@@ -68,7 +68,7 @@ def test_card_save():
         pop = 0.2
 
     card1.popularity = pop
-    card1._save('tests/test_card_save.json')
+    card1._save('tests/dummy_data/test_card_save.json')
 
-    card2 = import_cards('tests/test_card_save.json')[0]
+    card2 = import_cards('tests/dummy_data/test_card_save.json')[0]
     assert card2.popularity == pop

@@ -1,10 +1,10 @@
 [
     {
-        "originLang": "",
-        "learningLang": "",
+        "originLang": "koń",
+        "learningLang": "horse",
         "categories": [
-            ""
+            "Animals"
         ],
-        "popularity": 0.1
+        "popularity": 0.3
     }
 ]
