@@ -1,7 +1,5 @@
 {
     "answers": {
-        "totalCorrect": 12,
-        "totalWrong": 22,
         "correct": [
             {
                 "originLang": "Samochód",
@@ -20,7 +18,7 @@
     "exams": [
         {
             "correct": 0,
-            "total": 5,
+            "total": 1,
             "percentage": 0.0,
             "answers": [
                 {
@@ -28,35 +26,30 @@
                     "given": "sdasa",
                     "toBeGuessed": "Airplane",
                     "isCorrect": false
-                },
-                {
-                    "expected": "Pociąg",
-                    "given": "asdas",
-                    "toBeGuessed": "Train",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Żołnierz",
-                    "given": "asdasd",
-                    "toBeGuessed": "Soldier",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Samochód",
-                    "given": "asdasd",
-                    "toBeGuessed": "Car",
-                    "isCorrect": false
-                },
-                {
-                    "expected": "Woźny",
-                    "given": "asdasd",
-                    "toBeGuessed": "Janitor",
-                    "isCorrect": false
                 }
             ],
             "date": "22-12-2022 19:29"
+        },
+        {
+            "correct": 1,
+            "total": 2,
+            "percentage": 50.0,
+            "answers": [
+                {
+                    "expected": "a",
+                    "given": "",
+                    "toBeGuessed": "_a",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "a",
+                    "given": "a",
+                    "toBeGuessed": "_a",
+                    "isCorrect": true
+                }
+            ],
+            "date": "16-01-2023 23:45"
         }
     ],
-    "appUseTimeSeconds": 450000,
     "answersToLastExam": 2
 }

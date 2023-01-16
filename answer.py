@@ -9,5 +9,7 @@ class Answer:
         self.to_be_guessed = card.learning_lang_value
         self.is_correct = card.evaluate_answer(answer)
         dt = datetime.fromtimestamp(time())
-        date_str = dt.strftime('%d-%m-%Y %H:%M')
-        self.date = date_str
+        self.date = dt
+
+    def date_str(self, format: str = '%d-%m-%Y %H:%M'):
+        return self.date.strftime(format)

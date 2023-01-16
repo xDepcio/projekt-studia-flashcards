@@ -76,37 +76,91 @@ def test_stats_get_days_list():
 
 
 def test_stats_save_exam():
-    with open('tests/dummy_data/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
-        staged_data = json.load(fh)
-    stats = Stats('tests/dummy_data/test_stats_save_exam.json')
+    start_data = {
+        "answers": {
+            "correct": [
+                {
+                    "originLang": "Samochód",
+                    "learningLang": "Car",
+                    "date": "19-12-2022 01:15"
+                }
+            ],
+            "wrong": [
+                {
+                    "originLang": "Samolot",
+                    "learningLang": "Airplane",
+                    "date": "19-12-2022 01:57"
+                }
+            ]
+        },
+        "exams": [
+            {
+                "correct": 0,
+                "total": 1,
+                "percentage": 0.0,
+                "answers": [
+                    {
+                        "expected": "Samolot",
+                        "given": "sdasa",
+                        "toBeGuessed": "Airplane",
+                        "isCorrect": False
+                    }
+                ],
+                "date": "22-12-2022 19:29"
+            }
+        ],
+        "answersToLastExam": 2
+    }
+
+
+    path = 'tests/dummy_data/test_stats_save_exam.json'
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(start_data, fh, ensure_ascii=False, indent=4)
+    stats = Stats(path)
     card1 = Card(1, 'a', '_a')
     card2 = Card(2, 'a', '_a')
     dummy_cards = [card1, card2]
     exam = Exam(dummy_cards)
     exam.answer_card(card1, '')
     exam.answer_card(card2, 'a')
-    exam.is_completed = True
     ex_result = exam.generate_result()
-
     stats.save_exam(exam)
-    with open('tests/dummy_data/test_stats_save_exam.json', 'r', encoding='utf-8') as fh:
+
+    with open(path, 'r', encoding='utf-8') as fh:
         data = json.load(fh)
         assert len(data['exams']) == 2
         assert data['exams'][1] == ex_result
 
-    with open('tests/dummy_data/test_stats_save_exam.json', 'w', encoding='utf-8') as fh:
-        json.dump(staged_data, fh, indent=4, ensure_ascii=False)
-
 
 def test_stats_save_answer():
-    with open('tests/dummy_data/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
-        staged_data = json.load(f)
-    stats = Stats('tests/dummy_data/test_stats_save_answer.json')
+    start_data = {
+        "answers": {
+            "correct": [
+                {
+                    "originLang": "Samochód",
+                    "learningLang": "Car",
+                    "date": "19-12-2022 01:15"
+                }
+            ],
+            "wrong": [
+                {
+                    "originLang": "Samolot",
+                    "learningLang": "Airplane",
+                    "date": "19-12-2022 01:57"
+                }
+            ]
+        }
+    }
+    path = 'tests/dummy_data/test_stats_save_answer.json'
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(start_data, f, ensure_ascii=False, indent=4)
+
+    stats = Stats(path)
     card1 = Card(1, 'a', '_a')
     ans = Answer(card1, 'a')
     stats.save_answer(ans)
 
-    with open('tests/dummy_data/test_stats_save_answer.json', 'r', encoding='utf-8') as f:
+    with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
         assert data['answers']['wrong'] == [
             {
@@ -118,8 +172,5 @@ def test_stats_save_answer():
         assert data['answers']['correct'][1] == {
                 "originLang": "a",
                 "learningLang": "_a",
-                "date": ans.date
+                "date": ans.date_str()
             }
-
-    with open('tests/dummy_data/test_stats_save_answer.json', 'w', encoding='utf-8') as f:
-        json.dump(staged_data, f, indent=4, ensure_ascii=False)

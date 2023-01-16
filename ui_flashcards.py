@@ -180,6 +180,7 @@ class Ui_MainWindow(object):
         self.widget.setObjectName(u"widget")
         self.widget.setCursor(QCursor(Qt.ArrowCursor))
         self.verticalLayout_3 = QVBoxLayout(self.widget)
+        self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.widgetCatExportLabel = QWidget(self.widget)
         self.widgetCatExportLabel.setObjectName(u"widgetCatExportLabel")
@@ -188,7 +189,22 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.widgetCatExportLabel.sizePolicy().hasHeightForWidth())
         self.widgetCatExportLabel.setSizePolicy(sizePolicy1)
-        self.widgetCatExportLabel.setStyleSheet(u"")
+        self.widgetCatExportLabel.setStyleSheet(u"QPushButton {\n"
+"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(42, 142, 255);\n"
+"	color: white;\n"
+"	border-color: rgb(42, 142, 255);\n"
+"}")
         self.horizontalLayout_16 = QHBoxLayout(self.widgetCatExportLabel)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.choosenCategoryHeader = QLabel(self.widgetCatExportLabel)
@@ -197,12 +213,17 @@ class Ui_MainWindow(object):
         self.choosenCategoryHeader.setSizePolicy(sizePolicy1)
         font3 = QFont()
         font3.setPointSize(10)
+        font3.setBold(True)
+        font3.setWeight(75)
         self.choosenCategoryHeader.setFont(font3)
+        self.choosenCategoryHeader.setStyleSheet(u"color: rgb(77, 77, 77);\n"
+"font-weight: 600;")
 
         self.horizontalLayout_16.addWidget(self.choosenCategoryHeader)
 
         self.btnExport = QPushButton(self.widgetCatExportLabel)
         self.btnExport.setObjectName(u"btnExport")
+        self.btnExport.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_16.addWidget(self.btnExport)
 
@@ -216,7 +237,15 @@ class Ui_MainWindow(object):
         font4.setBold(False)
         font4.setWeight(50)
         self.cardName.setFont(font4)
+        self.cardName.setStyleSheet(u"background-color: white;\n"
+"border-top-left-radius: 10px;\n"
+"border-top-right-radius: 10px;\n"
+"margin: 0 10px;\n"
+"color: rgb(26, 26, 26);")
+        self.cardName.setLineWidth(1)
         self.cardName.setAlignment(Qt.AlignCenter)
+        self.cardName.setMargin(0)
+        self.cardName.setIndent(-1)
 
         self.verticalLayout_3.addWidget(self.cardName)
 
@@ -234,7 +263,11 @@ class Ui_MainWindow(object):
         self.answerFeedbackLabel.setFont(font5)
         self.answerFeedbackLabel.setStyleSheet(u"padding: 10px;\n"
 "font-size: 18px;\n"
-"font-weight: 400;")
+"font-weight: 400;\n"
+"background-color: white;\n"
+"border-bottom-left-radius: 10px;\n"
+"border-bottom-right-radius: 10px;\n"
+"margin: 0 10px;")
         self.answerFeedbackLabel.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_3.addWidget(self.answerFeedbackLabel)
@@ -289,6 +322,8 @@ class Ui_MainWindow(object):
         font6 = QFont()
         font6.setPointSize(11)
         self.answerInput.setFont(font6)
+        self.answerInput.setStyleSheet(u"border-radius: 4px;\n"
+"border: 1px solid rgb(146, 146, 146);")
 
         self.horizontalLayout_3.addWidget(self.answerInput)
 
@@ -348,47 +383,55 @@ class Ui_MainWindow(object):
         self.widget_2.setObjectName(u"widget_2")
         sizePolicy1.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
         self.widget_2.setSizePolicy(sizePolicy1)
-        self.horizontalLayout_6 = QHBoxLayout(self.widget_2)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.testEasyBtn = QPushButton(self.widget_2)
-        self.testEasyBtn.setObjectName(u"testEasyBtn")
-        self.testEasyBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.testEasyBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.widget_2.setStyleSheet(u"QPushButton:enabled {\n"
+"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 7px;\n"
 "padding-left: 15px;\n"
 "padding-right: 15px;\n"
-"font-weight: 500;")
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"padding: 7px;\n"
+"padding-left: 15px;\n"
+"padding-right: 15px;\n"
+"font-weight: 500;\n"
+"border: 2px solid rgb(118, 152, 184);\n"
+"color: rgb(118, 152, 184);\n"
+"background-color: rgb(227, 227, 227);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(42, 142, 255);\n"
+"	color: white;\n"
+"	border-color: rgb(42, 142, 255);\n"
+"}\n"
+"")
+        self.horizontalLayout_6 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.testEasyBtn = QPushButton(self.widget_2)
+        self.testEasyBtn.setObjectName(u"testEasyBtn")
+        self.testEasyBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.testEasyBtn.setStyleSheet(u"")
 
         self.horizontalLayout_6.addWidget(self.testEasyBtn)
 
         self.testMediumBtn = QPushButton(self.widget_2)
         self.testMediumBtn.setObjectName(u"testMediumBtn")
         self.testMediumBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.testMediumBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
-"border-radius: 5px;\n"
-"background-color: 'white';\n"
-"border: 2px solid rgb(62, 162, 255);\n"
-"padding: 7px;\n"
-"padding-left: 15px;\n"
-"padding-right: 15px;\n"
-"font-weight: 500;")
+        self.testMediumBtn.setStyleSheet(u"")
 
         self.horizontalLayout_6.addWidget(self.testMediumBtn)
 
         self.testHardBtn = QPushButton(self.widget_2)
         self.testHardBtn.setObjectName(u"testHardBtn")
         self.testHardBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.testHardBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
-"border-radius: 5px;\n"
-"background-color: 'white';\n"
-"border: 2px solid rgb(62, 162, 255);\n"
-"padding: 7px;\n"
-"padding-left: 15px;\n"
-"padding-right: 15px;\n"
-"font-weight: 500;")
+        self.testHardBtn.setStyleSheet(u"")
 
         self.horizontalLayout_6.addWidget(self.testHardBtn)
 
@@ -400,29 +443,7 @@ class Ui_MainWindow(object):
         self.testStartBtn.setObjectName(u"testStartBtn")
         self.testStartBtn.setEnabled(False)
         self.testStartBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.testStartBtn.setStyleSheet(u"QPushButton:enabled {\n"
-"color: rgb(62, 162, 255);\n"
-"border-radius: 5px;\n"
-"background-color: 'white';\n"
-"border: 2px solid rgb(62, 162, 255);\n"
-"padding: 7px;\n"
-"padding-left: 15px;\n"
-"padding-right: 15px;\n"
-"font-weight: 500;\n"
-"}\n"
-"QPushButton:disabled {\n"
-"color: rgb(62, 162, 255);\n"
-"border-radius: 5px;\n"
-"background-color: 'white';\n"
-"border: 2px solid rgb(62, 162, 255);\n"
-"padding: 7px;\n"
-"padding-left: 15px;\n"
-"padding-right: 15px;\n"
-"font-weight: 500;\n"
-"border: 2px solid rgb(118, 152, 184);\n"
-"color: rgb(118, 152, 184);\n"
-"background-color: rgb(227, 227, 227);\n"
-"}")
+        self.testStartBtn.setStyleSheet(u"")
 
         self.horizontalLayout_6.addWidget(self.testStartBtn)
 
@@ -466,12 +487,42 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.testCardInput = QLineEdit(self.widget_4)
         self.testCardInput.setObjectName(u"testCardInput")
+        sizePolicy3.setHeightForWidth(self.testCardInput.sizePolicy().hasHeightForWidth())
+        self.testCardInput.setSizePolicy(sizePolicy3)
+        self.testCardInput.setFont(font6)
+        self.testCardInput.setStyleSheet(u"border-radius: 4px;\n"
+"border: 1px solid rgb(146, 146, 146);")
 
         self.horizontalLayout_7.addWidget(self.testCardInput)
 
         self.testCardBtn = QPushButton(self.widget_4)
         self.testCardBtn.setObjectName(u"testCardBtn")
         self.testCardBtn.setMinimumSize(QSize(150, 0))
+        self.testCardBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.testCardBtn.setStyleSheet(u"QPushButton:enabled {\n"
+"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"background-color: 'white';\n"
+"border: 2px solid rgb(62, 162, 255);\n"
+"padding: 7px;\n"
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"color: rgb(62, 162, 255);\n"
+"border-radius: 5px;\n"
+"padding: 7px;\n"
+"font-weight: 500;\n"
+"border: 2px solid rgb(118, 152, 184);\n"
+"color: rgb(118, 152, 184);\n"
+"background-color: rgb(227, 227, 227);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(42, 142, 255);\n"
+"	color: white;\n"
+"	border-color: rgb(42, 142, 255);\n"
+"}")
 
         self.horizontalLayout_7.addWidget(self.testCardBtn)
 
@@ -506,7 +557,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 605, 376))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -582,7 +633,12 @@ class Ui_MainWindow(object):
 "padding: 5px;\n"
 "font-weight: 500;")
         icon = QIcon()
-        icon.addFile(u"storage/icons/refresh.svg", QSize(), QIcon.Normal, QIcon.Off)
+        iconThemeName = u"document-new"
+        if QIcon.hasThemeIcon(iconThemeName):
+            icon = QIcon.fromTheme(iconThemeName)
+        else:
+            icon.addFile(u"storage/icons/refresh.svg", QSize(), QIcon.Normal, QIcon.Off)
+        
         self.refreshStatsBtn.setIcon(icon)
 
         self.horizontalLayout_5.addWidget(self.refreshStatsBtn)
@@ -874,7 +930,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(0)
+        self.pagesStack.setCurrentIndex(1)
         self.testStack.setCurrentIndex(2)
         self.statsStack.setCurrentIndex(2)
 

@@ -20,9 +20,6 @@ class Exam:
 
     def draw_card(self):
         """Return random Card() object from Exam().unanswered_cards array"""
-        if len(self.unanswered_cards) <= 0:
-            self.is_completed = True
-            return
         return choice(self.unanswered_cards)
 
     def answer_card(self, card, answer: str):
@@ -31,6 +28,8 @@ class Exam:
         self.unanswered_cards.remove(card)
         answer_res = card.answer(answer)
         self.answers.append(answer_res)
+        if len(self.unanswered_cards) <= 0:
+            self.is_completed = True
 
     def generate_result(self) -> dict:
         """Generates dict containing exam results"""

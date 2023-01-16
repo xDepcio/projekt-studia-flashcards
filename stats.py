@@ -5,7 +5,7 @@ from typing import Tuple, List
 
 
 class Stats:
-    def __init__(self, file_path):
+    def __init__(self, file_path: str):
         self.file_path = file_path
         self.data = None
         with open(self.file_path, encoding='utf-8') as fh:
@@ -141,7 +141,7 @@ class Stats:
             answer_str = {
                 "originLang": answer.expected,
                 "learningLang": answer.to_be_guessed,
-                "date": answer.date
+                "date": answer.date_str()
             }
             if answer.is_correct:
                 self.data['answers']['correct'].append(answer_str)

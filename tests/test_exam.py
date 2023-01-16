@@ -114,6 +114,4 @@ def test_exam_draw_card():
     exam.answer_card(card2, 'a')
     exam.answer_card(card3, 'a')
     exam.answer_card(card4, 'a')
-    assert exam.is_completed is False
-    exam.draw_card()
     assert exam.is_completed is True

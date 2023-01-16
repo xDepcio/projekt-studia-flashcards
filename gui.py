@@ -7,8 +7,6 @@ from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod, QTimer
 from PySide2.QtCharts import QtCharts
 from PySide2.QtGui import QPixmap, QPainter, QBrush, QColor
 import sys
-from matplotlib import pyplot as plt
-from io import BytesIO
 from datetime import datetime
 from ui_flashcards import Ui_MainWindow
 from stylesheets import StyleSheet
@@ -17,7 +15,6 @@ from utils import (
     export_cards_to_json,
     import_cards,
     get_categorized_cards_collections,
-    add_card,
     remove_card, export_cards_to_csv
 )
 from stats import Stats
@@ -172,14 +169,11 @@ class FlashcardsWindow(QMainWindow):
     def _draw_exam_card(self):
         self.ui.testCardInput.setText('')
         card = self.state['currExam'].draw_card()
-        if self.state['currExam'].is_completed:
-            self.state['activated_timer'].stop()
-            self._handleEndExam()
-            return
         self.ui.testCardLabel.setText(card.learning_lang_value)
         self.state['currExamCard'] = card
 
     def _handleEndExam(self):
+        self.state['activated_timer'].stop()
         self.stats.save_exam(self.state['currExam'])
         result = self.state['currExam'].generate_result()
         print(result)
@@ -244,7 +238,10 @@ class FlashcardsWindow(QMainWindow):
         user_input = self.ui.testCardInput.text()
         card = self.state['currExamCard']
         self.state['currExam'].answer_card(card, user_input)
-        self._draw_exam_card()
+        if self.state['currExam'].is_completed:
+            self._handleEndExam()
+        else:
+            self._draw_exam_card()
 
     def _setupExamsPage(self):
         self.ui.testEasyBtn.clicked.connect(self._handleTestDiffBtn1Click)

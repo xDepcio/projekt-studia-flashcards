@@ -5,6 +5,7 @@ from config import Config as cfg
 import csv
 from typing import List
 import ast
+import os
 
 
 def import_cards(path: str) -> List[Card]:
@@ -77,8 +78,6 @@ def extend_cards_storage_from_csv(from_file: str, dest_file: str):
         reader = csv.reader(file)
         for row in reader:
             originLang, learningLang, categories, popularity = row
-            # print(originLang, learningLang, categories, popularity)
-            # print(type(originLang), type(learningLang), type(categories), type(popularity))
             categories = ast.literal_eval(categories)
             popularity = float(popularity)
             new_cards.append({
@@ -158,7 +157,8 @@ def add_card(
         popularity: float = None):
     """Adds card with given arguments to file
     at path in CARDS_PATH env variable"""
-    with open('temp_cards.json', 'w', encoding='utf-8') as fh:
+    path = 'temp_cards.json'
+    with open(path, 'w', encoding='utf-8') as fh:
         card_data = {
             'originLang': origin_name,
             'learningLang': learn_name,
@@ -170,7 +170,8 @@ def add_card(
 
         json.dump([card_data], fh, indent=4, ensure_ascii=False)
 
-    extend_cards_storage_from_json('temp_cards.json', cfg.CARDS_PATH)
+    extend_cards_storage_from_json(path, cfg.CARDS_PATH)
+    os.remove(path)
 
 
 def remove_card(card_obj: Card):

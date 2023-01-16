@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.18000000000000002
     },
     {
         "id": 2,
@@ -51,7 +51,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.43740000000000007
+        "popularity": 0.99
     },
     {
         "id": 9,
@@ -95,7 +95,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.7873200000000001
+        "popularity": 0.99
     },
     {
         "id": 12,
@@ -104,7 +104,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 13,
@@ -113,7 +113,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 14,
@@ -157,7 +157,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 19,
@@ -208,7 +208,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 25,
@@ -226,7 +226,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 27,
@@ -244,7 +244,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 29,
@@ -280,7 +280,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.99
     },
     {
         "id": 33,
@@ -316,7 +316,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 37,
@@ -324,7 +324,8 @@
         "learningLang": "sunroof car",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 38,
@@ -333,7 +334,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 39,
@@ -351,7 +352,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 41,
@@ -369,7 +370,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 43,
@@ -377,7 +378,8 @@
         "learningLang": "semi-trailer truck",
         "categories": [
             "Vehicles"
-        ]
+        ],
+        "popularity": 0.18000000000000002
     },
     {
         "id": 44,
@@ -421,7 +423,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 49,
@@ -430,7 +432,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.13500000000000004
+        "popularity": 0.24300000000000008
     },
     {
         "id": 50,
@@ -439,7 +441,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 51,
@@ -472,7 +474,8 @@
         "learningLang": "baker",
         "categories": [
             "Jobs"
-        ]
+        ],
+        "popularity": 0.32400000000000007
     },
     {
         "id": 55,
@@ -498,7 +501,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "mieszkanie",
@@ -507,7 +510,7 @@
             "Home"
         ],
         "id": 58,
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "originLang": "pokój",
@@ -515,7 +518,8 @@
         "categories": [
             "Home"
         ],
-        "id": 59
+        "id": 59,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "kuchnia",
@@ -524,7 +528,7 @@
             "Home"
         ],
         "id": 60,
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "originLang": "łazienka",
@@ -576,7 +580,8 @@
         "categories": [
             "Home"
         ],
-        "id": 66
+        "id": 66,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "ogród",
@@ -645,7 +650,7 @@
             "Sports"
         ],
         "id": 74,
-        "popularity": 0.32400000000000007
+        "popularity": 0.99
     },
     {
         "originLang": "siatkówka",
@@ -670,7 +675,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 77
+        "id": 77,
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "bieganie",
@@ -679,7 +685,7 @@
             "Sports"
         ],
         "id": 78,
-        "popularity": 0.10125000000000002
+        "popularity": 0.3280500000000001
     },
     {
         "originLang": "pływanie",
@@ -751,7 +757,7 @@
             "Sports"
         ],
         "id": 86,
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "originLang": "mma",
@@ -777,7 +783,7 @@
             "Sports"
         ],
         "id": 89,
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "originLang": "bandyta",
@@ -807,13 +813,14 @@
         "originLang": "Rx-7",
         "learningLang": "FD3S",
         "id": 93,
-        "categories": []
+        "categories": [],
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "AAAACzołgggg",
         "learningLang": "AAATankkkk",
         "categories": [],
-        "popularity": 0.5,
+        "popularity": 0.9,
         "id": 94
     },
     {
@@ -824,12 +831,21 @@
         "id": 95
     },
     {
-        "originLang": "cat",
-        "learningLang": "kot",
+        "originLang": "koń",
+        "learningLang": "horse",
+        "categories": [
+            "Animals"
+        ],
+        "popularity": 0.07500000000000001,
+        "id": 97
+    },
+    {
+        "originLang": "pies",
+        "learningLang": "dog",
         "categories": [
             "Animals"
         ],
         "popularity": 0.1,
-        "id": 96
+        "id": 98
     }
 ]
