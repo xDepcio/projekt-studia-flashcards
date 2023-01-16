@@ -4,6 +4,7 @@ from card_collection import CardCollection
 from config import Config as cfg
 import csv
 from typing import List
+import ast
 
 
 def import_cards(path: str) -> List[Card]:
@@ -76,8 +77,10 @@ def extend_cards_storage_from_csv(from_file: str, dest_file: str):
         reader = csv.reader(file)
         for row in reader:
             originLang, learningLang, categories, popularity = row
-            categories = json.loads(categories)
-            popularity = json.loads(popularity)
+            # print(originLang, learningLang, categories, popularity)
+            # print(type(originLang), type(learningLang), type(categories), type(popularity))
+            categories = ast.literal_eval(categories)
+            popularity = float(popularity)
             new_cards.append({
                 "originLang": originLang,
                 "learningLang": learningLang,

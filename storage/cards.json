@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 2,
@@ -95,7 +95,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.43740000000000007
+        "popularity": 0.7873200000000001
     },
     {
         "id": 12,
@@ -148,7 +148,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 18,
@@ -253,7 +253,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "id": 30,
@@ -481,7 +481,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.5832000000000002
+        "popularity": 0.99
     },
     {
         "id": 56,
@@ -824,12 +824,12 @@
         "id": 95
     },
     {
-        "originLang": "koń",
-        "learningLang": "horse",
+        "originLang": "cat",
+        "learningLang": "kot",
         "categories": [
             "Animals"
         ],
-        "popularity": 0.3,
+        "popularity": 0.1,
         "id": 96
     }
 ]

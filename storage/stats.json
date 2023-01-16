@@ -562,6 +562,21 @@
                 "originLang": "bandyta",
                 "learningLang": "thug",
                 "date": "11-01-2023 22:47"
+            },
+            {
+                "originLang": "cat",
+                "learningLang": "kot",
+                "date": "16-01-2023 19:13"
+            },
+            {
+                "originLang": "cat",
+                "learningLang": "kot",
+                "date": "16-01-2023 19:13"
+            },
+            {
+                "originLang": "cat",
+                "learningLang": "kot",
+                "date": "16-01-2023 19:13"
             }
         ],
         "wrong": [
@@ -1364,6 +1379,16 @@
                 "originLang": "motocykl",
                 "learningLang": "motorcycle",
                 "date": "13-01-2023 22:00"
+            },
+            {
+                "originLang": "cat",
+                "learningLang": "kot",
+                "date": "16-01-2023 19:13"
+            },
+            {
+                "originLang": "cat",
+                "learningLang": "kot",
+                "date": "16-01-2023 19:13"
             }
         ]
     },
@@ -3571,8 +3596,84 @@
                 }
             ],
             "date": "12-01-2023 22:53"
+        },
+        {
+            "correct": 0,
+            "total": 5,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "wózek widłowy",
+                    "given": "",
+                    "toBeGuessed": "forklift",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Woźny",
+                    "given": "",
+                    "toBeGuessed": "Janitor",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "tramwaj",
+                    "given": "",
+                    "toBeGuessed": "tram",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "fryzjer",
+                    "given": "",
+                    "toBeGuessed": "hairdresser",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "kolejka linowa",
+                    "given": "",
+                    "toBeGuessed": "cable car",
+                    "isCorrect": false
+                }
+            ],
+            "date": "16-01-2023 19:12"
+        },
+        {
+            "correct": 0,
+            "total": 5,
+            "percentage": 0.0,
+            "answers": [
+                {
+                    "expected": "Ciężarówka",
+                    "given": "",
+                    "toBeGuessed": "Truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "żeglarstwo",
+                    "given": "",
+                    "toBeGuessed": "sailing",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód dostawczy",
+                    "given": "",
+                    "toBeGuessed": "delivery truck",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "ładowarka",
+                    "given": "",
+                    "toBeGuessed": "loader",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "fryzjer",
+                    "given": "",
+                    "toBeGuessed": "hairdresser",
+                    "isCorrect": false
+                }
+            ],
+            "date": "16-01-2023 19:20"
         }
     ],
-    "answersToLastExam": 267,
-    "appUseTimeSeconds": 7068.119573354721
+    "answersToLastExam": 277,
+    "appUseTimeSeconds": 7911.7431099414825
 }

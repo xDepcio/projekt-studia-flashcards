@@ -51,4 +51,6 @@ class CreateCardDialog(QDialog):
             extend_cards_storage_from_json(file_path, cfg.CARDS_PATH)
         if ext == '.txt':
             extend_cards_storage_from_csv(file_path, cfg.CARDS_PATH)
-        self.destroy()
+        self.parent().ui.categoriesField.clear()
+        self.parent()._setupCategories()
+        self.close()
