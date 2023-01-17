@@ -1,11 +1,10 @@
 from PySide2.QtWidgets import (
-    QApplication, QHBoxLayout, QVBoxLayout, QWidget, QSlider, QSpinBox,
-    QMainWindow, QListWidgetItem, QGraphicsScene, QGraphicsSimpleTextItem,
-    QSizePolicy, QLabel, QMessageBox, QFileDialog
+    QApplication, QVBoxLayout, QWidget, QMainWindow,
+    QListWidgetItem, QLabel, QMessageBox, QFileDialog
 )
-from PySide2.QtCore import Qt, SignalInstance, Signal, QMetaMethod, QTimer
+from PySide2.QtCore import Qt, QTimer
 from PySide2.QtCharts import QtCharts
-from PySide2.QtGui import QPixmap, QPainter, QBrush, QColor
+from PySide2.QtGui import QColor
 import sys
 from datetime import datetime
 from ui_flashcards import Ui_MainWindow
@@ -156,7 +155,6 @@ class FlashcardsWindow(QMainWindow):
         self.state['activated_timer'] = timer
 
         def timer_callback():
-            print('called cb')
             minutes, seconds = divmod(self.state['time_left'], 60)
             self.ui.testTimerLabel.setText(
                 "{:d}:{:02d}".format(minutes, seconds)
@@ -191,7 +189,6 @@ class FlashcardsWindow(QMainWindow):
         self.state['activated_timer'].stop()
         self.stats.save_exam(self.state['currExam'])
         result = self.state['currExam'].generate_result()
-        print(result)
         self.ui.testStack.setCurrentIndex(1)
         prc = result['percentage']
         self.ui.examScoreHeader.setText(
@@ -287,7 +284,6 @@ class FlashcardsWindow(QMainWindow):
     def __setSelectedBtnUi(self):
         """Changes difficulty buttons styles based
         on which one is selected"""
-        print(StyleSheet.btnExamSelected)
         self.ui.testStartBtn.setDisabled(False)
         self.ui.testEasyBtn.setStyleSheet(
             StyleSheet.btnExamSelected if self.state['testDiffBtn'] == 'easy'
@@ -324,7 +320,6 @@ class FlashcardsWindow(QMainWindow):
 
     def _draw_new_card(self, card_collection):
         """Draws new card on training page"""
-        print(card_collection.cards)
         card = card_collection.draw_cards(1)[0]
         self.ui.cardName.setText(card.learning_lang_value)
         self.ui.flashcardButton.setText('Sprawdź')
@@ -339,7 +334,6 @@ class FlashcardsWindow(QMainWindow):
         input_str = self.ui.answerInput.text().strip()
         answer = card.answer(input_str)
         self.__format_answer_label(answer.is_correct)
-        print('------executed------')
         self.stats.save_answer(answer)
 
         if self._shouldShowPopup():
@@ -446,7 +440,6 @@ class FlashcardsWindow(QMainWindow):
         """Fills exams list widget on stats sub page with previously
         taken exams"""
         prev_exams = self.stats.get_exams()
-        print(prev_exams)
         for exam in prev_exams:
             points = f"{exam['correct']}/{exam['total']}"
             percentage = f"{exam['percentage']}%"

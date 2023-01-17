@@ -77,15 +77,12 @@ def extend_cards_storage_from_csv(from_file: str, dest_file: str):
     with open(from_file, 'r', encoding='utf-8') as file:
         reader = csv.reader(file)
         for row in reader:
-            # originLang, learningLang, categories, popularity = row
             originLang, learningLang, categories = row
             categories = ast.literal_eval(categories)
-            # popularity = float(popularity)
             new_cards.append({
                 "originLang": originLang,
                 "learningLang": learningLang,
                 "categories": categories,
-                # "popularity": popularity
             })
 
     file_old = open(dest_file, encoding='utf-8')
@@ -116,7 +113,6 @@ def export_cards_to_json(destination_file_name: str, cards: List[Card]):
             'originLang': card.origin_lang_value,
             'learningLang': card.learning_lang_value,
             'categories': card.categories,
-            # 'popularity': card.popularity,
         }
         data.append(card_data)
     json.dump(data, file, indent=4, ensure_ascii=False)
@@ -131,9 +127,7 @@ def export_cards_to_csv(dest_file_name: str, cards: List[Card]):
             originLang = card.origin_lang_value
             learningLang = card.learning_lang_value
             categories = card.categories
-            popularity = card.popularity
             csvwriter.writerow(
-                # [originLang, learningLang, categories, popularity]
                 [originLang, learningLang, categories]
             )
 
