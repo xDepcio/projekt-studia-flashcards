@@ -38,7 +38,6 @@ class Ui_MainWindow(object):
 "	border-radius: 9;\n"
 "	font-weight: 500;\n"
 "	font-size: 16px;\n"
-"	transition-duration: 1s;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -589,36 +588,60 @@ class Ui_MainWindow(object):
         self.statsAnswersBtn = QPushButton(self.page_3)
         self.statsAnswersBtn.setObjectName(u"statsAnswersBtn")
         self.statsAnswersBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.statsAnswersBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.statsAnswersBtn.setStyleSheet(u"QPushButton {\n"
+"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
-"font-weight: 500;")
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(42, 142, 255);\n"
+"color: white;\n"
+"border-color: rgb(42, 142, 255);\n"
+"}")
 
         self.horizontalLayout_5.addWidget(self.statsAnswersBtn)
 
         self.statsTestsBtn = QPushButton(self.page_3)
         self.statsTestsBtn.setObjectName(u"statsTestsBtn")
         self.statsTestsBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.statsTestsBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.statsTestsBtn.setStyleSheet(u"QPushButton {\n"
+"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
-"font-weight: 500;")
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(42, 142, 255);\n"
+"color: white;\n"
+"border-color: rgb(42, 142, 255);\n"
+"}")
 
         self.horizontalLayout_5.addWidget(self.statsTestsBtn)
 
         self.statsOtherBtn = QPushButton(self.page_3)
         self.statsOtherBtn.setObjectName(u"statsOtherBtn")
         self.statsOtherBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.statsOtherBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.statsOtherBtn.setStyleSheet(u"QPushButton {\n"
+"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: 'white';\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
-"font-weight: 500;")
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(42, 142, 255);\n"
+"color: white;\n"
+"border-color: rgb(42, 142, 255);\n"
+"}")
 
         self.horizontalLayout_5.addWidget(self.statsOtherBtn)
 
@@ -626,12 +649,20 @@ class Ui_MainWindow(object):
         self.refreshStatsBtn.setObjectName(u"refreshStatsBtn")
         self.refreshStatsBtn.setMaximumSize(QSize(50, 27))
         self.refreshStatsBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.refreshStatsBtn.setStyleSheet(u"color: rgb(62, 162, 255);\n"
+        self.refreshStatsBtn.setStyleSheet(u"QPushButton {\n"
+"color: rgb(62, 162, 255);\n"
 "border-radius: 5px;\n"
 "background-color: rgb(62, 162, 255);\n"
 "border: 2px solid rgb(62, 162, 255);\n"
 "padding: 5px;\n"
-"font-weight: 500;")
+"font-weight: 500;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(42, 142, 255);\n"
+"color: white;\n"
+"border-color: rgb(42, 142, 255);\n"
+"}")
         icon = QIcon()
         iconThemeName = u"document-new"
         if QIcon.hasThemeIcon(iconThemeName):
@@ -697,7 +728,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 361, 491))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)
@@ -930,9 +961,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pagesStack.setCurrentIndex(1)
+        self.pagesStack.setCurrentIndex(0)
         self.testStack.setCurrentIndex(2)
-        self.statsStack.setCurrentIndex(2)
+        self.statsStack.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

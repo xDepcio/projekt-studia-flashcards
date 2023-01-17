@@ -1,10 +1,16 @@
 [
     {
-        "originLang": "cat",
-        "learningLang": "kot",
+        "originLang": "koń",
+        "learningLang": "horse",
         "categories": [
             "Animals"
-        ],
-        "popularity": 0.1
+        ]
+    },
+    {
+        "originLang": "pies",
+        "learningLang": "dog",
+        "categories": [
+            "Animals"
+        ]
     }
 ]

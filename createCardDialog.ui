@@ -10,138 +10,283 @@
     <height>371</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>9</number>
+   </property>
    <item>
-    <widget class="QWidget" name="widget_3" native="true">
+    <widget class="QWidget" name="widget_7" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
-       <widget class="QWidget" name="widget" native="true">
+       <widget class="QWidget" name="widget_3" native="true">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="styleSheet">
+         <string notr="true">background-color: white;
+border-top-left-radius: 9px;
+border-top-right-radius: 9px;</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="topMargin">
+          <number>35</number>
+         </property>
          <item>
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Nazwa po Polsku:</string>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(26, 26, 26);</string>
+              </property>
+              <property name="text">
+               <string>Nazwa po Polsku:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(26, 26, 26);</string>
+              </property>
+              <property name="text">
+               <string>Nazwa po Angielsku:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(26, 26, 26);</string>
+              </property>
+              <property name="text">
+               <string>Kategorie rozdzielone &quot;,&quot;:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>Nazwa po Angielsku:</string>
+          <widget class="QWidget" name="widget_2" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Kategorie (rozdzielone przecinkami):</string>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLineEdit" name="originNameInput">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 4px;
+border: 1px solid rgb(146, 146, 146);
+padding: 4px;
+background-color: rgb(246, 246, 246);
+</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="learnNameInput">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 4px;
+border: 1px solid rgb(146, 146, 146);
+padding: 4px;
+background-color: rgb(246, 246, 246);
+</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="categoryInput">
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 4px;
+border: 1px solid rgb(146, 146, 146);
+padding: 4px;
+background-color: rgb(246, 246, 246);
+</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="widget_2" native="true">
+       <widget class="QWidget" name="widget_5" native="true">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLineEdit" name="originNameInput"/>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="learnNameInput"/>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="categoryInput"/>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QWidget" name="widget_5" native="true">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_6">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+        <property name="styleSheet">
+         <string notr="true">background-color: white;
+border-bottom-left-radius: 9px;
+border-bottom-right-radius: 9px;</string>
         </property>
-        <property name="text">
-         <string>Częstość wyświetlania:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="widget_4" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="bottomMargin">
+          <number>38</number>
+         </property>
          <item>
-          <widget class="QLabel" name="label_5">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(26, 26, 26);</string>
+           </property>
            <property name="text">
-            <string>Bardzo żadko</string>
+            <string>Częstość wyświetlania:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSlider" name="horizontalSlider">
-           <property name="minimum">
-            <number>1</number>
+          <widget class="QWidget" name="widget_4" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-           <property name="value">
-            <number>10</number>
-           </property>
-           <property name="sliderPosition">
-            <number>10</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="tickPosition">
-            <enum>QSlider::NoTicks</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Bardzo często</string>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(26, 26, 26);</string>
+              </property>
+              <property name="text">
+               <string>Bardzo żadko</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="horizontalSlider">
+              <property name="cursor">
+               <cursorShape>ArrowCursor</cursorShape>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>10</number>
+              </property>
+              <property name="sliderPosition">
+               <number>10</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::NoTicks</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(26, 26, 26);</string>
+              </property>
+              <property name="text">
+               <string>Bardzo często</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -159,8 +304,35 @@
       </sizepolicy>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QPushButton" name="btnImport">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background-color: rgb(62, 162, 255);
+	border: none;
+	color: &quot;white&quot;;
+	padding-bottom: 7px;
+	padding-top: 7px;
+	padding-right: 15px;
+	padding-left: 15px;
+	border-radius: 5;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+QPushButton:hover {
+	background-color: rgb(42, 142, 255);
+}</string>
+        </property>
         <property name="text">
          <string>Importuj z pliku</string>
         </property>
@@ -168,6 +340,12 @@
       </item>
       <item>
        <widget class="QDialogButtonBox" name="btnBox">
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(26, 26, 26);</string>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>

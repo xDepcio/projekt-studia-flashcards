@@ -46,6 +46,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.btnAddCard.clicked.connect(lambda: self.card_dialog.show())
 
     def _setupCategories(self):
+        """Fills List Widget with card categories"""
         cards = import_cards(Config.CARDS_PATH)
         card_collections = get_categorized_cards_collections(cards)
         for card_collection in card_collections:
@@ -58,6 +59,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.categoriesField.item(0).setSelected(True)
 
     def _connectCategoriesBtns(self):
+        """Connects buttons on Train page to callbacks"""
         self.ui.categoriesField.itemClicked.connect(self._selectCategory)
         self.ui.answerInput.textChanged.connect(self._handleInputChange)
         self.ui.flashcardButton.clicked.connect(self._handleAnswer)
@@ -65,8 +67,8 @@ class FlashcardsWindow(QMainWindow):
         self.ui.btnExport.clicked.connect(self._handleExportCategory)
 
     def _handleExportCategory(self):
+        """Handles user click of export button"""
         options = QFileDialog.Options()
-        # options |= QFileDialog.DontConfirmOverwrite
         file_path, _ = QFileDialog.getSaveFileName(
             None,
             "Eksportuj fiszki",
@@ -85,6 +87,7 @@ class FlashcardsWindow(QMainWindow):
             )
 
     def _handleDeleteCard(self):
+        """Handles user click of delete card button"""
         card = self.state['current_card']
         remove_card(card)
         self.ui.categoriesField.clear()
@@ -92,28 +95,33 @@ class FlashcardsWindow(QMainWindow):
         self._selectCategory(self.ui.categoriesField.item(0))
 
     def _setupUseTimer(self):
+        """Initiates timer to count app use time"""
         self.state['sessionStartTime'] = time()
         app = QApplication.instance()
         app.lastWindowClosed.connect(self._saveUseTime())
 
     def _saveUseTime(self):
+        """Saves app use time"""
         session_time = time() - self.state['sessionStartTime']
         self.stats.save_use_time(session_time)
         self.state['sessionStartTime'] = time()
 
-    def _shouldShowPopup(self):
+    def _shouldShowPopup(self) -> bool:
+        """Checks if reminder to take an exam should be shown"""
         show_after = Config.POPUP_ANSWERS_COUNT
         if self.stats.answers_since_last_exam() == show_after:
             return True
         return False
 
     def _showReminderPopup(self):
+        """Shows reminder to take an exam"""
         msg = QMessageBox()
         msg.setWindowTitle(Config.POPUP_TITLE)
         msg.setText(Config.POPUP_MSG)
         msg.exec_()
 
     def _selectCategory(self, category):
+        """Handles user click on certain category in list widget"""
         card_collection = category.card_collection
         self.state['current_collection'] = card_collection
         self._draw_new_card(card_collection)
@@ -123,6 +131,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.btnExport.CardCollection = card_collection
 
     def _handleStartTestClick(self):
+        """Handles user click on start exam button"""
         self.ui.testEasyBtn.setDisabled(True)
         self.ui.testMediumBtn.setDisabled(True)
         self.ui.testHardBtn.setDisabled(True)
@@ -140,6 +149,7 @@ class FlashcardsWindow(QMainWindow):
         self._draw_exam_card()
 
     def _setupTestTimer(self):
+        """Initiates timer to show remaining exam time left"""
         self.state['time_left'] = self.state['test_time_limit']
         timer = QTimer()
         timer.setInterval(1000)
@@ -160,6 +170,8 @@ class FlashcardsWindow(QMainWindow):
         timer.start()
 
     def _test_timer_ended(self):
+        """Callback to when timer counted to 0,
+        Ends current exam"""
         self.ui.testTimerLabel.setText('Koniec')
         cards = [*self.state['currExam'].unanswered_cards]
         for card in cards:
@@ -167,12 +179,15 @@ class FlashcardsWindow(QMainWindow):
         self._handleEndExam()
 
     def _draw_exam_card(self):
+        """Draws new exam card from current exam"""
         self.ui.testCardInput.setText('')
         card = self.state['currExam'].draw_card()
         self.ui.testCardLabel.setText(card.learning_lang_value)
         self.state['currExamCard'] = card
 
     def _handleEndExam(self):
+        """Callback to run when user has ended an exam.
+        Saves an exam result and displays It"""
         self.state['activated_timer'].stop()
         self.stats.save_exam(self.state['currExam'])
         result = self.state['currExam'].generate_result()
@@ -195,6 +210,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.testStartBtn.setDisabled(False)
 
     def _display_exam_result_in_layout(self, result, layout, widget_holder):
+        """Handles drawing exam result in widget placed at layout"""
         if self.state.get('attachedExamAnswerWidget'):
             for child in widget_holder.children():
                 if type(child) == QWidget:
@@ -229,12 +245,15 @@ class FlashcardsWindow(QMainWindow):
             answer_vbox_layout.addWidget(status_label)
 
     def _handleTestInputChange(self):
+        """Disables and enables next question button in exams page
+        based on user input"""
         if self.ui.testCardInput.text() == '':
             self.ui.testCardBtn.setDisabled(True)
         else:
             self.ui.testCardBtn.setDisabled(False)
 
     def _handleNextExamQuestion(self):
+        """Handles user click of next question button on exam page"""
         user_input = self.ui.testCardInput.text()
         card = self.state['currExamCard']
         self.state['currExam'].answer_card(card, user_input)
@@ -244,24 +263,30 @@ class FlashcardsWindow(QMainWindow):
             self._draw_exam_card()
 
     def _setupExamsPage(self):
+        """Connects callback to buttons on exam page"""
         self.ui.testEasyBtn.clicked.connect(self._handleTestDiffBtn1Click)
         self.ui.testMediumBtn.clicked.connect(self._handleTestDiffBtn2Click)
         self.ui.testHardBtn.clicked.connect(self._handleTestDiffBtn3Click)
         self.ui.testStartBtn.clicked.connect(self._handleStartTestClick)
 
     def _handleTestDiffBtn1Click(self):
+        """Handles easy difficulty button click"""
         self.state['testDiffBtn'] = 'easy'
         self.__setSelectedBtnUi()
 
     def _handleTestDiffBtn2Click(self):
+        """Handles medium difficulty button click"""
         self.state['testDiffBtn'] = 'medium'
         self.__setSelectedBtnUi()
 
     def _handleTestDiffBtn3Click(self):
+        """Handles hard difficulty button click"""
         self.state['testDiffBtn'] = 'hard'
         self.__setSelectedBtnUi()
 
     def __setSelectedBtnUi(self):
+        """Changes difficulty buttons styles based
+        on which one is selected"""
         print(StyleSheet.btnExamSelected)
         self.ui.testStartBtn.setDisabled(False)
         self.ui.testEasyBtn.setStyleSheet(
@@ -279,6 +304,8 @@ class FlashcardsWindow(QMainWindow):
         self._handleSetExamDiff(self.state['testDiffBtn'])
 
     def _handleSetExamDiff(self, difficulty):
+        """Changes exam setup variables based on which
+        difficulty is choosen"""
         info_str = ''
         if difficulty == 'easy':
             info_str = "Czas: 3min     Ilość pytań: 5"
@@ -296,6 +323,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.testTimerLabel.setText(info_str)
 
     def _draw_new_card(self, card_collection):
+        """Draws new card on training page"""
         print(card_collection.cards)
         card = card_collection.draw_cards(1)[0]
         self.ui.cardName.setText(card.learning_lang_value)
@@ -305,6 +333,8 @@ class FlashcardsWindow(QMainWindow):
         self.state['current_card'] = card
 
     def _handleAnswer(self):
+        """Handles user click of check answer button
+        on training page"""
         card = self.state['current_card']
         input_str = self.ui.answerInput.text().strip()
         answer = card.answer(input_str)
@@ -320,12 +350,16 @@ class FlashcardsWindow(QMainWindow):
         self.ui.flashcardButton.clicked.connect(self._handleNextCardClick)
 
     def _handleInputChange(self):
+        """Disables and enables check answer button on training page
+        based on user input"""
         if self.ui.answerInput.text() == '':
             self.ui.flashcardButton.setDisabled(True)
         else:
             self.ui.flashcardButton.setDisabled(False)
 
     def __format_answer_label(self, is_answer_correct):
+        """Draws prompt based on correctness of user answer
+        on training page"""
         card = self.state['current_card']
         if is_answer_correct:
             self.ui.answerFeedbackLabel.setText('Dobrze :)')
@@ -344,12 +378,16 @@ class FlashcardsWindow(QMainWindow):
         self.ui.answerFeedbackLabel.setFont(font)
 
     def _handleNextCardClick(self):
+        """Handles user click of next question button
+        on training page"""
         curr_card_collection = self.state['current_collection']
         self.ui.flashcardButton.clicked.disconnect(self._handleNextCardClick)
         self.ui.flashcardButton.clicked.connect(self._handleAnswer)
         self._draw_new_card(curr_card_collection)
 
     def _setupMainNav(self):
+        """Connects callbacks to main navigation buttons.
+        Each callback takes user to another app page"""
         self.ui.trainButton.clicked.connect(
             lambda: self.ui.pagesStack.setCurrentIndex(0))
         self.ui.examButton.clicked.connect(
@@ -358,6 +396,8 @@ class FlashcardsWindow(QMainWindow):
             lambda: self.ui.pagesStack.setCurrentIndex(2))
 
     def _setupStatsPage(self):
+        """Connects buttons on stats page to
+        callbacks and calls setup for sub stats-pages"""
         self.ui.statsAnswersBtn.clicked.connect(
             lambda: self.ui.statsStack.setCurrentIndex(0))
         self.ui.statsTestsBtn.clicked.connect(
@@ -373,6 +413,7 @@ class FlashcardsWindow(QMainWindow):
         self._setupStatsMiscPage()
 
     def _setupStatsMiscPage(self):
+        """Draws misc statistics data on "others" sub-page on stats page"""
         self.ui.labelAllAnswers.setText(f"{self.stats.answers_count()}")
         self.ui.labelCorrectAnswers.setText(
             f"{self.stats.correct_answers_count()}"
@@ -393,6 +434,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.labelAppUseTime.setText(days_str + hours_str + minutes_str)
 
     def _refreshStats(self):
+        """Re-initaites sub pages on stats page (displays up to date data)"""
         self._saveUseTime()
         self.stats.reload_stats()
         self._setupStatsMiscPage()
@@ -401,6 +443,8 @@ class FlashcardsWindow(QMainWindow):
         self._setupStatsExamsPage()
 
     def _setupStatsExamsPage(self):
+        """Fills exams list widget on stats sub page with previously
+        taken exams"""
         prev_exams = self.stats.get_exams()
         print(prev_exams)
         for exam in prev_exams:
@@ -413,11 +457,15 @@ class FlashcardsWindow(QMainWindow):
         self.ui.prevExamsList.itemClicked.connect(self._selectExam)
 
     def _selectExam(self, exam):
+        """Handles user click on certain exam in exams list widget
+        on stats sub page"""
         self._display_exam_result_in_layout(
             exam.exam, self.ui.vbox_exam_history, self.ui.examsHistoryHolder
         )
 
     def _handleSliderChange(self):
+        """Handles user change of slider position on stats
+        "answers" sub page"""
         value = self.ui.daysSlider.value()
         self.state['daysRange'] = value
         self.ui.daysShownLabel.setText(
@@ -426,6 +474,7 @@ class FlashcardsWindow(QMainWindow):
         self._refreshStats()
 
     def _setupStatsAnswersPage(self):
+        """Draws plot with user answers history on "answers" stats sub page"""
         if self.ui.plotCorrect:
             self.ui.plotCorrect.deleteLater()
             del self.ui.plotCorrect
@@ -468,6 +517,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.plotCanvasLayoutCorrect.addWidget(self.ui.plotCorrect)
 
     def _setupPlotCanvas(self):
+        """Adds layout to drawn plot on stats "answers" sub page"""
         self.ui.plotCanvasLayoutCorrect = QVBoxLayout(self.ui.correctPlot)
         self.ui.plotCorrect = None
 

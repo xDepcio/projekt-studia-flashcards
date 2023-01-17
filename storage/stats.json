@@ -582,6 +582,11 @@
                 "originLang": "koń",
                 "learningLang": "horse",
                 "date": "16-01-2023 23:51"
+            },
+            {
+                "originLang": "pies",
+                "learningLang": "dog",
+                "date": "17-01-2023 00:00"
             }
         ],
         "wrong": [
@@ -1394,6 +1399,36 @@
                 "originLang": "cat",
                 "learningLang": "kot",
                 "date": "16-01-2023 19:13"
+            },
+            {
+                "originLang": "śmigłowiec",
+                "learningLang": "helicopter",
+                "date": "16-01-2023 23:58"
+            },
+            {
+                "originLang": "koszykówka",
+                "learningLang": "basketball",
+                "date": "16-01-2023 23:59"
+            },
+            {
+                "originLang": "koparko-ładowarka",
+                "learningLang": "bulldozer",
+                "date": "16-01-2023 23:59"
+            },
+            {
+                "originLang": "samochód kempingowy",
+                "learningLang": "recreational vehicle (RV)",
+                "date": "16-01-2023 23:59"
+            },
+            {
+                "originLang": "samochód sportowy",
+                "learningLang": "sports car",
+                "date": "16-01-2023 23:59"
+            },
+            {
+                "originLang": "koń",
+                "learningLang": "horse",
+                "date": "17-01-2023 00:00"
             }
         ]
     },
@@ -4379,8 +4414,46 @@
                 }
             ],
             "date": "16-01-2023 23:45"
+        },
+        {
+            "correct": 2,
+            "total": 5,
+            "percentage": 40.0,
+            "answers": [
+                {
+                    "expected": "Ciężarówka",
+                    "given": "ciężarówka",
+                    "toBeGuessed": "Truck",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "Policjant",
+                    "given": "policjant",
+                    "toBeGuessed": "Police officer",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "samochód terenowy",
+                    "given": "suv",
+                    "toBeGuessed": "SUV",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "prawnik",
+                    "given": "adwokat",
+                    "toBeGuessed": "lawyer",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "łódź",
+                    "given": "łódka",
+                    "toBeGuessed": "boat",
+                    "isCorrect": false
+                }
+            ],
+            "date": "16-01-2023 23:56"
         }
     ],
-    "answersToLastExam": 277,
-    "appUseTimeSeconds": 8148.355006456375
+    "answersToLastExam": 278,
+    "appUseTimeSeconds": 8224.750608682632
 }

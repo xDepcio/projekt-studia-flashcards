@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.18000000000000002
+        "popularity": 0.135
     },
     {
         "id": 2,
@@ -42,7 +42,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 6,
@@ -208,7 +208,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 25,
@@ -432,7 +432,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.24300000000000008
+        "popularity": 0.4374000000000001
     },
     {
         "id": 50,
@@ -804,40 +804,12 @@
         "id": 91
     },
     {
-        "originLang": "Czołgggg",
-        "learningLang": "Tankkkk",
-        "id": 92,
-        "categories": []
-    },
-    {
-        "originLang": "Rx-7",
-        "learningLang": "FD3S",
-        "id": 93,
-        "categories": [],
-        "popularity": 0.18000000000000002
-    },
-    {
-        "originLang": "AAAACzołgggg",
-        "learningLang": "AAATankkkk",
-        "categories": [],
-        "popularity": 0.9,
-        "id": 94
-    },
-    {
-        "originLang": "AAAARx-7",
-        "learningLang": "AAAAFD3S",
-        "categories": [],
-        "popularity": 0.1,
-        "id": 95
-    },
-    {
         "originLang": "koń",
         "learningLang": "horse",
         "categories": [
             "Animals"
         ],
-        "popularity": 0.07500000000000001,
-        "id": 97
+        "id": 95
     },
     {
         "originLang": "pies",
@@ -845,7 +817,6 @@
         "categories": [
             "Animals"
         ],
-        "popularity": 0.1,
-        "id": 98
+        "id": 96
     }
 ]

@@ -34,7 +34,6 @@
 	border-radius: 9;
 	font-weight: 500;
 	font-size: 16px;
-	transition-duration: 1s;
 }
 
 QPushButton:hover {
@@ -103,7 +102,7 @@ QPushButton:hover {
       <item>
        <widget class="QStackedWidget" name="pagesStack">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -835,12 +834,20 @@ QPushButton:hover {
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(62, 162, 255);
+               <string notr="true">QPushButton {
+color: rgb(62, 162, 255);
 border-radius: 5px;
 background-color: 'white';
 border: 2px solid rgb(62, 162, 255);
 padding: 5px;
-font-weight: 500;</string>
+font-weight: 500;
+}
+
+QPushButton:hover {
+background-color: rgb(42, 142, 255);
+color: white;
+border-color: rgb(42, 142, 255);
+}</string>
               </property>
               <property name="text">
                <string>Odpowiedzi</string>
@@ -853,12 +860,20 @@ font-weight: 500;</string>
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(62, 162, 255);
+               <string notr="true">QPushButton {
+color: rgb(62, 162, 255);
 border-radius: 5px;
 background-color: 'white';
 border: 2px solid rgb(62, 162, 255);
 padding: 5px;
-font-weight: 500;</string>
+font-weight: 500;
+}
+
+QPushButton:hover {
+background-color: rgb(42, 142, 255);
+color: white;
+border-color: rgb(42, 142, 255);
+}</string>
               </property>
               <property name="text">
                <string>Testy</string>
@@ -871,12 +886,20 @@ font-weight: 500;</string>
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(62, 162, 255);
+               <string notr="true">QPushButton {
+color: rgb(62, 162, 255);
 border-radius: 5px;
 background-color: 'white';
 border: 2px solid rgb(62, 162, 255);
 padding: 5px;
-font-weight: 500;</string>
+font-weight: 500;
+}
+
+QPushButton:hover {
+background-color: rgb(42, 142, 255);
+color: white;
+border-color: rgb(42, 142, 255);
+}</string>
               </property>
               <property name="text">
                <string>Inne</string>
@@ -895,12 +918,20 @@ font-weight: 500;</string>
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(62, 162, 255);
+               <string notr="true">QPushButton {
+color: rgb(62, 162, 255);
 border-radius: 5px;
 background-color: rgb(62, 162, 255);
 border: 2px solid rgb(62, 162, 255);
 padding: 5px;
-font-weight: 500;</string>
+font-weight: 500;
+}
+
+QPushButton:hover {
+background-color: rgb(42, 142, 255);
+color: white;
+border-color: rgb(42, 142, 255);
+}</string>
               </property>
               <property name="text">
                <string/>
@@ -919,7 +950,7 @@ font-weight: 500;</string>
              <bool>false</bool>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_4">
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -989,8 +1020,8 @@ font-weight: 500;</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>98</width>
-                   <height>28</height>
+                   <width>361</width>
+                   <height>491</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
