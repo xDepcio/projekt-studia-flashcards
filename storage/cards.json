@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.135
+        "popularity": 0.18000000000000002
     },
     {
         "id": 2,
@@ -42,7 +42,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "id": 7,
@@ -825,7 +825,6 @@
         "categories": [
             "Animals"
         ],
-        "popularity": 0.69,
         "id": 94
     }
 ]

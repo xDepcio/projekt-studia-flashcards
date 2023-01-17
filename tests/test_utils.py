@@ -107,16 +107,14 @@ def test_utils_extend_cards_storage_from_csv():
             "id": 3,
             "originLang": "koszykówka",
             "learningLang": "basketball",
-            "categories": ["Sports"],
-            "popularity": 0.1,
+            "categories": ["Sports"]
         }
         assert card1 in data
         card2 = {
             "id": 4,
             "originLang": "noga",
             "learningLang": "football",
-            "categories": [],
-            "popularity": 0.1,
+            "categories": []
         }
         assert card2 in data
 
@@ -144,12 +142,12 @@ def test_export_cards_to_json():
         open('tests/dummy_data/test_export.json', 'r', encoding='utf-8'))
     assert len(cards) == 4
     assert cards[0]['categories'] == ['Vehicles']
-    assert cards[0]['popularity'] == 0.5
+    assert cards[0].get('popularity') is None
     assert cards[1]['categories'] == ['Vehicles', 'Sports']
-    assert cards[1]['popularity'] == 0.2
+    assert cards[1].get('popularity') is None
     assert cards[2]['originLang'] == 'aź'
     assert cards[2]['learningLang'] == '_aż'
-    assert cards[2]['popularity'] == 0.1
+    assert cards[2].get('popularity') is None
     assert cards[2]['categories'] == []
 
 

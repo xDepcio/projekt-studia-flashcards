@@ -23,14 +23,12 @@
         "categories": [
             "Sports"
         ],
-        "popularity": 0.1,
         "id": 3
     },
     {
         "originLang": "noga",
         "learningLang": "football",
         "categories": [],
-        "popularity": 0.1,
         "id": 4
     }
 ]
