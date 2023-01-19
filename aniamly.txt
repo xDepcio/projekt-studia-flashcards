@@ -1,3 +1,0 @@
-koń,horse,['Animals']
-pies,dog,['Animals']
-kot,cat,['Animals']
