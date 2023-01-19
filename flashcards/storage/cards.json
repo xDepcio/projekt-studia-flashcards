@@ -6,7 +6,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.07500000000000001
+        "popularity": 0.18000000000000002
     },
     {
         "id": 2,
@@ -60,7 +60,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.7424999999999999
+        "popularity": 0.556875
     },
     {
         "id": 8,
@@ -78,7 +78,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 10,
@@ -122,7 +122,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 15,
@@ -262,7 +262,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.5832000000000002
     },
     {
         "id": 31,
@@ -334,7 +334,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "id": 39,
@@ -343,7 +343,7 @@
         "categories": [
             "Vehicles"
         ],
-        "popularity": 0.135
+        "popularity": 0.10125
     },
     {
         "id": 40,
@@ -563,7 +563,7 @@
             "Home"
         ],
         "id": 64,
-        "popularity": 0.18000000000000002
+        "popularity": 0.32400000000000007
     },
     {
         "originLang": "korytarz",
@@ -667,7 +667,8 @@
         "categories": [
             "Sports"
         ],
-        "id": 76
+        "id": 76,
+        "popularity": 0.18000000000000002
     },
     {
         "originLang": "tenis",
@@ -685,7 +686,7 @@
             "Sports"
         ],
         "id": 78,
-        "popularity": 0.3280500000000001
+        "popularity": 0.5904900000000002
     },
     {
         "originLang": "pływanie",
@@ -757,7 +758,7 @@
             "Sports"
         ],
         "id": 86,
-        "popularity": 0.7424999999999999
+        "popularity": 0.99
     },
     {
         "originLang": "mma",

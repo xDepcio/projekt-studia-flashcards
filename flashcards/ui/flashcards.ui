@@ -802,8 +802,8 @@ QPushButton:hover {
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>605</width>
-                      <height>376</height>
+                      <width>98</width>
+                      <height>28</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -937,8 +937,8 @@ border-color: rgb(42, 142, 255);
                <string/>
               </property>
               <property name="icon">
-               <iconset theme="document-new">
-                <normaloff>storage/icons/refresh.svg</normaloff>storage/icons/refresh.svg</iconset>
+               <iconset>
+                <normaloff>./flashcards/storage/icons/refresh.svg</normaloff>./flashcards/storage/icons/refresh.svg</iconset>
               </property>
              </widget>
             </item>
@@ -1020,8 +1020,8 @@ border-color: rgb(42, 142, 255);
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>361</width>
-                   <height>491</height>
+                   <width>98</width>
+                   <height>28</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_12">

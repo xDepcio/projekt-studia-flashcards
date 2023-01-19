@@ -1,6 +1,7 @@
 from answer import Answer
 from config import Config
 import json
+from typing import List
 
 
 class Card:
@@ -9,7 +10,7 @@ class Card:
         id: int,
         origin_lang_value: str,
         learning_lang_value: str,
-        categories=None,
+        categories: List[str] = None,
         popularity: float = None
     ):
         self.id = id

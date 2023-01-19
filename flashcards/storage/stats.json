@@ -4492,8 +4492,106 @@
                 }
             ],
             "date": "16-01-2023 23:56"
+        },
+        {
+            "correct": 5,
+            "total": 15,
+            "percentage": 33.33,
+            "answers": [
+                {
+                    "expected": "samochód z niskim zawieszeniem",
+                    "given": "sdaf",
+                    "toBeGuessed": "lowrider",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Woźny",
+                    "given": "woźny",
+                    "toBeGuessed": "Janitor",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "łódź",
+                    "given": "łódź",
+                    "toBeGuessed": "boat",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "samochód policyjny",
+                    "given": "radiowóz",
+                    "toBeGuessed": "police car",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód sportowy",
+                    "given": "samochód sportowy",
+                    "toBeGuessed": "sports car",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "samochód wojskowy",
+                    "given": "sa",
+                    "toBeGuessed": "military vehicle",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "Policjant",
+                    "given": "policjant",
+                    "toBeGuessed": "Police officer",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "samochód elektryczny",
+                    "given": "samochód elektryczny",
+                    "toBeGuessed": "electric car",
+                    "isCorrect": true
+                },
+                {
+                    "expected": "hokej",
+                    "given": "",
+                    "toBeGuessed": "hockey",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "samochód ratunkowy",
+                    "given": "",
+                    "toBeGuessed": "ambulance",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "przedpokój",
+                    "given": "",
+                    "toBeGuessed": "hallway",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "boks",
+                    "given": "",
+                    "toBeGuessed": "boxing",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "lekkoatletyka",
+                    "given": "",
+                    "toBeGuessed": "track and field",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "bieganie",
+                    "given": "",
+                    "toBeGuessed": "running",
+                    "isCorrect": false
+                },
+                {
+                    "expected": "wózek widłowy",
+                    "given": "",
+                    "toBeGuessed": "forklift",
+                    "isCorrect": false
+                }
+            ],
+            "date": "19-01-2023 21:40"
         }
     ],
-    "answersToLastExam": 278,
-    "appUseTimeSeconds": 8318.523457288742
+    "answersToLastExam": 293,
+    "appUseTimeSeconds": 8433.028946876526
 }

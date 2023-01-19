@@ -556,7 +556,7 @@ class Ui_MainWindow(object):
         self.examAnswerScroll.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 605, 376))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
         self.horizontalLayout_2 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.scrollItemsHolder = QWidget(self.scrollAreaWidgetContents)
@@ -664,12 +664,7 @@ class Ui_MainWindow(object):
 "border-color: rgb(42, 142, 255);\n"
 "}")
         icon = QIcon()
-        iconThemeName = u"document-new"
-        if QIcon.hasThemeIcon(iconThemeName):
-            icon = QIcon.fromTheme(iconThemeName)
-        else:
-            icon.addFile(u"storage/icons/refresh.svg", QSize(), QIcon.Normal, QIcon.Off)
-        
+        icon.addFile(u"./flashcards/storage/icons/refresh.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.refreshStatsBtn.setIcon(icon)
 
         self.horizontalLayout_5.addWidget(self.refreshStatsBtn)
@@ -728,7 +723,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 361, 491))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
         self.verticalLayout_12 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.examsHistoryHolder = QWidget(self.scrollAreaWidgetContents_2)

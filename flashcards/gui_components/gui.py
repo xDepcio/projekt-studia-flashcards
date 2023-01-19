@@ -136,6 +136,7 @@ class FlashcardsWindow(QMainWindow):
         self.ui.testMediumBtn.setDisabled(True)
         self.ui.testHardBtn.setDisabled(True)
         self.ui.testStartBtn.setDisabled(True)
+        self.ui.testCardBtn.setDisabled(True)
         self.ui.testStack.setCurrentIndex(0)
         self.ui.testCardInput.textChanged.connect(self._handleTestInputChange)
         self.ui.testCardBtn.clicked.connect(self._handleNextExamQuestion)
