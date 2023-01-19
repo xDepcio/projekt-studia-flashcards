@@ -1,4 +1,4 @@
-from ui_createCardDialog import Ui_Dialog
+from ui.ui_createCardDialog import Ui_Dialog
 from PySide2.QtWidgets import QDialog, QFileDialog
 from utils import (
     extend_cards_storage_from_json,

@@ -423,7 +423,7 @@
         "categories": [
             "Jobs"
         ],
-        "popularity": 0.32400000000000007
+        "popularity": 0.24300000000000005
     },
     {
         "id": 49,
@@ -528,7 +528,7 @@
             "Home"
         ],
         "id": 60,
-        "popularity": 0.99
+        "popularity": 0.41765625
     },
     {
         "originLang": "łazienka",
@@ -572,7 +572,7 @@
             "Home"
         ],
         "id": 65,
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "originLang": "garaż",
@@ -623,7 +623,7 @@
             "Home"
         ],
         "id": 71,
-        "popularity": 0.99
+        "popularity": 0.7424999999999999
     },
     {
         "originLang": "okno",

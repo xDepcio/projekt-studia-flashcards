@@ -587,6 +587,36 @@
                 "originLang": "pies",
                 "learningLang": "dog",
                 "date": "17-01-2023 00:00"
+            },
+            {
+                "originLang": "mechanik",
+                "learningLang": "mechanic",
+                "date": "19-01-2023 20:36"
+            },
+            {
+                "originLang": "kuchnia",
+                "learningLang": "kitchen",
+                "date": "19-01-2023 20:36"
+            },
+            {
+                "originLang": "kuchnia",
+                "learningLang": "kitchen",
+                "date": "19-01-2023 20:37"
+            },
+            {
+                "originLang": "dach",
+                "learningLang": "roof",
+                "date": "19-01-2023 20:37"
+            },
+            {
+                "originLang": "korytarz",
+                "learningLang": "corridor",
+                "date": "19-01-2023 20:37"
+            },
+            {
+                "originLang": "kuchnia",
+                "learningLang": "kitchen",
+                "date": "19-01-2023 20:37"
             }
         ],
         "wrong": [
@@ -1429,6 +1459,16 @@
                 "originLang": "koń",
                 "learningLang": "horse",
                 "date": "17-01-2023 00:00"
+            },
+            {
+                "originLang": "ładowarka",
+                "learningLang": "loader",
+                "date": "19-01-2023 20:37"
+            },
+            {
+                "originLang": "kolarstwo",
+                "learningLang": "cycling",
+                "date": "19-01-2023 20:37"
             }
         ]
     },
@@ -4455,5 +4495,5 @@
         }
     ],
     "answersToLastExam": 278,
-    "appUseTimeSeconds": 8257.48129940033
+    "appUseTimeSeconds": 8318.523457288742
 }

@@ -1,3 +1,4 @@
+import path_setup
 from PySide2.QtWidgets import (
     QApplication, QVBoxLayout, QWidget, QMainWindow,
     QListWidgetItem, QLabel, QMessageBox, QFileDialog
@@ -7,7 +8,7 @@ from PySide2.QtCharts import QtCharts
 from PySide2.QtGui import QColor
 import sys
 from datetime import datetime
-from ui_flashcards import Ui_MainWindow
+from ui.ui_flashcards import Ui_MainWindow
 from stylesheets import StyleSheet
 from time import time
 from utils import (
@@ -19,7 +20,7 @@ from utils import (
 from stats import Stats
 from exam import Exam
 from config import Config
-from card_dialog_gui import CreateCardDialog
+from gui_components.card_dialog_gui import CreateCardDialog
 import os
 
 
